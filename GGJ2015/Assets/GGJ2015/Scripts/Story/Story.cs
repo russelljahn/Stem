@@ -1,9 +1,9 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace Assets.GGJ2015.Scripts {
+namespace Assets.GGJ2015.Scripts.Story {
     public class Story {
 
         [SerializeField] private readonly Dictionary<string, Pivot> _idsToPivots = new Dictionary<string, Pivot>();
