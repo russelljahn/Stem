@@ -38,7 +38,7 @@ namespace Assets.GGJ2015.Scripts.Gui {
         }
 
 
-        public void Replace(Choice choice) {
+        public void LoadChoice(Choice choice) {
             _choice = choice;
             // Replace text & whatnot based on new choice
         }
