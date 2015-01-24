@@ -1,24 +1,41 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using UnityEngine;
 
 
 namespace Assets.GGJ2015.Scripts {
-    public static class PivotManager {
+    public class Story {
 
-        private static List<Pivot> _pivots;
+        [SerializeField] private readonly Dictionary<string, Pivot> _idsToPivots = new Dictionary<string, Pivot>();
+        public Pivot Root; 
 
 
-        static PivotManager() {
-            CreatePivots();
+        public Story() {
+            var pivots = GeneratePivots();
+            foreach (var pivot in pivots) {
+                if (pivot.Id == PivotIds.StoryRoot) {
+                    Root = pivot;
+                }
+                if (_idsToPivots.ContainsKey(pivot.Id)) {
+                    Debug.LogWarning(string.Format("Pivot '{0}' contains duplicate id '{1}'!", pivot.Description, pivot.Id));
+                }
+                _idsToPivots[pivot.Id] = pivot;
+            }
         }
 
 
-        private static void CreatePivots() {
-            _pivots = new List<Pivot> {
+        public Pivot GetPivot(string id) {
+            if (!_idsToPivots.ContainsKey(id)) {
+                throw new ArgumentException("There is no pivot with id!");
+            }
+            return _idsToPivots[id];
+        }
+
+
+        private IEnumerable<Pivot> GeneratePivots() {
+            return new List<Pivot> {
                 new Pivot {
-                    Id = PivotIds.Flower,
+                    Id = PivotIds.StoryRoot,
                     Description = "There is a flower.",
                     Choices = new List<Choice> {
                         new Choice {
@@ -219,6 +236,9 @@ namespace Assets.GGJ2015.Scripts {
                     }
                 }
             };
+
+
+
         }
     }
 }

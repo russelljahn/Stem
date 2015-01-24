@@ -1,8 +1,8 @@
-
+﻿
 namespace Assets.GGJ2015.Scripts {
     public static class PivotIds {
         public const string None = "";
-        public const string Flower = "Flower";
+        public const string StoryRoot = "StoryRoot";
         public const string Puddle = "Puddle";
         public const string PeePuddle = "PeePuddle";
         public const string YouDied = "YouDied";
