@@ -11,11 +11,6 @@ namespace Assets.GGJ2015.Scripts.Gui.PivotAnimations {
 
         [SerializeField] private Animator _flowerGrowsAnimator;
 
-
-        //[SerializeField] private float _shortenFlytrapWaggleAnimationTime = .5f;
-        //[SerializeField]private float _shortenHeartsAnimationTime = .15f;
-
-
         [SerializeField] private float _fadeTime = 0.5f;
         [SerializeField] private AnimationCurve _fadeEasing = AnimationCurveUtils.GetLinearCurve();
 

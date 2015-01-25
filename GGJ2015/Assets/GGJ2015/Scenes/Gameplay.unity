@@ -115,6 +115,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _page: {fileID: 1487219217}
   _initialAnimation: {fileID: 0}
+--- !u!1 &33196961
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 33196962}
+  m_Layer: 5
+  m_Name: Pivot Animations
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &33196962
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 33196961}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 402283732}
+  - {fileID: 1646447951}
+  - {fileID: 306327910}
+  - {fileID: 1170582691}
+  - {fileID: 1437382805}
+  - {fileID: 1310341346}
+  - {fileID: 279052567}
+  - {fileID: 925907401}
+  - {fileID: 1432522017}
+  - {fileID: 1843918687}
+  - {fileID: 1441129313}
+  - {fileID: 822955988}
+  - {fileID: 184400790}
+  m_Father: {fileID: 275225856}
+  m_RootOrder: 1
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: .5, y: .5}
 --- !u!1 &72200219
 GameObject:
   m_ObjectHideFlags: 0
@@ -266,72 +311,6 @@ Transform:
   - {fileID: 405327447}
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!1 &143652623
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 143652624}
-  - 212: {fileID: 143652626}
-  - 95: {fileID: 143652625}
-  m_Layer: 0
-  m_Name: Animator
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &143652624
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 143652623}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 25, y: -90, z: 0}
-  m_LocalScale: {x: 60, y: 60, z: 60}
-  m_Children: []
-  m_Father: {fileID: 760085736}
-  m_RootOrder: 0
---- !u!95 &143652625
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 143652623}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 29699d16b257a45ddb84db8da6d9dbf0, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
---- !u!212 &143652626
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 143652623}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f7b071c56405e4606a5f30983b55e36a, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &183145729
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,7 +387,7 @@ GameObject:
   - 224: {fileID: 184400790}
   - 114: {fileID: 184400791}
   m_Layer: 5
-  m_Name: Water Flower Animation
+  m_Name: WaterFlower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -426,8 +405,8 @@ RectTransform:
   m_LocalScale: {x: 1.00001276, y: 1.00001276, z: 1.00001276}
   m_Children:
   - {fileID: 832108918}
-  m_Father: {fileID: 275225856}
-  m_RootOrder: 13
+  m_Father: {fileID: 33196962}
+  m_RootOrder: 12
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -513,6 +492,72 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: fcd402a1a95054e0e8d1c454d3eaaafe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1 &239851457
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 239851458}
+  - 212: {fileID: 239851460}
+  - 95: {fileID: 239851459}
+  m_Layer: 0
+  m_Name: Get Stung Animator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &239851458
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 239851457}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 76.7999954, y: 76.7999954, z: 76.7999954}
+  m_Children: []
+  m_Father: {fileID: 1432522017}
+  m_RootOrder: 0
+--- !u!95 &239851459
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 239851457}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7823dbdd03ded45599a369339be6c23e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!212 &239851460
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 239851457}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: 028eceb781d74441c9e9181a55b4cff9, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &275225852
 GameObject:
   m_ObjectHideFlags: 0
@@ -596,22 +641,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 943771977}
-  - {fileID: 279052567}
-  - {fileID: 402283732}
-  - {fileID: 1646447951}
-  - {fileID: 1571582778}
-  - {fileID: 1170582691}
-  - {fileID: 657448973}
-  - {fileID: 925907401}
-  - {fileID: 306327910}
-  - {fileID: 1843918687}
-  - {fileID: 1441129313}
-  - {fileID: 1390015926}
-  - {fileID: 760085736}
-  - {fileID: 184400790}
-  - {fileID: 1437382805}
-  - {fileID: 1310341346}
-  - {fileID: 822955988}
+  - {fileID: 33196962}
   - {fileID: 1487219216}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -630,7 +660,7 @@ GameObject:
   - 224: {fileID: 279052567}
   - 114: {fileID: 279052570}
   m_Layer: 5
-  m_Name: Grow Flower Animation
+  m_Name: FlowerGrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -648,8 +678,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 654495936}
-  m_Father: {fileID: 275225856}
-  m_RootOrder: 1
+  m_Father: {fileID: 33196962}
+  m_RootOrder: 6
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -697,7 +727,7 @@ GameObject:
   - 224: {fileID: 306327910}
   - 114: {fileID: 306327911}
   m_Layer: 5
-  m_Name: Get Busy Animation
+  m_Name: BeLovers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -716,8 +746,9 @@ RectTransform:
   m_Children:
   - {fileID: 212614525}
   - {fileID: 2142424447}
-  m_Father: {fileID: 275225856}
-  m_RootOrder: 8
+  - {fileID: 1571582778}
+  m_Father: {fileID: 33196962}
+  m_RootOrder: 2
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -769,7 +800,7 @@ GameObject:
   - 224: {fileID: 402283732}
   - 114: {fileID: 402283731}
   m_Layer: 5
-  m_Name: Bee Experiment Animation
+  m_Name: BeeExperiment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -801,8 +832,8 @@ RectTransform:
   m_LocalScale: {x: 1.00001276, y: 1.00001276, z: 1.00001276}
   m_Children:
   - {fileID: 2086046233}
-  m_Father: {fileID: 275225856}
-  m_RootOrder: 2
+  m_Father: {fileID: 33196962}
+  m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -1069,170 +1100,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 279052567}
   m_RootOrder: 0
---- !u!1 &657448972
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 140214, guid: d0178d3d99b764322ba77d44664618e3, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 224: {fileID: 657448973}
-  - 114: {fileID: 657448974}
-  m_Layer: 5
-  m_Name: Divorce Animation
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &657448973
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 22440214, guid: d0178d3d99b764322ba77d44664618e3,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 657448972}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.00001276, y: 1.00001276, z: 1.00001276}
-  m_Children:
-  - {fileID: 1224189919}
-  m_Father: {fileID: 275225856}
-  m_RootOrder: 6
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: .5, y: .5}
---- !u!114 &657448974
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11438316, guid: d0178d3d99b764322ba77d44664618e3,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 657448972}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34314dbed18824fec9e891ace9c505b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _length: 0
-  _animationClip: {fileID: 7400000, guid: fc5cf38c316d3404d9e6c4b49d70c939, type: 2}
---- !u!1 &689599691
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 689599692}
-  - 212: {fileID: 689599694}
-  - 95: {fileID: 689599693}
-  m_Layer: 0
-  m_Name: Animator
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &689599692
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 689599691}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 25, y: -90, z: 0}
-  m_LocalScale: {x: 60, y: 60, z: 60}
-  m_Children: []
-  m_Father: {fileID: 1390015926}
-  m_RootOrder: 0
---- !u!95 &689599693
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 689599691}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 29699d16b257a45ddb84db8da6d9dbf0, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
---- !u!212 &689599694
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 689599691}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f7b071c56405e4606a5f30983b55e36a, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
---- !u!1 &760085735
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 140214, guid: d0178d3d99b764322ba77d44664618e3, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 224: {fileID: 760085736}
-  - 114: {fileID: 760085737}
-  m_Layer: 5
-  m_Name: Trial Animation
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &760085736
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 22440214, guid: d0178d3d99b764322ba77d44664618e3,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 760085735}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.00001276, y: 1.00001276, z: 1.00001276}
-  m_Children:
-  - {fileID: 143652624}
-  m_Father: {fileID: 275225856}
-  m_RootOrder: 12
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: .5, y: .5}
---- !u!114 &760085737
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11438316, guid: d0178d3d99b764322ba77d44664618e3,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 760085735}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34314dbed18824fec9e891ace9c505b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _length: 0
-  _animationClip: {fileID: 7400000, guid: 6e720eea698bd4cdfbaed67a46402178, type: 2}
 --- !u!1 &822955987
 GameObject:
   m_ObjectHideFlags: 0
@@ -1243,7 +1110,7 @@ GameObject:
   - 224: {fileID: 822955988}
   - 114: {fileID: 822955989}
   m_Layer: 5
-  m_Name: Space Bees Animation
+  m_Name: SpaceBees
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1262,8 +1129,8 @@ RectTransform:
   m_Children:
   - {fileID: 1299689440}
   - {fileID: 1560836628}
-  m_Father: {fileID: 275225856}
-  m_RootOrder: 16
+  m_Father: {fileID: 33196962}
+  m_RootOrder: 11
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -1379,7 +1246,7 @@ GameObject:
   - 224: {fileID: 925907401}
   - 114: {fileID: 925907402}
   m_Layer: 5
-  m_Name: Flowers Sprout Animation
+  m_Name: FlowersSprout
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1397,7 +1264,7 @@ RectTransform:
   m_LocalScale: {x: 1.00001276, y: 1.00001276, z: 1.00001276}
   m_Children:
   - {fileID: 565872552}
-  m_Father: {fileID: 275225856}
+  m_Father: {fileID: 33196962}
   m_RootOrder: 7
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1741,8 +1608,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 20950217}
-  - {fileID: 1871092768}
   - {fileID: 1986092398}
+  - {fileID: 1871092768}
+  - {fileID: 1955479634}
   - {fileID: 1525098469}
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -1756,7 +1624,7 @@ GameObject:
   - 224: {fileID: 1170582691}
   - 114: {fileID: 1170582692}
   m_Layer: 5
-  m_Name: Boot Stomp Animation
+  m_Name: BootStomp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1774,8 +1642,8 @@ RectTransform:
   m_LocalScale: {x: 1.00001276, y: 1.00001276, z: 1.00001276}
   m_Children:
   - {fileID: 949335657}
-  m_Father: {fileID: 275225856}
-  m_RootOrder: 5
+  m_Father: {fileID: 33196962}
+  m_RootOrder: 3
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -1795,56 +1663,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _length: 0
   _animationClip: {fileID: 7400000, guid: b5f6867f153db437ebc520895ac68672, type: 2}
---- !u!1 &1224189918
+--- !u!1 &1234876118
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 1224189919}
-  - 212: {fileID: 1224189921}
-  - 95: {fileID: 1224189920}
+  - 4: {fileID: 1234876119}
+  - 212: {fileID: 1234876120}
   m_Layer: 0
-  m_Name: Animator
+  m_Name: Hospital Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1224189919
+--- !u!4 &1234876119
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1224189918}
+  m_GameObject: {fileID: 1234876118}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 76.7999954, y: 76.7999954, z: 76.7999954}
+  m_LocalScale: {x: 76.8000183, y: 76.8000183, z: 76.8000183}
   m_Children: []
-  m_Father: {fileID: 657448973}
-  m_RootOrder: 0
---- !u!95 &1224189920
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1224189918}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: df2faec4c9a1542daa6375e8c0c85a1b, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
---- !u!212 &1224189921
+  m_Father: {fileID: 1432522017}
+  m_RootOrder: 1
+--- !u!212 &1234876120
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1224189918}
+  m_GameObject: {fileID: 1234876118}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -1859,7 +1711,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c6d1a474e0e854e0197f225ada093f74, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 302f670e96bb14a5795c219117cba2d6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1299689439
 GameObject:
@@ -1937,7 +1789,7 @@ GameObject:
   - 224: {fileID: 1310341346}
   - 114: {fileID: 1310341347}
   m_Layer: 5
-  m_Name: Drink Water Animation
+  m_Name: DrinkWater
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1955,8 +1807,8 @@ RectTransform:
   m_LocalScale: {x: 1.00001276, y: 1.00001276, z: 1.00001276}
   m_Children:
   - {fileID: 1418084673}
-  m_Father: {fileID: 275225856}
-  m_RootOrder: 15
+  m_Father: {fileID: 33196962}
+  m_RootOrder: 5
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -1994,55 +1846,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
   _spriteRenderer: {fileID: 1418084675}
---- !u!1 &1390015925
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 140214, guid: d0178d3d99b764322ba77d44664618e3, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 224: {fileID: 1390015926}
-  - 114: {fileID: 1390015927}
-  m_Layer: 5
-  m_Name: Trial Animation
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &1390015926
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 22440214, guid: d0178d3d99b764322ba77d44664618e3,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1390015925}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.00001276, y: 1.00001276, z: 1.00001276}
-  m_Children:
-  - {fileID: 689599692}
-  m_Father: {fileID: 275225856}
-  m_RootOrder: 11
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: .5, y: .5}
---- !u!114 &1390015927
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11438316, guid: d0178d3d99b764322ba77d44664618e3,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1390015925}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34314dbed18824fec9e891ace9c505b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _length: 0
-  _animationClip: {fileID: 7400000, guid: 6e720eea698bd4cdfbaed67a46402178, type: 2}
 --- !u!1 &1418084672
 GameObject:
   m_ObjectHideFlags: 0
@@ -2109,6 +1912,74 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 36d14675bbd4e47c0a96b6b55a6aae02, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1 &1432522016
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 140214, guid: d0178d3d99b764322ba77d44664618e3, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 1432522017}
+  - 114: {fileID: 1432522018}
+  m_Layer: 5
+  m_Name: GetStung
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1432522017
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 22440214, guid: d0178d3d99b764322ba77d44664618e3,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1432522016}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.00001276, y: 1.00001276, z: 1.00001276}
+  m_Children:
+  - {fileID: 239851458}
+  - {fileID: 1234876119}
+  m_Father: {fileID: 33196962}
+  m_RootOrder: 8
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: .5, y: .5}
+--- !u!114 &1432522018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11438316, guid: d0178d3d99b764322ba77d44664618e3,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1432522016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0e36f54882ff438bbe0f75ed9854a12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _length: 0
+  _getStungClip: {fileID: 7400000, guid: cb98725bf54dc48f9aa8df0fcc094982, type: 2}
+  _fadeTime: .5
+  _fadeEasing:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  _getStungSpriteRenderer: {fileID: 239851460}
+  _hospitalSpriteRenderer: {fileID: 1234876120}
 --- !u!1 &1437382804
 GameObject:
   m_ObjectHideFlags: 0
@@ -2119,7 +1990,7 @@ GameObject:
   - 224: {fileID: 1437382805}
   - 114: {fileID: 1437382806}
   m_Layer: 5
-  m_Name: Drink Pee Animation
+  m_Name: DrinkPee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2137,8 +2008,8 @@ RectTransform:
   m_LocalScale: {x: 1.00001276, y: 1.00001276, z: 1.00001276}
   m_Children:
   - {fileID: 72200220}
-  m_Father: {fileID: 275225856}
-  m_RootOrder: 14
+  m_Father: {fileID: 33196962}
+  m_RootOrder: 4
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -2186,7 +2057,7 @@ GameObject:
   - 224: {fileID: 1441129313}
   - 114: {fileID: 1441129314}
   m_Layer: 5
-  m_Name: Pesticide Animation
+  m_Name: Pesticide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2204,7 +2075,7 @@ RectTransform:
   m_LocalScale: {x: 1.00001276, y: 1.00001276, z: 1.00001276}
   m_Children:
   - {fileID: 1765299388}
-  m_Father: {fileID: 275225856}
+  m_Father: {fileID: 33196962}
   m_RootOrder: 10
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2428,7 +2299,7 @@ RectTransform:
   - {fileID: 1036463620}
   - {fileID: 1484398347}
   m_Father: {fileID: 275225856}
-  m_RootOrder: 17
+  m_RootOrder: 2
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -2585,7 +2456,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1057193204}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!1 &1560836627
 GameObject:
   m_ObjectHideFlags: 0
@@ -2662,7 +2533,7 @@ GameObject:
   - 224: {fileID: 1571582778}
   - 114: {fileID: 1571582779}
   m_Layer: 5
-  m_Name: Be Lovers Animation
+  m_Name: TODO
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2677,11 +2548,11 @@ RectTransform:
   m_GameObject: {fileID: 1571582777}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.00001276, y: 1.00001276, z: 1.00001276}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 522520135}
-  m_Father: {fileID: 275225856}
-  m_RootOrder: 4
+  m_Father: {fileID: 306327910}
+  m_RootOrder: 2
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -2711,7 +2582,7 @@ GameObject:
   - 224: {fileID: 1646447951}
   - 114: {fileID: 1646447952}
   m_Layer: 5
-  m_Name: Bee Utopia Animation
+  m_Name: BeeUtopia
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2729,8 +2600,8 @@ RectTransform:
   m_LocalScale: {x: 1.00001276, y: 1.00001276, z: 1.00001276}
   m_Children:
   - {fileID: 183145730}
-  m_Father: {fileID: 275225856}
-  m_RootOrder: 3
+  m_Father: {fileID: 33196962}
+  m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -2892,7 +2763,7 @@ GameObject:
   - 224: {fileID: 1843918687}
   - 114: {fileID: 1843918688}
   m_Layer: 5
-  m_Name: Pee Animation
+  m_Name: Pee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2910,7 +2781,7 @@ RectTransform:
   m_LocalScale: {x: 1.00001276, y: 1.00001276, z: 1.00001276}
   m_Children:
   - {fileID: 1673549971}
-  m_Father: {fileID: 275225856}
+  m_Father: {fileID: 33196962}
   m_RootOrder: 9
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2958,7 +2829,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1057193204}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!114 &1871092769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3001,6 +2872,59 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
   _crossfadeTime: 1
+--- !u!1 &1955479633
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1955479634}
+  - 114: {fileID: 1955479635}
+  m_Layer: 0
+  m_Name: Animations
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1955479634
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1955479633}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.63939285, y: 18.4868317, z: -82.3045502}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1057193204}
+  m_RootOrder: 3
+--- !u!114 &1955479635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1955479633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 938a0e5ffece64d3ea97727f65606719, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PivotAnimations:
+  - {fileID: 402283731}
+  - {fileID: 1646447952}
+  - {fileID: 306327911}
+  - {fileID: 1170582692}
+  - {fileID: 1437382806}
+  - {fileID: 1310341347}
+  - {fileID: 279052570}
+  - {fileID: 925907402}
+  - {fileID: 1432522018}
+  - {fileID: 1843918688}
+  - {fileID: 822955989}
+  - {fileID: 184400791}
+  - {fileID: 1441129314}
 --- !u!1 &1986092397
 GameObject:
   m_ObjectHideFlags: 0
@@ -3028,7 +2952,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1057193204}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!114 &1986092399
 MonoBehaviour:
   m_ObjectHideFlags: 0
