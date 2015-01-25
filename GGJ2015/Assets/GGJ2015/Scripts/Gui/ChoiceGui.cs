@@ -1,5 +1,5 @@
 using System;
-using Assets.GGJ2015.Scripts.Story;
+using Assets.GGJ2015.Scripts.Pivots;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;

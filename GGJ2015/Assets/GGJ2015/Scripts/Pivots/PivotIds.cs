@@ -1,5 +1,5 @@
 ﻿
-namespace Assets.GGJ2015.Scripts.Story {
+namespace Assets.GGJ2015.Scripts.Pivots {
     public static class PivotIds {
         public const string None = "";
         public const string StoryRoot = "StoryRoot";
@@ -19,8 +19,6 @@ namespace Assets.GGJ2015.Scripts.Story {
         public const string MakeFlowerBaby = "MakeFlowerBaby";
         public const string GetStung = "GetStung";
         public const string Experiment = "Experiment";
-
-
 
     }
 }

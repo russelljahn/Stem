@@ -1,13 +1,14 @@
 using System;
 using System.Collections.Generic;
+using Assets.GGJ2015.Scripts.PropertyAttributes;
 using UnityEngine;
 
 
-namespace Assets.GGJ2015.Scripts.Story {
+namespace Assets.GGJ2015.Scripts.Pivots {
     public class Story {
 
-        [SerializeField] private readonly Dictionary<string, Pivot> _idsToPivots = new Dictionary<string, Pivot>();
-        public Pivot Root; 
+        private readonly Dictionary<string, Pivot> _idsToPivots = new Dictionary<string, Pivot>();
+        [SerializeField, Readonly] public Pivot Root; 
 
 
         public Story() {

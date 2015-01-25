@@ -1,4 +1,4 @@
-using Assets.GGJ2015.Scripts.Story;
+using Assets.GGJ2015.Scripts.Pivots;
 using UnityEngine;
 
 
