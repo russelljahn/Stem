@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Assets.GGJ2015.Scripts.Audio;
+using Assets.GGJ2015.Scripts.Extensions;
 using Assets.GGJ2015.Scripts.Gui;
 using Assets.GGJ2015.Scripts.PropertyAttributes;
 using UnityEngine;
@@ -62,17 +63,30 @@ namespace Assets.GGJ2015.Scripts.Pivots {
         private void OnClickChoice(Choice choice) {
             var pivot = _currentStory.GetPivot(choice.NextPivot);
 
+            HandleOnClickChoiceAudio(choice);
+
+            UnloadCurrentPivot(() => { LoadPivot(pivot); });
+            _previousChoice = choice;
+        }
+
+
+        private void HandleOnClickChoiceAudio(Choice choice) {
             var buttonClickClip = AudioClips.GetClip(AudioClips.ButtonClick);
             var buttonClickTrackId = AudioClips.GetClipTrackId(AudioClips.ButtonClick);
             _audioManager.LoadClip(buttonClickTrackId, buttonClickClip);
             _audioManager.PlayTrackOneShot(buttonClickTrackId);
 
-            var previousChoiceTrackId = AudioClips.GetClipTrackId(_previousChoice.OnTriggerTrackName);
+            var nextChoiceClip = AudioClips.GetClip(choice.OnTriggerTrackName);
             var nextChoiceTrackId = AudioClips.GetClipTrackId(choice.OnTriggerTrackName);
-            _audioManager.Crossfade(nextChoiceTrackId, previousChoiceTrackId);
+            var previousChoiceTrackId = AudioClips.GetClipTrackId(_previousChoice.OnTriggerTrackName);
 
-            UnloadCurrentPivot(() => { LoadPivot(pivot); });
-            _previousChoice = choice;
+            _audioManager.LoadClip(nextChoiceTrackId, nextChoiceClip, 0.0f, true);
+            _audioManager.PlayTrack(previousChoiceTrackId);
+            _audioManager.PlayTrack(nextChoiceTrackId);
+
+            if (_previousChoice.IsNotNull()) {
+                _audioManager.Crossfade(nextChoiceTrackId, previousChoiceTrackId);
+            }
         }
 
 
