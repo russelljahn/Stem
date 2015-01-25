@@ -139,7 +139,8 @@ namespace Assets.GGJ2015.Scripts.Pivots {
                         new Choice {
                             Description = "Hide the body.",
                             OnTriggerAnimationName = Animations.Grave,
-                            NextPivot = PivotIds.StoryRoot
+                            NextPivot = PivotIds.StoryRoot,
+							OnTriggerTrackName = AudioClips.BgGrave
                         }
                     }
                 },
@@ -151,11 +152,13 @@ namespace Assets.GGJ2015.Scripts.Pivots {
                             Description = "Be friends.",
                             NextPivot = PivotIds.StoryRoot,
                             OnTriggerAnimationName = Animations.Grave,
+							OnTriggerTrackName = AudioClips.BgGrave
                         },
                         new Choice {
                             Description = "Be lovers & get busy.",
                             NextPivot = PivotIds.BeeUtopia,
                             OnTriggerAnimationName = Animations.BeLovers,
+							OnTriggerTrackName = AudioClips.BgBeLovers
                         }
                     }
                 },
@@ -167,11 +170,13 @@ namespace Assets.GGJ2015.Scripts.Pivots {
                             Description = "Dance with the bees.",
                             NextPivot = PivotIds.GotEbola,
                             OnTriggerAnimationName = Animations.GetStung,
+							OnTriggerTrackName = AudioClips.BgGotEbola
                         },
                         new Choice {
                             Description = "Experiment on the bees.",
                             NextPivot = PivotIds.Experiment,
                             OnTriggerAnimationName = Animations.BeeExperiment,
+							OnTriggerTrackName = AudioClips.BgExperiment
                         }
                     }
                 },
@@ -183,13 +188,14 @@ namespace Assets.GGJ2015.Scripts.Pivots {
                             Description = "Go to the hospital.",
                             NextPivot = PivotIds.GotEbola,
                             OnTriggerAnimationName = Animations.GotEbola,
+							OnTriggerTrackName = AudioClips.BgGotEbola
 
                         },
                         new Choice {
                             Description = "Go home and sleep it off.",
                             NextPivot = PivotIds.StoryRoot,
                             OnTriggerAnimationName = Animations.Grave,
-
+							OnTriggerTrackName = AudioClips.BgNormal
                         }
                     }
                 },
@@ -201,12 +207,13 @@ namespace Assets.GGJ2015.Scripts.Pivots {
                             Description = "The bees go to infinity and beyond.",
                             NextPivot = PivotIds.StoryRoot,
                             OnTriggerAnimationName = Animations.SpaceBees,
-
+							OnTriggerTrackName = AudioClips.BgNormal
                         },
                         new Choice {
                             Description = "Chill.",
                             NextPivot = PivotIds.GetStung,
                             OnTriggerAnimationName = Animations.GetStung,
+							OnTriggerTrackName = AudioClips.BgGetStung
                         },
                     }
                 },
@@ -218,12 +225,13 @@ namespace Assets.GGJ2015.Scripts.Pivots {
 							Description = "Sure, punish me",
 							NextPivot = PivotIds.GetStung,
                             OnTriggerAnimationName = Animations.GetStung,
+							OnTriggerTrackName = AudioClips.BgGetStung
 						},
 						new Choice {
 							Description = "Fry Me",
 							NextPivot = PivotIds.StoryRoot,
                             OnTriggerAnimationName = Animations.Grave, //TODO: WItch
-                            
+							OnTriggerTrackName = AudioClips.BgNormal
 						},
 					}
 				},
@@ -235,12 +243,13 @@ namespace Assets.GGJ2015.Scripts.Pivots {
 							Description = "Pesticide anyone?",
 							NextPivot = PivotIds.FlowerMutates,
                             OnTriggerAnimationName = Animations.Pesticide,
-
+							OnTriggerTrackName = AudioClips.BgFlowerMutates
 						},
 						new Choice {
 							Description = "Let them grow.",
 							NextPivot = PivotIds.BeeUtopia,
                             OnTriggerAnimationName = Animations.FlowersSprout,
+							OnTriggerTrackName = AudioClips.BgBeeUtopia
 						},
 					}
 				},
