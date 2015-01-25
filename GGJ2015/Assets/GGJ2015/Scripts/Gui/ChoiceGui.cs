@@ -53,7 +53,6 @@ namespace Assets.GGJ2015.Scripts.Gui {
 
 
         public void AnimateIn(float time = 1.0f, Action onComplete = null) {
-            Debug.Log("Animating in!");
             TweenUtils.TweenAlpha(_canvasGroup, 1f, time, _animateInEasing, onComplete);
         }
 

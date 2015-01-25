@@ -1,8 +1,9 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using Assets.GGJ2015.Scripts.Audio;
 using Assets.GGJ2015.Scripts.Extensions;
 using Assets.GGJ2015.Scripts.Gui;
+using Assets.GGJ2015.Scripts.Gui.PivotAnimations;
 using Assets.GGJ2015.Scripts.PropertyAttributes;
 using Assets.GGJ2015.Scripts.Utils;
 using UnityEngine;
@@ -12,7 +13,7 @@ namespace Assets.GGJ2015.Scripts.Pivots {
     [RequireComponent(typeof(CanvasGroup))]
     public class Page : MonoBehaviour {
         [SerializeField] private List<ChoiceGui> _choiceGuis = new List<ChoiceGui>();
-        [SerializeField] private PivotGraphics _pivotGraphics;
+        [SerializeField] private PivotAnimation _pivotGraphics;
         [SerializeField] private AudioManager _audioManager;
 
 
@@ -55,7 +56,7 @@ namespace Assets.GGJ2015.Scripts.Pivots {
                 var choice = pivot.Choices[i];
 
                 choiceGui.LoadChoice(choice);
-                choiceGui.AnimateIn(_guiFadeTime, () => { choiceGui.ChoiceClicked += OnClickChoice; Debug.Log("Finished animating in!"); } );
+                choiceGui.AnimateIn(_guiFadeTime, () => { choiceGui.ChoiceClicked += OnClickChoice; } );
             }
         }
 
