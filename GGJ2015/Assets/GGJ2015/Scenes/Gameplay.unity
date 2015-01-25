@@ -302,6 +302,7 @@ GameObject:
   - 222: {fileID: 279052569}
   - 114: {fileID: 279052568}
   - 114: {fileID: 279052570}
+  - 225: {fileID: 279052571}
   m_Layer: 5
   m_Name: Pivot Graphics
   m_TagString: Untagged
@@ -369,6 +370,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad07bb143a6654a5a91ed5447019605f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!225 &279052571
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 279052566}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &405327445
 GameObject:
   m_ObjectHideFlags: 0
@@ -691,6 +703,7 @@ Transform:
   m_Children:
   - {fileID: 20950217}
   - {fileID: 1871092768}
+  - {fileID: 1986092398}
   - {fileID: 1525098469}
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -966,15 +979,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 141b2158a1a0f4952b777d41af1a2139, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ChoiceGuis:
+  _choiceGuis:
   - {fileID: 1036463621}
   - {fileID: 1484398349}
-  PivotGraphics: {fileID: 279052570}
+  _pivotGraphics: {fileID: 279052570}
+  _audioManager: {fileID: 1871092769}
   _currentPivot:
     Id: 
     Description: 
     Graphics: {fileID: 0}
-  _audioManager: {fileID: 0}
+  _musicFadeEasing:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!225 &1487219218
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1088,7 +1116,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1057193204}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!1 &1871092767
 GameObject:
   m_ObjectHideFlags: 0
@@ -1159,3 +1187,45 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
   _crossfadeTime: 1
+--- !u!1 &1986092397
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1986092398}
+  - 114: {fileID: 1986092399}
+  m_Layer: 0
+  m_Name: Audio Clips
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1986092398
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1986092397}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1057193204}
+  m_RootOrder: 2
+--- !u!114 &1986092399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1986092397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbb62be6a656c43739840444ca9e3c91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Clips:
+  - {fileID: 8300000, guid: bbcc2af4d80be4876bbf1a37685fbce3, type: 3}
+  - {fileID: 8300000, guid: d327746367614482cbbc1c037bf39c38, type: 3}

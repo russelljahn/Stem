@@ -43,12 +43,12 @@ namespace Assets.GGJ2015.Scripts.Pivots {
                         new Choice {
                             Description = "Water it.",
                             NextPivot = PivotIds.Puddle,
-                            OnTriggerTrackName = AudioClips.BgDark
+                            OnTriggerTrackName = AudioClips.BgNormal
                         },
                         new Choice {
                             Description = "Stomp on it.",
                             NextPivot = PivotIds.FlowerSprout,
-                            OnTriggerTrackName = AudioClips.BgHappy
+                            OnTriggerTrackName = AudioClips.BgNormal
                         }
                     }
                 },

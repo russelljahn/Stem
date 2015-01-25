@@ -49,6 +49,7 @@
      <Compile Include="Assets\GGJ2015\Scripts\Audio\AudioClips.cs" />
      <Compile Include="Assets\GGJ2015\Scripts\Audio\AudioManager.cs" />
      <Compile Include="Assets\GGJ2015\Scripts\Audio\AudioTrackIds.cs" />
+     <Compile Include="Assets\GGJ2015\Scripts\Extensions\MonoBehaviourExtensions.cs" />
      <Compile Include="Assets\GGJ2015\Scripts\Extensions\ObjectExtensions.cs" />
      <Compile Include="Assets\GGJ2015\Scripts\GameplayManager.cs" />
      <Compile Include="Assets\GGJ2015\Scripts\Gui\ChoiceGui.cs" />
