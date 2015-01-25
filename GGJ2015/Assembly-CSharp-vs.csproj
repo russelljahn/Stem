@@ -55,7 +55,7 @@
      <Compile Include="Assets\GGJ2015\Scripts\Gui\ChoiceGui.cs" />
      <Compile Include="Assets\GGJ2015\Scripts\Gui\PivotAnimations\GrowFlowerAnimation.cs" />
      <Compile Include="Assets\GGJ2015\Scripts\Gui\PivotAnimations\PivotAnimation.cs" />
-     <Compile Include="Assets\GGJ2015\Scripts\Gui\PivotAnimations\StompFlowerAnimation.cs" />
+     <Compile Include="Assets\GGJ2015\Scripts\Gui\PivotAnimations\SimpleAnimation.cs" />
      <Compile Include="Assets\GGJ2015\Scripts\Pivots\Choice.cs" />
      <Compile Include="Assets\GGJ2015\Scripts\Pivots\Page.cs" />
      <Compile Include="Assets\GGJ2015\Scripts\Pivots\Pivot.cs" />
