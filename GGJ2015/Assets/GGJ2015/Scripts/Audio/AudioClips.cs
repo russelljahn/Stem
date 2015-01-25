@@ -12,7 +12,30 @@ namespace Assets.GGJ2015.Scripts.Audio {
 
         public const string BgNormal = "BgNormal";
         public const string SfxButton = "SfxButton";
-
+		public const string BgPeePuddle = "BgPeePuddle";
+		public const string BgRumblyTummy = "BgRumblyTummy";
+		public const string BgFriendDies = "BgFriendDies";
+		public const string BgGotEbola = "BgGotEbola";
+		public const string BgAreYouSure = "BgAreYouSure";
+		public const string BgYouSure = "BgYouSure";
+		public const string BgYouDied = "BgYouDied";
+		public const string BgInTrial = "BgInTrial";
+		public const string BgGrave = "BgGrave";
+		public const string BgAsylum = "BgAsylum";
+		public const string BgIncineration = "BgIncineration";
+		public const string BgStoryRoot = "BgStoryRoot";
+		public const string BgMakeFlowerBaby = "BgMakeFlowerBaby";
+		public const string BgBeFriends = "BgBeFriends";
+		public const string BgBeLovers = "BgBeLovers";
+		public const string BgExperiment = "BgExperiment";
+		public const string BgGetStung = "BgGetStung";
+		public const string BgInfinityAndBeyond = "BgInfinityAndBeyond";
+		public const string BgTerriblePerson = "TerriblePerson";
+		public const string BgFourthWall = "FourthWall";
+		public const string BgFlowerMutates = "FlowerMutates";
+		public const string BgBeeUtupia = "BeeUtupia";
+        public const string ButtonClick = "ButtonClick";
+		public const string BgYourBurial = "YourBurial";
 
 
          #region Singleton nonsense

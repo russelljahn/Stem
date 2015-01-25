@@ -59,12 +59,12 @@ namespace Assets.GGJ2015.Scripts.Pivots {
                         new Choice {
                             Description = "Pee in it.",
                             NextPivot = PivotIds.PeePuddle,
-//							OnTriggerTrackName = AudioClips.BgPeePuddle
+							OnTriggerTrackName = AudioClips.BgPeePuddle
                         },
                         new Choice {
                             Description = "Drink it.",
                             NextPivot = PivotIds.RumblyTummy,
-//							OnTriggerTrackName = AudioClips.BgRumblyTummy
+							OnTriggerTrackName = AudioClips.BgRumblyTummy
                         }
                     }
                 },
@@ -74,25 +74,13 @@ namespace Assets.GGJ2015.Scripts.Pivots {
                     Choices = new List<Choice> {
                         new Choice {
                             Description = "Drink it.",
-                            NextPivot = PivotIds.RumblyTummy
+                            NextPivot = PivotIds.RumblyTummy,
+							OnTriggerTrackName = AudioClips.BgRumblyTummy
                         },
                         new Choice {
                             Description = "Share it with a friend.",
-                            NextPivot = PivotIds.FriendDies
-                        }
-                    }
-                },
-                new Pivot {
-                    Id = PivotIds.YouDied,
-                    Description = "You died.",
-                    Choices = new List<Choice> {
-                        new Choice {
-                            Description = "Be buried.",
-                            NextPivot = PivotIds.None //TODO
-                        },
-                        new Choice {
-                            Description = "Be cremated.",
-                            NextPivot = PivotIds.None //TODO
+                            NextPivot = PivotIds.FriendDies,
+							OnTriggerTrackName = AudioClips.BgFriendDies
                         }
                     }
                 },
@@ -102,11 +90,13 @@ namespace Assets.GGJ2015.Scripts.Pivots {
                     Choices = new List<Choice> {
                         new Choice {
                             Description = "Go to the hospital.",
-                            NextPivot = PivotIds.GotEbola
+                            NextPivot = PivotIds.GotEbola,
+							OnTriggerTrackName = AudioClips.BgGotEbola
                         },
                         new Choice {
                             Description = "Go home and sleep it off.",
-                            NextPivot = PivotIds.Grave
+							NextPivot = PivotIds.Grave,
+							OnTriggerTrackName = AudioClips.BgGrave
                         }
                     }
                 },
@@ -116,25 +106,13 @@ namespace Assets.GGJ2015.Scripts.Pivots {
                     Choices = new List<Choice> {
                         new Choice {
                             Description = "Infect others.",
-                            NextPivot = PivotIds.YouSure
+                            NextPivot = PivotIds.TerriblePerson,
+							OnTriggerTrackName = AudioClips.BgTerriblePerson
                         },
                         new Choice {
                             Description = "Do the right thing.",
-                            NextPivot = PivotIds.YouDied
-                        }
-                    }
-                },
-                new Pivot {
-                    Id = PivotIds.AreYouSure,
-                    Description = "Are you sure?",
-                    Choices = new List<Choice> {
-                        new Choice {
-                            Description = "Yes.",
-                            NextPivot = PivotIds.YouDied
-                        },
-                        new Choice {
-                            Description = "Go to the hospital.",
-                            NextPivot = PivotIds.GotEbola
+                            NextPivot = PivotIds.Grave,
+							OnTriggerTrackName = AudioClips.BgGrave
                         }
                     }
                 },
@@ -143,8 +121,9 @@ namespace Assets.GGJ2015.Scripts.Pivots {
                     Description = "Your friend dies.",
                     Choices = new List<Choice> {
                         new Choice {
-                            Description = "Tell the truth.",
-                            NextPivot = PivotIds.InTrial,
+                            Description = "Get a new friend",
+                            NextPivot = PivotIds.StoryRoot,
+							OnTriggerTrackName = AudioClips.BgNormal
                         },
                         new Choice {
                             Description = "Hide the body.",
@@ -153,30 +132,16 @@ namespace Assets.GGJ2015.Scripts.Pivots {
                     }
                 },
                 new Pivot {
-                    Id = PivotIds.InTrial,
-                    Description = "You were arrested and put on trial.",
-                    Choices = new List<Choice> {
-                        new Choice {
-                            Description = "Plead insanity.",
-                            NextPivot = PivotIds.Asylum
-                        },
-                        new Choice {
-                            Description = "Settle out of court.",
-                            NextPivot = PivotIds.Incineration
-                        }
-                    }
-                },
-                new Pivot {
                     Id = PivotIds.Grave,
                     Description = "A flower sprouts from the grave.",
 					Choices = new List<Choice> {
 						new Choice {
-							Description = "Be friends.",
-							NextPivot = PivotIds.StoryRoot
+							Description = "Water the flower.",
+							NextPivot = PivotIds.Puddle
 						},
 						new Choice {
-							Description = "Be lovers.",
-							NextPivot = PivotIds.MakeFlowerBaby //TODO
+							Description = "Stomp on it.",
+							NextPivot = PivotIds.FlowerSprout
 						}
 					}
                 },
@@ -186,11 +151,11 @@ namespace Assets.GGJ2015.Scripts.Pivots {
                     Choices = new List<Choice> {
                         new Choice {
                             Description = "Be friends.",
-                            NextPivot = PivotIds.None //TODO
+                            NextPivot = PivotIds.Grave
                         },
                         new Choice {
-                            Description = "Be lovers.",
-                            NextPivot = PivotIds.MakeFlowerBaby //TODO
+                            Description = "Be lovers & get busy.",
+                            NextPivot = PivotIds.BeeUtopia
                         }
                     }
                 },
@@ -200,7 +165,7 @@ namespace Assets.GGJ2015.Scripts.Pivots {
                     Choices = new List<Choice> {
                         new Choice {
                             Description = "Dance with the bees.",
-                            NextPivot = PivotIds.GetStung
+                            NextPivot = PivotIds.GotEbola
                         },
                         new Choice {
                             Description = "Experiment on the bees.",
@@ -215,7 +180,6 @@ namespace Assets.GGJ2015.Scripts.Pivots {
                     Choices = new List<Choice> { },
                 },
                 new Pivot {
-                    //TODO
                     Id = PivotIds.GetStung,
                     Description = "You got stung.",
                     Choices = new List<Choice> {
@@ -225,7 +189,7 @@ namespace Assets.GGJ2015.Scripts.Pivots {
                         },
                         new Choice {
                             Description = "Go home and sleep it off.",
-                            NextPivot = PivotIds.YouSure
+                            NextPivot = PivotIds.Grave
                         }
                     }
                 },
@@ -235,56 +199,42 @@ namespace Assets.GGJ2015.Scripts.Pivots {
                     Choices = new List<Choice> {
                         new Choice {
                             Description = "The bees go to infinity and beyond.",
-                            NextPivot = PivotIds.None //TODO
+                            NextPivot = PivotIds.StoryRoot
                         },
                         new Choice {
-                            Description = "The bees stay on Earth.",
-                            NextPivot = PivotIds.None //TODO
+                            Description = "Chill.",
+                            NextPivot = PivotIds.GetStung
                         },
                     }
                 },
-				new Pivot {
-					Id = PivotIds.YouSure,
-					Description = "Are You Sure?",
-					Choices = new List<Choice> {
-						new Choice {
-							Description = "Of course.",
-							NextPivot = PivotIds.TerriblePerson
-						},
-						new Choice {
-							Description = "Maybe not.",
-							NextPivot = PivotIds.GotEbola
-						},
-					}
-				},
 				new Pivot {
 					Id = PivotIds.TerriblePerson,
 					Description = "Given a flower seed by the Voice to plant in honor of your friend. Plant it?",
 					Choices = new List<Choice> {
 						new Choice {
-							Description = "Yes.",
-							NextPivot = PivotIds.StoryRoot
+							Description = "Sure, punish me",
+							NextPivot = PivotIds.GetStung
 						},
 						new Choice {
-							Description = "Maybe not.",
-							NextPivot = PivotIds.FourthWall
+							Description = "Fry Me",
+							NextPivot = PivotIds.Grave
 						},
 					}
 				},
 				new Pivot {
 					Id = PivotIds.FlowerSprout,
-					Description = "Aren't we all?",
+					Description = "What are you gonna do now?",
 					Choices = new List<Choice> {
 						new Choice {
-							Description = "Given a flower seed by the Voice to plant in honor of your friend. Plant it?",
-							NextPivot = PivotIds.StoryRoot
+							Description = "Pesticide anyone?",
+							NextPivot = PivotIds.FlowerMutates
 						},
 						new Choice {
-							Description = "Maybe not.",
-							NextPivot = PivotIds.TerriblePerson
+							Description = "Let them grow.",
+							NextPivot = PivotIds.BeeUtopia
 						},
 					}
-				}
+				},
             };
 
 
