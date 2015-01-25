@@ -12,8 +12,6 @@ namespace Assets.GGJ2015.Scripts.Pivots {
         public const string FriendDies = "FriendDies";
         public const string GetStung = "GetStung";
         public const string GotEbola = "GotEbola";
-        public const string Grave = "Grave";
-        public const string MakeFlowerBaby = "MakeFlowerBaby";
         public const string Pesticide = "Pesticide";
         public const string PeePuddle = "PeePuddle";
         public const string Puddle = "Puddle";

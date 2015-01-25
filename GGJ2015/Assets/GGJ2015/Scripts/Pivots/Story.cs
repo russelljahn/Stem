@@ -43,11 +43,13 @@ namespace Assets.GGJ2015.Scripts.Pivots {
                         new Choice {
                             Description = "Water it.",
                             NextPivot = PivotIds.Puddle,
+                            OnTriggerAnimationName = Animations.WaterFlower,
                             OnTriggerTrackName = AudioClips.BgNormal
                         },
                         new Choice {
                             Description = "Stomp on it.",
                             NextPivot = PivotIds.FlowerSprout,
+                            OnTriggerAnimationName = Animations.BootStomp,
                             OnTriggerTrackName = AudioClips.BgNormal
                         }
                     }
@@ -59,11 +61,13 @@ namespace Assets.GGJ2015.Scripts.Pivots {
                         new Choice {
                             Description = "Pee in it.",
                             NextPivot = PivotIds.PeePuddle,
+                            OnTriggerAnimationName = Animations.Pee,
 							OnTriggerTrackName = AudioClips.BgPeePuddle
                         },
                         new Choice {
                             Description = "Drink it.",
                             NextPivot = PivotIds.RumblyTummy,
+                            OnTriggerAnimationName = Animations.DrinkWater,
 							OnTriggerTrackName = AudioClips.BgRumblyTummy
                         }
                     }
@@ -75,11 +79,13 @@ namespace Assets.GGJ2015.Scripts.Pivots {
                         new Choice {
                             Description = "Drink it.",
                             NextPivot = PivotIds.RumblyTummy,
+                            OnTriggerAnimationName = Animations.DrinkPee,
 							OnTriggerTrackName = AudioClips.BgRumblyTummy
                         },
                         new Choice {
                             Description = "Share it with a friend.",
                             NextPivot = PivotIds.FriendDies,
+                            OnTriggerAnimationName = Animations.DrinkPee,
 							OnTriggerTrackName = AudioClips.BgFriendDies
                         }
                     }
@@ -91,11 +97,13 @@ namespace Assets.GGJ2015.Scripts.Pivots {
                         new Choice {
                             Description = "Go to the hospital.",
                             NextPivot = PivotIds.GotEbola,
+                            OnTriggerAnimationName = Animations.GotEbola,
 							OnTriggerTrackName = AudioClips.BgGotEbola
                         },
                         new Choice {
                             Description = "Go home and sleep it off.",
-							NextPivot = PivotIds.Grave,
+							NextPivot = PivotIds.StoryRoot,
+                            OnTriggerAnimationName = Animations.Grave,
 							OnTriggerTrackName = AudioClips.BgGrave
                         }
                     }
@@ -107,11 +115,13 @@ namespace Assets.GGJ2015.Scripts.Pivots {
                         new Choice {
                             Description = "Infect others.",
                             NextPivot = PivotIds.TerriblePerson,
+                            OnTriggerAnimationName = Animations.InfectOthers,
 							OnTriggerTrackName = AudioClips.BgTerriblePerson
                         },
                         new Choice {
                             Description = "Do the right thing.",
-                            NextPivot = PivotIds.Grave,
+                            NextPivot = PivotIds.StoryRoot,
+                            OnTriggerAnimationName = Animations.Grave,
 							OnTriggerTrackName = AudioClips.BgGrave
                         }
                     }
@@ -123,27 +133,15 @@ namespace Assets.GGJ2015.Scripts.Pivots {
                         new Choice {
                             Description = "Get a new friend",
                             NextPivot = PivotIds.StoryRoot,
+                            OnTriggerAnimationName = Animations.Grave,
 							OnTriggerTrackName = AudioClips.BgNormal
                         },
                         new Choice {
                             Description = "Hide the body.",
-                            NextPivot = PivotIds.Grave
+                            OnTriggerAnimationName = Animations.Grave,
+                            NextPivot = PivotIds.StoryRoot
                         }
                     }
-                },
-                new Pivot {
-                    Id = PivotIds.Grave,
-                    Description = "A flower sprouts from the grave.",
-					Choices = new List<Choice> {
-						new Choice {
-							Description = "Water the flower.",
-							NextPivot = PivotIds.Puddle
-						},
-						new Choice {
-							Description = "Stomp on it.",
-							NextPivot = PivotIds.FlowerSprout
-						}
-					}
                 },
                 new Pivot {
                     Id = PivotIds.FlowerMutates,
@@ -151,11 +149,13 @@ namespace Assets.GGJ2015.Scripts.Pivots {
                     Choices = new List<Choice> {
                         new Choice {
                             Description = "Be friends.",
-                            NextPivot = PivotIds.Grave
+                            NextPivot = PivotIds.StoryRoot,
+                            OnTriggerAnimationName = Animations.Grave,
                         },
                         new Choice {
                             Description = "Be lovers & get busy.",
-                            NextPivot = PivotIds.BeeUtopia
+                            NextPivot = PivotIds.BeeUtopia,
+                            OnTriggerAnimationName = Animations.BeLovers,
                         }
                     }
                 },
@@ -165,19 +165,15 @@ namespace Assets.GGJ2015.Scripts.Pivots {
                     Choices = new List<Choice> {
                         new Choice {
                             Description = "Dance with the bees.",
-                            NextPivot = PivotIds.GotEbola
+                            NextPivot = PivotIds.GotEbola,
+                            OnTriggerAnimationName = Animations.GetStung,
                         },
                         new Choice {
                             Description = "Experiment on the bees.",
-                            NextPivot = PivotIds.Experiment
+                            NextPivot = PivotIds.Experiment,
+                            OnTriggerAnimationName = Animations.BeeExperiment,
                         }
                     }
-                },
-                new Pivot {
-                    //TODO
-                    Id = PivotIds.MakeFlowerBaby,
-                    Description = "Make a flower baby.",
-                    Choices = new List<Choice> { },
                 },
                 new Pivot {
                     Id = PivotIds.GetStung,
@@ -185,11 +181,15 @@ namespace Assets.GGJ2015.Scripts.Pivots {
                     Choices = new List<Choice> {
                         new Choice {
                             Description = "Go to the hospital.",
-                            NextPivot = PivotIds.GotEbola
+                            NextPivot = PivotIds.GotEbola,
+                            OnTriggerAnimationName = Animations.GotEbola,
+
                         },
                         new Choice {
                             Description = "Go home and sleep it off.",
-                            NextPivot = PivotIds.Grave
+                            NextPivot = PivotIds.StoryRoot,
+                            OnTriggerAnimationName = Animations.Grave,
+
                         }
                     }
                 },
@@ -199,11 +199,14 @@ namespace Assets.GGJ2015.Scripts.Pivots {
                     Choices = new List<Choice> {
                         new Choice {
                             Description = "The bees go to infinity and beyond.",
-                            NextPivot = PivotIds.StoryRoot
+                            NextPivot = PivotIds.StoryRoot,
+                            OnTriggerAnimationName = Animations.SpaceBees,
+
                         },
                         new Choice {
                             Description = "Chill.",
-                            NextPivot = PivotIds.GetStung
+                            NextPivot = PivotIds.GetStung,
+                            OnTriggerAnimationName = Animations.GetStung,
                         },
                     }
                 },
@@ -213,11 +216,14 @@ namespace Assets.GGJ2015.Scripts.Pivots {
 					Choices = new List<Choice> {
 						new Choice {
 							Description = "Sure, punish me",
-							NextPivot = PivotIds.GetStung
+							NextPivot = PivotIds.GetStung,
+                            OnTriggerAnimationName = Animations.GetStung,
 						},
 						new Choice {
 							Description = "Fry Me",
-							NextPivot = PivotIds.Grave
+							NextPivot = PivotIds.StoryRoot,
+                            OnTriggerAnimationName = Animations.Grave, //TODO: WItch
+                            
 						},
 					}
 				},
@@ -227,11 +233,14 @@ namespace Assets.GGJ2015.Scripts.Pivots {
 					Choices = new List<Choice> {
 						new Choice {
 							Description = "Pesticide anyone?",
-							NextPivot = PivotIds.FlowerMutates
+							NextPivot = PivotIds.FlowerMutates,
+                            OnTriggerAnimationName = Animations.Pesticide,
+
 						},
 						new Choice {
 							Description = "Let them grow.",
-							NextPivot = PivotIds.BeeUtopia
+							NextPivot = PivotIds.BeeUtopia,
+                            OnTriggerAnimationName = Animations.FlowersSprout,
 						},
 					}
 				},

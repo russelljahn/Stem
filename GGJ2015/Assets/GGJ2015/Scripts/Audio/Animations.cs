@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using Assets.GGJ2015.Scripts.Extensions;
 using Assets.GGJ2015.Scripts.Gui.PivotAnimations;
 using UnityEngine;
@@ -16,9 +16,14 @@ namespace Assets.GGJ2015.Scripts.Audio {
         public const string BootStomp = "BootStomp";
         public const string DrinkPee = "DrinkPee";
         public const string DrinkWater = "DrinkWater";
+        public const string GotEbola = "GotEbola";
+        public const string Grave = "Grave";
         public const string FlowerGrow = "FlowerGrow";
         public const string FlowersSprout = "FlowersSprout";
+        public const string GetSickFromPee = "GetSickFromPee";
+        public const string GetSickFromWater = "GetSickFromWater";
         public const string GetStung = "GetStung";
+        public const string InfectOthers = "InfectOthers";
         public const string Pee = "Pee";
         public const string Pesticide = "Pesticide";
         public const string SpaceBees = "SpaceBees";
