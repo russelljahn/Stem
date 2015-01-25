@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using Assets.GGJ2015.Scripts.Audio;
 using Assets.GGJ2015.Scripts.Extensions;
@@ -77,9 +77,8 @@ namespace Assets.GGJ2015.Scripts.Pivots {
 
 
         public void AnimatePivotTransition(Pivot pivot) {
-            //_currentPivotAnimation.Play();
-            //var guiAnimationWaitTime = _currentPivotAnimation.Length - _guiFadeTime;
-            var guiAnimationWaitTime = _guiFadeTime;
+            _currentPivotAnimation.Play();
+            var guiAnimationWaitTime = _currentPivotAnimation.Length - _guiFadeTime;
             this.InvokeAfterTime(guiAnimationWaitTime, () => {
                 for (int i = 0; i < pivot.Choices.Count; ++i) {
                     var choiceGui = _choiceGuis[i];
@@ -90,15 +89,18 @@ namespace Assets.GGJ2015.Scripts.Pivots {
 
 
         private void OnClickChoice(Choice choice) {
-            Debug.Log("OnClickChoice: " + choice.Description);
             var pivot = _currentStory.GetPivot(choice.NextPivot);
+            var previousPivotAnimation = _currentPivotAnimation;
+            _currentPivotAnimation = Animations.GetAnimation(choice.OnTriggerAnimationName);
+
             HandleOnClickChoiceAudio(choice);
 
             UnloadCurrentPivot(() => {
-                LoadPivot(pivot); 
+                LoadPivot(pivot);
+                previousPivotAnimation.Stop();
                 AnimatePivotTransition(pivot);
             });
-            //_currentPivotAnimation = choice.PivotAnimation; //TODO: Implement!
+
             _previousChoice = choice;
         }
 

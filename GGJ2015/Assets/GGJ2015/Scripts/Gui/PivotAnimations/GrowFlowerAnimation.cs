@@ -20,8 +20,15 @@ namespace Assets.GGJ2015.Scripts.Gui.PivotAnimations {
             _growFlowerAnimator.speed = 0f;
             Length = _fadeTime + _growFlowerAnimationClip.length;
 
+            _spriteRenderer.color = new Color(1f, 1f, 1f, 0f);
+
             TweenUtils.TweenAlpha(_spriteRenderer, 1f, _fadeTime, _fadeEasing, () => { _growFlowerAnimator.speed = 1f; });
             this.InvokeAfterTime(Length, RaiseFinishedEvent);
+        }
+
+
+        private void OnDisable() {
+            TweenUtils.TweenAlpha(_spriteRenderer, 0f, 0.1f, _fadeEasing);
         }
 
     }
