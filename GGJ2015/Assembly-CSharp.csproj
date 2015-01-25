@@ -53,6 +53,8 @@
      <Compile Include="Assets\GGJ2015\Scripts\Extensions\ObjectExtensions.cs" />
      <Compile Include="Assets\GGJ2015\Scripts\GameplayManager.cs" />
      <Compile Include="Assets\GGJ2015\Scripts\Gui\ChoiceGui.cs" />
+     <Compile Include="Assets\GGJ2015\Scripts\Gui\PivotAnimations\DrinkAnimation.cs" />
+     <Compile Include="Assets\GGJ2015\Scripts\Gui\PivotAnimations\GetBusyAnimation.cs" />
      <Compile Include="Assets\GGJ2015\Scripts\Gui\PivotAnimations\GrowFlowerAnimation.cs" />
      <Compile Include="Assets\GGJ2015\Scripts\Gui\PivotAnimations\PivotAnimation.cs" />
      <Compile Include="Assets\GGJ2015\Scripts\Gui\PivotAnimations\SimpleAnimation.cs" />
