@@ -40,7 +40,7 @@ namespace Assets.GGJ2015.Scripts.Gui {
 
         public void LoadChoice(Choice choice) {
             _choice = choice;
-            // Replace text & whatnot based on new choice
+            _text.text = choice.Description;
         }
 
 

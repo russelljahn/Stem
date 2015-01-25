@@ -1,5 +1,6 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
+using Assets.GGJ2015.Scripts.Audio;
 using Assets.GGJ2015.Scripts.Gui;
 using Assets.GGJ2015.Scripts.PropertyAttributes;
 using UnityEngine;
@@ -13,7 +14,9 @@ namespace Assets.GGJ2015.Scripts.Pivots {
 
         [SerializeField, Readonly] private Pivot _currentPivot;
         [SerializeField, Readonly] private Story _currentStory;
+        [SerializeField, Readonly] private AudioManager _audioManager;
 
+        var last 
 
         public void Setup(Story story) {
             _currentStory = story;
@@ -57,6 +60,9 @@ namespace Assets.GGJ2015.Scripts.Pivots {
 
         private void OnClickChoice(Choice choice) {
             var pivot = _currentStory.GetPivot(choice.NextPivot);
+
+            _audioManager.Crossfade();
+
             UnloadCurrentPivot(() => { LoadPivot(pivot); });
         }
 

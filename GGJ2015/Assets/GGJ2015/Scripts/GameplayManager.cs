@@ -4,14 +4,14 @@ using UnityEngine;
 
 namespace Assets.GGJ2015.Scripts {
     public class GameplayManager : MonoBehaviour {
-        private Story _currentStory = new Story();
+        private readonly Story _currentStory = new Story();
         [SerializeField] private Page _currentPage;
 
         private void Start() {
-            _currentPage.Setup(_currentStory);
+            Debug.Log("_currentStory.Root.Description: " + _currentStory.Root.Description);
 
-            //var storyRoot = 
-            //_currentPage.LoadPivot(_c);
+            _currentPage.Setup(_currentStory);
+            _currentPage.LoadPivot(_currentStory.Root);
         }
 
 

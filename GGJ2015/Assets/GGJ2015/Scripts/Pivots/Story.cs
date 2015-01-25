@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Assets.GGJ2015.Scripts.Audio;
 using Assets.GGJ2015.Scripts.PropertyAttributes;
 using UnityEngine;
 
@@ -41,11 +42,13 @@ namespace Assets.GGJ2015.Scripts.Pivots {
                     Choices = new List<Choice> {
                         new Choice {
                             Description = "Water it.",
-                            NextPivot = PivotIds.Puddle
+                            NextPivot = PivotIds.Puddle,
+                            OnTriggerTrackName = AudioClips.BgDark
                         },
                         new Choice {
                             Description = "Stomp on it.",
-                            NextPivot = PivotIds.FlowerSprout
+                            NextPivot = PivotIds.FlowerSprout,
+                            OnTriggerTrackName = AudioClips.BgHappy
                         }
                     }
                 },

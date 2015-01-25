@@ -509,6 +509,12 @@ namespace Assets.GGJ2015.Scripts.Utils
             );
             TweenFloat(ptr, endValue, time, easing, onComplete);
         }
+
+
+        public static void TweenVolume(AudioSource source, float endValue, float time, AnimationCurve easing = null, params Action [] onComplete) {
+            var ptr = new Pointer<float>(() => source.volume, value => { source.volume = value; });
+            TweenFloat(ptr, endValue, time, easing, onComplete);
+        }
         #endregion
 
 

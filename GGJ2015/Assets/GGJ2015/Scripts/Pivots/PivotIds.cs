@@ -19,6 +19,5 @@ namespace Assets.GGJ2015.Scripts.Pivots {
         public const string MakeFlowerBaby = "MakeFlowerBaby";
         public const string GetStung = "GetStung";
         public const string Experiment = "Experiment";
-
     }
 }
