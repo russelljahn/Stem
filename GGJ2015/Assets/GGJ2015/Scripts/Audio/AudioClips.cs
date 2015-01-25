@@ -33,7 +33,7 @@ namespace Assets.GGJ2015.Scripts.Audio {
 		public const string BgTerriblePerson = "TerriblePerson";
 		public const string BgFourthWall = "FourthWall";
 		public const string BgFlowerMutates = "FlowerMutates";
-		public const string BgBeeUtupia = "BeeUtupia";
+		public const string BgBeeUtopia = "BeeUtopia";
         public const string ButtonClick = "ButtonClick";
 		public const string BgYourBurial = "YourBurial";
 
