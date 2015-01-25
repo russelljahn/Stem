@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using Assets.GGJ2015.Scripts.Gui;
+using Assets.GGJ2015.Scripts.Gui.PivotAnimations;
 
 
 namespace Assets.GGJ2015.Scripts.Pivots {
@@ -8,7 +8,7 @@ namespace Assets.GGJ2015.Scripts.Pivots {
     public class Pivot {
         public string Id;
         public string Description;
-        public PivotGraphics Graphics;
+        public PivotAnimation Graphics;
         public List<Choice> Choices;
     }
 }

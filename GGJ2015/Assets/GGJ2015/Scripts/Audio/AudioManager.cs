@@ -60,6 +60,15 @@ namespace Assets.GGJ2015.Scripts.Audio {
         }
 
 
+        public void PlayTrackOneShot(string clipName) {
+            var clip = AudioClips.GetClip(clipName);
+            var trackId = AudioClips.GetClipTrackId(clipName);
+            LoadClip(trackId, clip);
+            PlayTrackOneShot(trackId);
+        }
+
+
+
         public void Crossfade(int fadeInTrackId, int fadeOutTrackId, float fadeInVolume = 0.0f, float fadeOutVolume = 1.0f) {
             Fade(fadeOutTrackId, fadeOutVolume, _fadeOutEasing);
             Fade(fadeInTrackId, fadeInVolume, _fadeInEasing);
@@ -71,7 +80,6 @@ namespace Assets.GGJ2015.Scripts.Audio {
             var fadeInTrack = _tracks [trackId];
             TweenUtils.TweenVolume(fadeInTrack, volume, _crossfadeTime, easing);
         }
-
 
     }
 }

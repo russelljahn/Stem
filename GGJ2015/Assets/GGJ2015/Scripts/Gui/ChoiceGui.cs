@@ -13,15 +13,9 @@ namespace Assets.GGJ2015.Scripts.Gui {
 
     public class ChoiceGui : MonoBehaviour {
 
-		void Start()
-		{
-			AnimateOut ();
-		}
-
 		[SerializeField] private CanvasGroup _canvasGroup;
         [SerializeField] private Text _text;
         [SerializeField] private Button _button;
-	    [SerializeField] private float _animationTime = 1.0f;
 		[SerializeField] private AnimationCurve _animateInEasing = AnimationCurveUtils.GetLinearCurve();
 		[SerializeField] private AnimationCurve _animateOutEasing = AnimationCurveUtils.GetLinearCurve();
         private Choice _choice;
@@ -58,13 +52,13 @@ namespace Assets.GGJ2015.Scripts.Gui {
         }
 
 
-        public void AnimateIn(Action onComplete = null) {
-            TweenUtils.TweenAlpha(_canvasGroup, 1f, _animationTime, _animateInEasing, onComplete);
+        public void AnimateIn(float time = 1.0f, Action onComplete = null) {
+            TweenUtils.TweenAlpha(_canvasGroup, 1f, time, _animateInEasing, onComplete);
         }
 
 
-		public void AnimateOut(Action onComplete = null) {
-            TweenUtils.TweenAlpha(_canvasGroup, 0f, _animationTime, _animateOutEasing, onComplete);
+		public void AnimateOut(float time = 1.0f, Action onComplete = null) {
+            TweenUtils.TweenAlpha(_canvasGroup, 0f, time, _animateOutEasing, onComplete);
 		}		
 	}
 }

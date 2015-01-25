@@ -10,6 +10,7 @@ namespace Assets.GGJ2015.Scripts.Audio {
 
         [SerializeField] protected List<AudioClip> Clips = new List<AudioClip>();
 
+<<<<<<< HEAD
         public const string BgHappy = "BgHappy";
         public const string BgDark = "BgDark";
 		public const string BgPeePuddle = "BgPeePuddle";
@@ -36,6 +37,10 @@ namespace Assets.GGJ2015.Scripts.Audio {
 		public const string BgBeeUtupia = "BeeUtupia";
         public const string ButtonClick = "ButtonClick";
 		public const string BgYourBurial = "YourBurial";
+=======
+        public const string BgNormal = "BgNormal";
+        public const string SfxButton = "SfxButton";
+>>>>>>> f42ab12194f79143983844037966b4c59a5f6ca8
 
 
 
@@ -66,20 +71,25 @@ namespace Assets.GGJ2015.Scripts.Audio {
 
 
         public static AudioClip GetClip(string clipName) {
-            Debug.Log(Instance.Clips.First(clip => clip.name == clipName));
-            return Instance.Clips.First(clip => clip.name == clipName);
+            foreach (var clip in Instance.Clips) {
+                if (clip.IsNull()) {
+                    continue;
+                }
+                if (clip.name.Equals(clipName)) {
+                    return clip;
+                }
+            }
+            Debug.LogError("Could not find clip with name: " + clipName);
+            return null;
         }
 
 
         public static int GetClipTrackId(string clipName) {
             switch (clipName) {
-                case BgHappy:
+                case BgNormal:
                     return AudioTrackIds.Bg1;
 
-                case BgDark:
-                    return AudioTrackIds.Bg2;
-
-                case ButtonClick:
+                case SfxButton:
                     return AudioTrackIds.Sfx1;
 
                 default:

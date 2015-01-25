@@ -46,13 +46,21 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\GGJ2015\Scripts\Audio\Animations.cs" />
      <Compile Include="Assets\GGJ2015\Scripts\Audio\AudioClips.cs" />
      <Compile Include="Assets\GGJ2015\Scripts\Audio\AudioManager.cs" />
      <Compile Include="Assets\GGJ2015\Scripts\Audio\AudioTrackIds.cs" />
+     <Compile Include="Assets\GGJ2015\Scripts\Extensions\MonoBehaviourExtensions.cs" />
      <Compile Include="Assets\GGJ2015\Scripts\Extensions\ObjectExtensions.cs" />
      <Compile Include="Assets\GGJ2015\Scripts\GameplayManager.cs" />
      <Compile Include="Assets\GGJ2015\Scripts\Gui\ChoiceGui.cs" />
-     <Compile Include="Assets\GGJ2015\Scripts\Gui\PivotGraphics.cs" />
+     <Compile Include="Assets\GGJ2015\Scripts\Gui\PivotAnimations\DrinkAnimation.cs" />
+     <Compile Include="Assets\GGJ2015\Scripts\Gui\PivotAnimations\GetBusyAnimation.cs" />
+     <Compile Include="Assets\GGJ2015\Scripts\Gui\PivotAnimations\GetStungAnimation.cs" />
+     <Compile Include="Assets\GGJ2015\Scripts\Gui\PivotAnimations\GrowFlowerAnimation.cs" />
+     <Compile Include="Assets\GGJ2015\Scripts\Gui\PivotAnimations\PivotAnimation.cs" />
+     <Compile Include="Assets\GGJ2015\Scripts\Gui\PivotAnimations\SimpleAnimation.cs" />
+     <Compile Include="Assets\GGJ2015\Scripts\Gui\PivotAnimations\SpaceBeesAnimation.cs" />
      <Compile Include="Assets\GGJ2015\Scripts\Pivots\Choice.cs" />
      <Compile Include="Assets\GGJ2015\Scripts\Pivots\Page.cs" />
      <Compile Include="Assets\GGJ2015\Scripts\Pivots\Pivot.cs" />

@@ -43,12 +43,12 @@ namespace Assets.GGJ2015.Scripts.Pivots {
                         new Choice {
                             Description = "Water it.",
                             NextPivot = PivotIds.Puddle,
-                            OnTriggerTrackName = AudioClips.BgDark
+                            OnTriggerTrackName = AudioClips.BgNormal
                         },
                         new Choice {
                             Description = "Stomp on it.",
                             NextPivot = PivotIds.FlowerSprout,
-                            OnTriggerTrackName = AudioClips.BgHappy
+                            OnTriggerTrackName = AudioClips.BgNormal
                         }
                     }
                 },
@@ -179,20 +179,6 @@ namespace Assets.GGJ2015.Scripts.Pivots {
                         }
                     }
                 },
-//                new Pivot {
-//                    Id = PivotIds.InTrial,
-//                    Description = "You were arrested and put on trial.",
-//                    Choices = new List<Choice> {
-//                        new Choice {
-//                            Description = "Plead insanity.",
-//                            NextPivot = PivotIds.Asylum
-//                        },
-//                        new Choice {
-//                            Description = "Plead guilty.",
-//                            NextPivot = PivotIds.Incineration
-//                        }
-//                    }
-//                },
                 new Pivot {
                     Id = PivotIds.Grave,
                     Description = "A flower sprouts from the grave.",

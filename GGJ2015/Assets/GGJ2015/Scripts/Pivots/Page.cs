@@ -3,29 +3,48 @@ using System.Collections.Generic;
 using Assets.GGJ2015.Scripts.Audio;
 using Assets.GGJ2015.Scripts.Extensions;
 using Assets.GGJ2015.Scripts.Gui;
+using Assets.GGJ2015.Scripts.Gui.PivotAnimations;
 using Assets.GGJ2015.Scripts.PropertyAttributes;
+using Assets.GGJ2015.Scripts.Utils;
 using UnityEngine;
 
 
 namespace Assets.GGJ2015.Scripts.Pivots {
     [RequireComponent(typeof(CanvasGroup))]
     public class Page : MonoBehaviour {
-        public List<ChoiceGui> ChoiceGuis = new List<ChoiceGui>();
-        public PivotGraphics PivotGraphics;
+        [SerializeField] private List<ChoiceGui> _choiceGuis = new List<ChoiceGui>();
+        [SerializeField] private AudioManager _audioManager;
+
 
         [SerializeField, Readonly] private Pivot _currentPivot;
         [SerializeField, Readonly] private Story _currentStory;
-        [SerializeField, Readonly] private AudioManager _audioManager;
+        [SerializeField, Readonly] private PivotAnimation _currentPivotAnimation;
+
 
         private Choice _previousChoice;
+        [SerializeField] private float _guiFadeTime = 1f;
+        [SerializeField] private float _musicFadeTime = 1f;
+        [SerializeField] private AnimationCurve _musicFadeEasing = AnimationCurveUtils.GetLinearCurve();
 
-        public void Setup(Story story) {
+
+        public void Setup(Story story, PivotAnimation initialAnimation) {
             _currentStory = story;
+            _currentPivotAnimation = initialAnimation;
+        }
+
+
+        private void Start() {
+            var normalBgTrackId = AudioClips.GetClipTrackId(AudioClips.BgNormal);
+            var nextChoiceClip = AudioClips.GetClip(AudioClips.BgNormal);
+
+            _audioManager.LoadClip(normalBgTrackId, nextChoiceClip, 0f, true);
+            _audioManager.PlayTrack(normalBgTrackId);
+            _audioManager.Fade(normalBgTrackId, _musicFadeTime, _musicFadeEasing);
         }
 
 
         public void LoadPivot(Pivot pivot) {
-            if (ChoiceGuis.Count != 2) {
+            if (_choiceGuis.Count != 2) {
                 Debug.LogError("Choices text count isn't 2!");
             }
             if (pivot.Choices.Count != 2) {
@@ -35,59 +54,63 @@ namespace Assets.GGJ2015.Scripts.Pivots {
             _currentPivot = pivot;
 
             for (int i = 0; i < pivot.Choices.Count; ++i) {
-                var choiceGui = ChoiceGuis [i];
+                var choiceGui = _choiceGuis [i];
                 var choice = pivot.Choices[i];
-
                 choiceGui.LoadChoice(choice);
-                choiceGui.AnimateIn();
-
-                //TODO: Make this a callback after animating in
-                choiceGui.ChoiceClicked += OnClickChoice;
             }
         }
 
 
         private void UnloadCurrentPivot(Action onComplete = null) {
-            for (int i = 0; i < _currentPivot.Choices.Count; ++i) {
-                var choiceGui = ChoiceGuis[i];
-                choiceGui.ChoiceClicked -= OnClickChoice;
+            if (_currentPivot.IsNotNull()) {
+                for (int i = 0; i < _currentPivot.Choices.Count; ++i) {
+                    var choiceGui = _choiceGuis [i];
+                    choiceGui.ChoiceClicked -= OnClickChoice;
+                    choiceGui.AnimateOut(_guiFadeTime);
+                }
+                _currentPivot = null;
             }
-            _currentPivot = null;
-            if (onComplete != null) {
-                onComplete.Invoke();                
+            if (onComplete.IsNotNull()) {
+                this.InvokeAfterTime(_guiFadeTime, onComplete);
             }
+        }
 
+
+        public void AnimatePivotTransition(Pivot pivot) {
+            _currentPivotAnimation.Play();
+            var guiAnimationWaitTime = _currentPivotAnimation.Length - _guiFadeTime;
+            this.InvokeAfterTime(guiAnimationWaitTime, () => {
+                for (int i = 0; i < pivot.Choices.Count; ++i) {
+                    var choiceGui = _choiceGuis[i];
+                    choiceGui.AnimateIn(_guiFadeTime, () => { choiceGui.ChoiceClicked += OnClickChoice; });
+                }
+            });
         }
 
 
         private void OnClickChoice(Choice choice) {
             var pivot = _currentStory.GetPivot(choice.NextPivot);
-
             HandleOnClickChoiceAudio(choice);
 
-            UnloadCurrentPivot(() => { LoadPivot(pivot); });
+            UnloadCurrentPivot(() => {
+                LoadPivot(pivot); 
+                AnimatePivotTransition(pivot);
+            });
+            //_currentPivotAnimation = choice.PivotAnimation; //TODO: Implement!
             _previousChoice = choice;
         }
 
 
         private void HandleOnClickChoiceAudio(Choice choice) {
-            var buttonClickClip = AudioClips.GetClip(AudioClips.ButtonClick);
-            var buttonClickTrackId = AudioClips.GetClipTrackId(AudioClips.ButtonClick);
-            _audioManager.LoadClip(buttonClickTrackId, buttonClickClip);
-            _audioManager.PlayTrackOneShot(buttonClickTrackId);
+            _audioManager.PlayTrackOneShot(AudioClips.SfxButton);
 
-            var nextChoiceClip = AudioClips.GetClip(choice.OnTriggerTrackName);
-            var nextChoiceTrackId = AudioClips.GetClipTrackId(choice.OnTriggerTrackName);
-            var previousChoiceTrackId = AudioClips.GetClipTrackId(_previousChoice.OnTriggerTrackName);
-
-            _audioManager.LoadClip(nextChoiceTrackId, nextChoiceClip, 0.0f, true);
-            _audioManager.PlayTrack(previousChoiceTrackId);
-            _audioManager.PlayTrack(nextChoiceTrackId);
-
-            if (_previousChoice.IsNotNull()) {
-                _audioManager.Crossfade(nextChoiceTrackId, previousChoiceTrackId);
-            }
+            //var nextChoiceClip = AudioClips.GetClip(choice.OnTriggerTrackName);
+            //var nextChoiceTrackId = AudioClips.GetClipTrackId(choice.OnTriggerTrackName);
+            //_audioManager.Fade(normalBgTrackId, _musicFadeTime, _musicFadeEasing);
         }
+
+
+        
 
 
     }
