@@ -122,11 +122,13 @@ namespace Assets.GGJ2015.Scripts.Pivots {
                     Choices = new List<Choice> {
                         new Choice {
                             Description = "Go to the hospital.",
-                            NextPivot = PivotIds.GotEbola
+                            NextPivot = PivotIds.GotEbola,
+							OnTriggerTrackName = AudioClips.BgGotEbola
                         },
                         new Choice {
                             Description = "Go home and sleep it off.",
-							NextPivot = PivotIds.Grave
+							NextPivot = PivotIds.Grave,
+							OnTriggerTrackName = AudioClips.BgGrave
                         }
                     }
                 },
@@ -136,11 +138,13 @@ namespace Assets.GGJ2015.Scripts.Pivots {
                     Choices = new List<Choice> {
                         new Choice {
                             Description = "Infect others.",
-                            NextPivot = PivotIds.TerriblePerson
+                            NextPivot = PivotIds.TerriblePerson,
+							OnTriggerTrackName = AudioClips.BgTerriblePerson
                         },
                         new Choice {
                             Description = "Do the right thing.",
-                            NextPivot = PivotIds.Grave
+                            NextPivot = PivotIds.Grave,
+							OnTriggerTrackName = AudioClips.BgGrave
                         }
                     }
                 },
@@ -150,11 +154,13 @@ namespace Assets.GGJ2015.Scripts.Pivots {
                     Choices = new List<Choice> {
                         new Choice {
                             Description = "Yes.",
-                            NextPivot = PivotIds.YouDied
+                            NextPivot = PivotIds.YouDied,
+							OnTriggerTrackName = AudioClips.BgYouDied
                         },
                         new Choice {
                             Description = "Go to the hospital.",
-                            NextPivot = PivotIds.GotEbola
+                            NextPivot = PivotIds.GotEbola,
+							OnTriggerTrackName = AudioClips.BgGotEbola
                         }
                     }
                 },
@@ -165,6 +171,7 @@ namespace Assets.GGJ2015.Scripts.Pivots {
                         new Choice {
                             Description = "Get a new friend",
                             NextPivot = PivotIds.StoryRoot,
+							OnTriggerTrackName = AudioClips.BgDark
                         },
                         new Choice {
                             Description = "Hide the body.",
