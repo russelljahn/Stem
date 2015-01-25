@@ -16,7 +16,7 @@ namespace Assets.GGJ2015.Scripts.Pivots {
         [SerializeField, Readonly] private Story _currentStory;
         [SerializeField, Readonly] private AudioManager _audioManager;
 
-        var last 
+        private Choice _previousChoice;
 
         public void Setup(Story story) {
             _currentStory = story;
@@ -55,15 +55,24 @@ namespace Assets.GGJ2015.Scripts.Pivots {
             if (onComplete != null) {
                 onComplete.Invoke();                
             }
+
         }
 
 
         private void OnClickChoice(Choice choice) {
             var pivot = _currentStory.GetPivot(choice.NextPivot);
 
-            _audioManager.Crossfade();
+            var buttonClickClip = AudioClips.GetClip(AudioClips.ButtonClick);
+            var buttonClickTrackId = AudioClips.GetClipTrackId(AudioClips.ButtonClick);
+            _audioManager.LoadClip(buttonClickTrackId, buttonClickClip);
+            _audioManager.PlayTrackOneShot(buttonClickTrackId);
+
+            var previousChoiceTrackId = AudioClips.GetClipTrackId(_previousChoice.OnTriggerTrackName);
+            var nextChoiceTrackId = AudioClips.GetClipTrackId(choice.OnTriggerTrackName);
+            _audioManager.Crossfade(nextChoiceTrackId, previousChoiceTrackId);
 
             UnloadCurrentPivot(() => { LoadPivot(pivot); });
+            _previousChoice = choice;
         }
 
 

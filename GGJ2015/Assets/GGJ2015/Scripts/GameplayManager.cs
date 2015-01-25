@@ -8,8 +8,6 @@ namespace Assets.GGJ2015.Scripts {
         [SerializeField] private Page _currentPage;
 
         private void Start() {
-            Debug.Log("_currentStory.Root.Description: " + _currentStory.Root.Description);
-
             _currentPage.Setup(_currentStory);
             _currentPage.LoadPivot(_currentStory.Root);
         }

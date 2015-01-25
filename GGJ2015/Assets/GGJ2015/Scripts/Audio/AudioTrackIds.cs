@@ -1,8 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+﻿
 namespace Assets.GGJ2015.Scripts.Audio {
     public static class AudioTrackIds {
         public const int Bg1 = 0;

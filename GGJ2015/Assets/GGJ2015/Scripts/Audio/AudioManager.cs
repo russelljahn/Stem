@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Assets.GGJ2015.Scripts.Utils;
 using UnityEngine;
@@ -54,15 +54,22 @@ namespace Assets.GGJ2015.Scripts.Audio {
         }
 
 
-        public void Crossfade(int fadeInTrackId, int fadeOutTrackId, float fadeInVolume = 0.0f, float fadeOutVolume = 1.0f) {
-            Fade(fadeOutTrackId, fadeOutVolume);
-            Fade(fadeInTrackId, fadeInVolume);
+        public void PlayTrackOneShot(int trackId) {
+            var track = _tracks [trackId];
+            track.PlayOneShot(track.clip);
         }
 
 
-        public void Fade(int trackId, float volume = 1.0f) {
+        public void Crossfade(int fadeInTrackId, int fadeOutTrackId, float fadeInVolume = 0.0f, float fadeOutVolume = 1.0f) {
+            Fade(fadeOutTrackId, fadeOutVolume, _fadeOutEasing);
+            Fade(fadeInTrackId, fadeInVolume, _fadeInEasing);
+        }
+
+
+        public void Fade(int trackId, float volume = 1.0f, AnimationCurve easing = null) {
+            easing = easing ?? AnimationCurveUtils.GetLinearCurve();
             var fadeInTrack = _tracks [trackId];
-            TweenUtils.TweenVolume(fadeInTrack, volume, _crossfadeTime, _fadeInEasing);
+            TweenUtils.TweenVolume(fadeInTrack, volume, _crossfadeTime, easing);
         }
 
 
