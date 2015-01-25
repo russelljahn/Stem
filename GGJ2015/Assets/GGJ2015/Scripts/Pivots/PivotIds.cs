@@ -26,5 +26,13 @@ namespace Assets.GGJ2015.Scripts.Pivots {
 		public const string Asylum = "Asylum";
 		public const string Incineration = "Incineration";
 		public const string HideBody = "HideBody";
+		public const string Pesticide = "Pesticide";
+		public const string LetItGrow = "LetItGrow";
+		public const string GetMedieval = "GetMedieval";
+		public const string InfinityAndBeyond = "InfinityAndBeyond";
+		public const string BeesStayHere = "BeesStayHere";
+		public const string BeFriends = "BeFriends";
+		public const string BeLovers = "BeLovers";
+		public const string YourBurial = "YourBurial";
     }
 }
