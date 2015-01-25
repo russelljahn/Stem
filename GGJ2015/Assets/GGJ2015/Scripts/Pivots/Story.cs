@@ -106,7 +106,7 @@ namespace Assets.GGJ2015.Scripts.Pivots {
                         },
                         new Choice {
                             Description = "Go home and sleep it off.",
-                            NextPivot = PivotIds.AreYouSure
+                            NextPivot = PivotIds.Grave
                         }
                     }
                 },
