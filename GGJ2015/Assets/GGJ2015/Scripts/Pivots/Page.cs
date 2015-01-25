@@ -13,12 +13,13 @@ namespace Assets.GGJ2015.Scripts.Pivots {
     [RequireComponent(typeof(CanvasGroup))]
     public class Page : MonoBehaviour {
         [SerializeField] private List<ChoiceGui> _choiceGuis = new List<ChoiceGui>();
-        [SerializeField] private PivotAnimation _pivotGraphics;
         [SerializeField] private AudioManager _audioManager;
 
 
         [SerializeField, Readonly] private Pivot _currentPivot;
         [SerializeField, Readonly] private Story _currentStory;
+        [SerializeField, Readonly] private PivotAnimation _currentPivotAnimation;
+
 
         private Choice _previousChoice;
         [SerializeField] private float _guiFadeTime = 1f;
@@ -26,8 +27,9 @@ namespace Assets.GGJ2015.Scripts.Pivots {
         [SerializeField] private AnimationCurve _musicFadeEasing = AnimationCurveUtils.GetLinearCurve();
 
 
-        public void Setup(Story story) {
+        public void Setup(Story story, PivotAnimation initialAnimation) {
             _currentStory = story;
+            _currentPivotAnimation = initialAnimation;
         }
 
 
@@ -54,9 +56,7 @@ namespace Assets.GGJ2015.Scripts.Pivots {
             for (int i = 0; i < pivot.Choices.Count; ++i) {
                 var choiceGui = _choiceGuis [i];
                 var choice = pivot.Choices[i];
-
                 choiceGui.LoadChoice(choice);
-                choiceGui.AnimateIn(_guiFadeTime, () => { choiceGui.ChoiceClicked += OnClickChoice; } );
             }
         }
 
@@ -76,12 +76,27 @@ namespace Assets.GGJ2015.Scripts.Pivots {
         }
 
 
+        public void AnimatePivotTransition(Pivot pivot) {
+            _currentPivotAnimation.Play();
+            var guiAnimationWaitTime = _currentPivotAnimation.Length - _guiFadeTime;
+            this.InvokeAfterTime(guiAnimationWaitTime, () => {
+                for (int i = 0; i < pivot.Choices.Count; ++i) {
+                    var choiceGui = _choiceGuis[i];
+                    choiceGui.AnimateIn(_guiFadeTime, () => { choiceGui.ChoiceClicked += OnClickChoice; });
+                }
+            });
+        }
+
+
         private void OnClickChoice(Choice choice) {
             var pivot = _currentStory.GetPivot(choice.NextPivot);
-
             HandleOnClickChoiceAudio(choice);
 
-            UnloadCurrentPivot(() => { LoadPivot(pivot); });
+            UnloadCurrentPivot(() => {
+                LoadPivot(pivot); 
+                AnimatePivotTransition(pivot);
+            });
+            //_currentPivotAnimation = choice.PivotAnimation; //TODO: Implement!
             _previousChoice = choice;
         }
 

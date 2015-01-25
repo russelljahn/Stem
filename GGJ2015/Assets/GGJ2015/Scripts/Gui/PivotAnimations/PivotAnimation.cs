@@ -1,21 +1,30 @@
 using UnityEngine;
 using System;
+using System.ComponentModel;
+using Assets.GGJ2015.Scripts.PropertyAttributes;
 
 
 namespace Assets.GGJ2015.Scripts.Gui.PivotAnimations {
     public abstract class PivotAnimation : MonoBehaviour {
 
         public event Action Finished = delegate { };
-        public float Length { get; protected set; }
+
+        [SerializeField, Readonly] private float _length;
+        public float Length { get { return _length; } protected set { _length = value; } }
 
 
         public void Play() {
-            enabled = true;
+            gameObject.SetActive(true);
         }
 
 
         public void Stop() {
-            enabled = false;
+            gameObject.SetActive(false);
+        }
+
+
+        protected void RaiseFinishedEvent() {
+            Finished.Invoke();
         }
     }
 }

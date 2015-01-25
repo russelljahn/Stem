@@ -502,6 +502,13 @@ namespace Assets.GGJ2015.Scripts.Utils
         }
 
 
+        public static void TweenAlpha(SpriteRenderer spriteRenderer, float endValue, float time, AnimationCurve easing = null, params Action [] onComplete) {
+            var color = spriteRenderer.color;
+            var ptr = new Pointer<float>(() => color.a, value => { color.a = value; spriteRenderer.color = color; });
+            TweenFloat(ptr, endValue, time, easing, onComplete);
+        }
+
+
         public static void TweenAlpha(Material material, float endValue, float time, AnimationCurve easing = null, params Action [] onComplete) {
             var ptr = new Pointer<float>(
                 () => material.color.a,

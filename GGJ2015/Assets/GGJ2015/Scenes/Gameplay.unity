@@ -113,7 +113,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bb767f60567642e2a2f9d008e63da8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentPage: {fileID: 1487219217}
+  _page: {fileID: 1487219217}
+  _initialAnimation: {fileID: 279052570}
 --- !u!1 &141665202
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,17 +300,14 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 224: {fileID: 279052567}
-  - 222: {fileID: 279052569}
-  - 114: {fileID: 279052568}
   - 114: {fileID: 279052570}
-  - 225: {fileID: 279052571}
   m_Layer: 5
-  m_Name: Pivot Graphics
+  m_Name: Grow Flower Animation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &279052567
 RectTransform:
   m_ObjectHideFlags: 0
@@ -321,7 +319,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1251560489}
+  - {fileID: 654495936}
   m_Father: {fileID: 275225856}
   m_RootOrder: 2
   m_AnchorMin: {x: 0, y: 0}
@@ -329,35 +327,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: .5, y: .5}
---- !u!114 &279052568
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11440214, guid: d0178d3d99b764322ba77d44664618e3,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 279052566}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: .485294104, g: .485294104, b: .485294104, a: 0}
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
---- !u!222 &279052569
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 22240214, guid: d0178d3d99b764322ba77d44664618e3,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 279052566}
 --- !u!114 &279052570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -367,20 +336,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 279052566}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad07bb143a6654a5a91ed5447019605f, type: 3}
+  m_Script: {fileID: 11500000, guid: 5e669b10cf1a14ea79e4932fd49ca091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!225 &279052571
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 279052566}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 0
-  m_BlocksRaycasts: 0
-  m_IgnoreParentGroups: 0
+  _growFlowerAnimator: {fileID: 654495934}
 --- !u!1 &405327445
 GameObject:
   m_ObjectHideFlags: 0
@@ -443,6 +402,72 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 141665207}
+  m_RootOrder: 0
+--- !u!1 &654495933
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 654495936}
+  - 212: {fileID: 654495935}
+  - 95: {fileID: 654495934}
+  m_Layer: 0
+  m_Name: Grow Flower Animator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!95 &654495934
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 654495933}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1fb706719abe94a70afee8029183cc3a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!212 &654495935
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 654495933}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 028eceb781d74441c9e9181a55b4cff9, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!4 &654495936
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 654495933}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 76.7999954, y: 76.7999954, z: 76.7999954}
+  m_Children: []
+  m_Father: {fileID: 279052567}
   m_RootOrder: 0
 --- !u!1 &943771976
 GameObject:
@@ -541,7 +566,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 250, y: -180}
-  m_SizeDelta: {x: 300, y: 150}
+  m_SizeDelta: {x: 400, y: 150}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1036463621
 MonoBehaviour:
@@ -558,7 +583,6 @@ MonoBehaviour:
   _canvasGroup: {fileID: 1036463625}
   _text: {fileID: 1036463623}
   _button: {fileID: 1036463622}
-  _animationTime: 1
   _animateInEasing:
     serializedVersion: 2
     m_Curve:
@@ -647,7 +671,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FontData:
     m_Font: {fileID: 12800000, guid: 2429897cd246440c0b62b3950b86c227, type: 3}
-    m_FontSize: 52
+    m_FontSize: 68
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -707,56 +731,6 @@ Transform:
   - {fileID: 1525098469}
   m_Father: {fileID: 0}
   m_RootOrder: 2
---- !u!1 &1251560488
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1251560489}
-  - 212: {fileID: 1251560490}
-  m_Layer: 0
-  m_Name: Flower0017
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1251560489
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1251560488}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -100, z: 0}
-  m_LocalScale: {x: 75, y: 75, z: 1}
-  m_Children: []
-  m_Father: {fileID: 279052567}
-  m_RootOrder: 0
---- !u!212 &1251560490
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1251560488}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: bdb540a33f8d247e1b369b1c4607c6e5, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1484398344
 GameObject:
   m_ObjectHideFlags: 0
@@ -793,7 +767,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FontData:
     m_Font: {fileID: 12800000, guid: 2429897cd246440c0b62b3950b86c227, type: 3}
-    m_FontSize: 52
+    m_FontSize: 68
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -827,7 +801,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -250, y: -180}
-  m_SizeDelta: {x: 300, y: 150}
+  m_SizeDelta: {x: 400, y: 150}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1484398348
 MonoBehaviour:
@@ -886,7 +860,6 @@ MonoBehaviour:
   _canvasGroup: {fileID: 1484398350}
   _text: {fileID: 1484398345}
   _button: {fileID: 1484398348}
-  _animationTime: 1
   _animateInEasing:
     serializedVersion: 2
     m_Curve:
@@ -982,12 +955,15 @@ MonoBehaviour:
   _choiceGuis:
   - {fileID: 1036463621}
   - {fileID: 1484398349}
-  _pivotGraphics: {fileID: 279052570}
+  _pivotGraphics: {fileID: 0}
   _audioManager: {fileID: 1871092769}
   _currentPivot:
     Id: 
     Description: 
     Graphics: {fileID: 0}
+  _currentPivotAnimation: {fileID: 0}
+  _guiFadeTime: .25
+  _musicFadeTime: 1
   _musicFadeEasing:
     serializedVersion: 2
     m_Curve:
@@ -1228,4 +1204,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Clips:
   - {fileID: 8300000, guid: bbcc2af4d80be4876bbf1a37685fbce3, type: 3}
-  - {fileID: 8300000, guid: d327746367614482cbbc1c037bf39c38, type: 3}
+  - {fileID: 8300000, guid: df8b94c19dcc74ab8b6d8db7e07ab60b, type: 3}
