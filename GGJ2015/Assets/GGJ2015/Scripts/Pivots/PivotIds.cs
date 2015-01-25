@@ -19,5 +19,12 @@ namespace Assets.GGJ2015.Scripts.Pivots {
         public const string MakeFlowerBaby = "MakeFlowerBaby";
         public const string GetStung = "GetStung";
         public const string Experiment = "Experiment";
+		public const string YouSure = "YouSure";
+		public const string TerriblePerson = "TerriblePerson";
+		public const string PlantItNot = "PlantItNot";
+		public const string FourthWall = "FourthWall";
+		public const string Asylum = "Asylum";
+		public const string Incineration = "Incineration";
+		public const string HideBody = "HideBody";
     }
 }

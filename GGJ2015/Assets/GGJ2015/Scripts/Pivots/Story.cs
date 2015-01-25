@@ -58,11 +58,13 @@ namespace Assets.GGJ2015.Scripts.Pivots {
                     Choices = new List<Choice> {
                         new Choice {
                             Description = "Pee in it.",
-                            NextPivot = PivotIds.PeePuddle
+                            NextPivot = PivotIds.PeePuddle,
+//							OnTriggerTrackName = AudioClips.BgPeePuddle
                         },
                         new Choice {
                             Description = "Drink it.",
-                            NextPivot = PivotIds.RumblyTummy
+                            NextPivot = PivotIds.RumblyTummy,
+//							OnTriggerTrackName = AudioClips.BgRumblyTummy
                         }
                     }
                 },
@@ -114,7 +116,7 @@ namespace Assets.GGJ2015.Scripts.Pivots {
                     Choices = new List<Choice> {
                         new Choice {
                             Description = "Infect others.",
-                            NextPivot = PivotIds.None //TODO
+                            NextPivot = PivotIds.YouSure
                         },
                         new Choice {
                             Description = "Do the right thing.",
@@ -156,25 +158,27 @@ namespace Assets.GGJ2015.Scripts.Pivots {
                     Choices = new List<Choice> {
                         new Choice {
                             Description = "Plead insanity.",
-                            NextPivot = PivotIds.None //TODO
+                            NextPivot = PivotIds.Asylum
                         },
                         new Choice {
                             Description = "Settle out of court.",
-                            NextPivot = PivotIds.None //TODO
+                            NextPivot = PivotIds.Incineration
                         }
                     }
                 },
                 new Pivot {
-                    //TODO
-                    Id = PivotIds.FoundInnocent,
-                    Description = "The jury found you innocent.",
-                    Choices = new List<Choice> { },
-                },
-                new Pivot {
-                    //TODO
                     Id = PivotIds.Grave,
                     Description = "A flower sprouts from the grave.",
-                    Choices = new List<Choice> { },
+					Choices = new List<Choice> {
+						new Choice {
+							Description = "Be friends.",
+							NextPivot = PivotIds.StoryRoot
+						},
+						new Choice {
+							Description = "Be lovers.",
+							NextPivot = PivotIds.MakeFlowerBaby //TODO
+						}
+					}
                 },
                 new Pivot {
                     Id = PivotIds.FlowerMutates,
@@ -221,7 +225,7 @@ namespace Assets.GGJ2015.Scripts.Pivots {
                         },
                         new Choice {
                             Description = "Go home and sleep it off.",
-                            NextPivot = PivotIds.AreYouSure
+                            NextPivot = PivotIds.YouSure
                         }
                     }
                 },
@@ -238,7 +242,49 @@ namespace Assets.GGJ2015.Scripts.Pivots {
                             NextPivot = PivotIds.None //TODO
                         },
                     }
-                }
+                },
+				new Pivot {
+					Id = PivotIds.YouSure,
+					Description = "Are You Sure?",
+					Choices = new List<Choice> {
+						new Choice {
+							Description = "Of course.",
+							NextPivot = PivotIds.TerriblePerson
+						},
+						new Choice {
+							Description = "Maybe not.",
+							NextPivot = PivotIds.GotEbola
+						},
+					}
+				},
+				new Pivot {
+					Id = PivotIds.TerriblePerson,
+					Description = "Given a flower seed by the Voice to plant in honor of your friend. Plant it?",
+					Choices = new List<Choice> {
+						new Choice {
+							Description = "Yes.",
+							NextPivot = PivotIds.StoryRoot
+						},
+						new Choice {
+							Description = "Maybe not.",
+							NextPivot = PivotIds.FourthWall
+						},
+					}
+				},
+				new Pivot {
+					Id = PivotIds.FlowerSprout,
+					Description = "Aren't we all?",
+					Choices = new List<Choice> {
+						new Choice {
+							Description = "Given a flower seed by the Voice to plant in honor of your friend. Plant it?",
+							NextPivot = PivotIds.StoryRoot
+						},
+						new Choice {
+							Description = "Maybe not.",
+							NextPivot = PivotIds.TerriblePerson
+						},
+					}
+				}
             };
 
 
