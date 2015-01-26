@@ -54,6 +54,7 @@
      <Compile Include="Assets\GGJ2015\Scripts\Extensions\ObjectExtensions.cs" />
      <Compile Include="Assets\GGJ2015\Scripts\GameplayManager.cs" />
      <Compile Include="Assets\GGJ2015\Scripts\Gui\ChoiceGui.cs" />
+     <Compile Include="Assets\GGJ2015\Scripts\Gui\PivotAnimations\BaconWitchAnimation.cs" />
      <Compile Include="Assets\GGJ2015\Scripts\Gui\PivotAnimations\DrinkAnimation.cs" />
      <Compile Include="Assets\GGJ2015\Scripts\Gui\PivotAnimations\GetBusyAnimation.cs" />
      <Compile Include="Assets\GGJ2015\Scripts\Gui\PivotAnimations\GetSickAnimation.cs" />

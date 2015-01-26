@@ -44,12 +44,11 @@ namespace Assets.GGJ2015.Scripts.Gui.PivotAnimations {
             this.InvokeAfterTime(_waitTime, FadeOutGrave);
         }
 
-
         private void FadeOutGrave() {
             TweenUtils.TweenAlpha(_graveSpriteRenderer, 0f, _graveFadeTime, _graveFadeEasing, RaiseFinishedEvent);
             TweenUtils.TweenAlpha(_growFlowerSpriteRenderer, 1f, _graveFadeTime, _graveFadeEasing, RaiseFinishedEvent);
             TweenUtils.TweenLocalPosition(_graveSpriteRenderer.transform, new Vector3(0f, -200f, 0f), _graveFadeTime, _graveFadeEasing, () => {
-                _graveSpriteRenderer.transform.localPosition = _initialLocalPosition;
+                transform.localPosition = _initialLocalPosition;
                 RaiseFinishedEvent();
             });
         }
