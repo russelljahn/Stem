@@ -131,7 +131,7 @@ namespace Assets.GGJ2015.Scripts.Pivots {
                     Description = "Your friend dies.",
                     Choices = new List<Choice> {
                         new Choice {
-                            Description = "Get a new friend",
+                            Description = "Get a new friend.",
                             NextPivot = PivotIds.StoryRoot,
                             OnTriggerAnimationName = Animations.Grave,
 							OnTriggerTrackName = AudioClips.BgNormal
@@ -155,7 +155,7 @@ namespace Assets.GGJ2015.Scripts.Pivots {
 							OnTriggerTrackName = AudioClips.BgGrave
                         },
                         new Choice {
-                            Description = "Be lovers & get busy.",
+                            Description = "Be lovers.",
                             NextPivot = PivotIds.BeeUtopia,
                             OnTriggerAnimationName = Animations.BeLovers,
 							OnTriggerTrackName = AudioClips.BgBeLovers
@@ -210,7 +210,7 @@ namespace Assets.GGJ2015.Scripts.Pivots {
 							OnTriggerTrackName = AudioClips.BgNormal
                         },
                         new Choice {
-                            Description = "Chill.",
+                            Description = "Chill with them.",
                             NextPivot = PivotIds.GetStung,
                             OnTriggerAnimationName = Animations.GetStung,
 							OnTriggerTrackName = AudioClips.BgGetStung
@@ -219,18 +219,18 @@ namespace Assets.GGJ2015.Scripts.Pivots {
                 },
 				new Pivot {
 					Id = PivotIds.TerriblePerson,
-					Description = "Given a flower seed by the Voice to plant in honor of your friend. Plant it?",
+					Description = "You're a terrible person! What should I do with you?",
 					Choices = new List<Choice> {
 						new Choice {
-							Description = "Sure, punish me",
+							Description = "Punish me!",
 							NextPivot = PivotIds.GetStung,
                             OnTriggerAnimationName = Animations.GetStung,
 							OnTriggerTrackName = AudioClips.BgGetStung
 						},
 						new Choice {
-							Description = "Fry Me",
+							Description = "Fry yourself!",
 							NextPivot = PivotIds.StoryRoot,
-                            OnTriggerAnimationName = Animations.Grave, //TODO: WItch
+                            OnTriggerAnimationName = Animations.Grave, //TODO: Witch
 							OnTriggerTrackName = AudioClips.BgNormal
 						},
 					}
@@ -248,7 +248,7 @@ namespace Assets.GGJ2015.Scripts.Pivots {
 						new Choice {
 							Description = "Let them grow.",
 							NextPivot = PivotIds.BeeUtopia,
-                            OnTriggerAnimationName = Animations.FlowersSprout,
+                            OnTriggerAnimationName = Animations.BeeUtopia,
 							OnTriggerTrackName = AudioClips.BgBeeUtopia
 						},
 					}
