@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,9 +22,16 @@ namespace Assets.GGJ2015.Scripts.Audio {
 
 
         private void Fade() {
-            TweenUtils.TweenAlpha(CanvasGroup, 0f, 1f, null, Closed);
+            TweenUtils.TweenAlpha(CanvasGroup, 0f, 1f, null, OnClose);
             TweenUtils.TweenAlpha(SpriteRenderer, 0f, 1f, null);
+        }
 
+
+        private void OnClose() {
+            CanvasGroup.interactable = false;
+            CanvasGroup.blocksRaycasts = false;
+
+            Closed.Invoke();
         }
     }
 }
