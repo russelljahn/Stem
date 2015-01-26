@@ -156,7 +156,7 @@ namespace Assets.GGJ2015.Scripts.Pivots {
                         },
                         new Choice {
                             Description = "Be lovers.",
-                            NextPivot = PivotIds.BeeUtopia,
+                            NextPivot = PivotIds.StoryRoot,
                             OnTriggerAnimationName = Animations.BeLovers,
 							OnTriggerTrackName = AudioClips.BgBeLovers
                         }

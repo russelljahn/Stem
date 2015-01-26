@@ -18,6 +18,9 @@ namespace Assets.GGJ2015.Scripts.Gui.PivotAnimations {
 
 
         private void OnEnable() {
+            _spriteRenderer.color = new Color(1f, 1f, 1f, 1f);
+
+
             Length = _fadeTime + _drinkAnimationClip.length - _shortenAnimationTime;     
             this.InvokeAfterTime(Length, FadeOut);
         }

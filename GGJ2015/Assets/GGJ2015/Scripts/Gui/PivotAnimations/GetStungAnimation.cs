@@ -17,6 +17,8 @@ namespace Assets.GGJ2015.Scripts.Gui.PivotAnimations {
 
 
         private void OnEnable() {
+            _getStungSpriteRenderer.color = Color.white;
+
             Length = _getStungClip.length;
             this.InvokeAfterTime(_getStungClip.length - _fadeTime, FadeToHospital);
 

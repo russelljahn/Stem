@@ -1,3 +1,4 @@
+using System.Security.Cryptography;
 using Assets.GGJ2015.Scripts.Extensions;
 using Assets.GGJ2015.Scripts.Utils;
 using UnityEngine;
@@ -21,11 +22,17 @@ namespace Assets.GGJ2015.Scripts.Gui.PivotAnimations {
 
         [SerializeField] private SpriteRenderer _flytrapWaggleSpriteRenderer;
         [SerializeField] private SpriteRenderer _heartsSpriteRenderer;
+        [SerializeField] private SpriteRenderer _growFlowerSpriteRenderer;
 
+
+        [SerializeField] private Animator _growFlowerAnimator;
+        [SerializeField] private AnimationClip _growFlowerAnimationClip;
 
 
         private void OnEnable() {
-            Length = _flytrapWaggleClip.length + _heartsClip.length + 2f*_fadeTime - _shortenFlytrapWaggleAnimationTime;
+            _growFlowerAnimator.speed = 0f;
+            _flytrapWaggleSpriteRenderer.color = Color.white;
+            Length = _flytrapWaggleClip.length + _heartsClip.length + 3f*_fadeTime - _shortenFlytrapWaggleAnimationTime + _growFlowerAnimationClip.length;
             _heartsAnimator.speed = 0f;
             this.InvokeAfterTime(_flytrapWaggleClip.length - _shortenFlytrapWaggleAnimationTime, FadeInHearts);
 
@@ -42,8 +49,19 @@ namespace Assets.GGJ2015.Scripts.Gui.PivotAnimations {
 
 
         private void FadeOutHearts() {
-            TweenUtils.TweenAlpha(_heartsSpriteRenderer, 0f, _fadeTime, _fadeEasing, RaiseFinishedEvent);
+            _flytrapWaggleSpriteRenderer.color = new Color(1f, 1f, 1f, 0f);
+            TweenUtils.TweenAlpha(_heartsSpriteRenderer, 0f, _fadeTime, _fadeEasing, FadeInFlowerGrow);
         }
 
+        private void FadeInFlowerGrow() {
+
+            TweenUtils.TweenAlpha(_growFlowerSpriteRenderer, 1f, _fadeTime, _fadeEasing, GrowAnimation);
+        }
+
+
+        private void GrowAnimation() {
+            _growFlowerAnimator.speed = 1f;
+            this.InvokeAfterTime(_growFlowerAnimationClip.length, RaiseFinishedEvent);
+        }
     }
 }

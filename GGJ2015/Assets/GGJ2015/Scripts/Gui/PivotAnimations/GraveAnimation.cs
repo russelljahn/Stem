@@ -33,6 +33,8 @@ namespace Assets.GGJ2015.Scripts.Gui.PivotAnimations {
             _initialScale = _graveSpriteRenderer.transform.localScale;
             _initialLocalPosition = _graveSpriteRenderer.transform.localPosition;
 
+            _graveSpriteRenderer.color = new Color(1f, 1f, 1f, 1f);
+
             _growFlowerSpriteRenderer.color = new Color(1f, 1f, 1f, 0f);
             Length = _growTime + _graveFadeTime + _waitTime;
             _graveSpriteRenderer.transform.localScale = Vector3.zero;
@@ -45,8 +47,8 @@ namespace Assets.GGJ2015.Scripts.Gui.PivotAnimations {
         }
 
         private void FadeOutGrave() {
-            TweenUtils.TweenAlpha(_graveSpriteRenderer, 0f, _graveFadeTime, _graveFadeEasing, RaiseFinishedEvent);
-            TweenUtils.TweenAlpha(_growFlowerSpriteRenderer, 1f, _graveFadeTime, _graveFadeEasing, RaiseFinishedEvent);
+            TweenUtils.TweenAlpha(_graveSpriteRenderer, 0f, _graveFadeTime, _graveFadeEasing);
+            TweenUtils.TweenAlpha(_growFlowerSpriteRenderer, 1f, _graveFadeTime, _graveFadeEasing);
             TweenUtils.TweenLocalPosition(_graveSpriteRenderer.transform, new Vector3(0f, -200f, 0f), _graveFadeTime, _graveFadeEasing, () => {
                 _graveSpriteRenderer.transform.localPosition = _initialLocalPosition;
                 RaiseFinishedEvent();
