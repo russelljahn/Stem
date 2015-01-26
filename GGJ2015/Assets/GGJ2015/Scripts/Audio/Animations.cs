@@ -22,7 +22,6 @@ namespace Assets.GGJ2015.Scripts.Audio {
         public const string GetSickFromPee = "GetSickFromPee";
         public const string GetSickFromWater = "GetSickFromWater";
         public const string GetStung = "GetStung";
-        public const string InfectOthers = "InfectOthers";
         public const string Pee = "Pee";
         public const string Pesticide = "Pesticide";
         public const string SpaceBees = "SpaceBees";

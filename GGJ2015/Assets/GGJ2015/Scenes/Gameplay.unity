@@ -510,7 +510,7 @@ GameObject:
   - 224: {fileID: 169276008}
   - 114: {fileID: 169276009}
   m_Layer: 5
-  m_Name: Ebola
+  m_Name: GotEbola
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1562,8 +1562,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 545210691}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 480, z: 0}
-  m_LocalScale: {x: 200, y: 200, z: 76.7999954}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 76.7990189, y: 76.7990189, z: 76.7990189}
   m_Children: []
   m_Father: {fileID: 169276008}
   m_RootOrder: 0
@@ -1962,7 +1962,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _length: 0
   _spaceBeesClip: {fileID: 7400000, guid: 166ba9c1fb9bb49c68482dc0a99749c7, type: 2}
-  _flowerGrowsClip: {fileID: 7400000, guid: 35d42293553b14b52afe2c2c5e075983, type: 2}
+  _flowerGrowsClip: {fileID: 7400000, guid: e12bbf777e09f45b5a2273274d4ce5c8, type: 2}
   _flowerGrowsAnimator: {fileID: 1560836629}
   _fadeTime: .25
   _fadeEasing:
@@ -3598,7 +3598,7 @@ Animator:
   m_GameObject: {fileID: 1560836627}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1fb706719abe94a70afee8029183cc3a, type: 2}
+  m_Controller: {fileID: 9100000, guid: 9de866d9484974642bb5ba24c254fe44, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1

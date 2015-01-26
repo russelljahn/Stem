@@ -115,7 +115,7 @@ namespace Assets.GGJ2015.Scripts.Pivots {
                         new Choice {
                             Description = "Infect others.",
                             NextPivot = PivotIds.TerriblePerson,
-                            OnTriggerAnimationName = Animations.InfectOthers,
+                            OnTriggerAnimationName = Animations.Grave, //TODO
 							OnTriggerTrackName = AudioClips.BgTerriblePerson
                         },
                         new Choice {
