@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
-using Assets.GGJ2015.Scripts.Extensions;
-using Assets.GGJ2015.Scripts.Gui.PivotAnimations;
+using Assets.Stem.Scripts.Extensions;
+using Assets.Stem.Scripts.Gui.PivotAnimations;
 using UnityEngine;
 
 
-namespace Assets.GGJ2015.Scripts.Audio {
+namespace Assets.Stem.Scripts.Audio {
     public class Animations : MonoBehaviour {
 
         [SerializeField] protected List<PivotAnimation> PivotAnimations = new List<PivotAnimation>();

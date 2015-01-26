@@ -1,10 +1,10 @@
-﻿using Assets.GGJ2015.Scripts.Gui;
-using Assets.GGJ2015.Scripts.Gui.PivotAnimations;
-using Assets.GGJ2015.Scripts.Pivots;
+using Assets.Stem.Scripts.Gui;
+using Assets.Stem.Scripts.Gui.PivotAnimations;
+using Assets.Stem.Scripts.Pivots;
 using UnityEngine;
 
 
-namespace Assets.GGJ2015.Scripts {
+namespace Assets.Stem.Scripts {
     public class GameplayManager : MonoBehaviour {
         private readonly Story _currentStory = new Story();
         [SerializeField] private Page _page;

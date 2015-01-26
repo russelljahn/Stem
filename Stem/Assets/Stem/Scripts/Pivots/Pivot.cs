@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
-using Assets.GGJ2015.Scripts.Gui.PivotAnimations;
+using Assets.Stem.Scripts.Gui.PivotAnimations;
 
 
-namespace Assets.GGJ2015.Scripts.Pivots {
+namespace Assets.Stem.Scripts.Pivots {
     [Serializable]
     public class Pivot {
         public string Id;

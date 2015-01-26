@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Assets.GGJ2015.Scripts.Utils;
+using Assets.Stem.Scripts.Utils;
 using UnityEngine;
 
 
-namespace Assets.GGJ2015.Scripts.Audio {
+namespace Assets.Stem.Scripts.Audio {
     public class AudioManager : MonoBehaviour {
 
         private readonly List<AudioSource> _tracks = new List<AudioSource>();

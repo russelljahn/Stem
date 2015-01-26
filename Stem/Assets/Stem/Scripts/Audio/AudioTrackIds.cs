@@ -1,5 +1,5 @@
 ﻿
-namespace Assets.GGJ2015.Scripts.Audio {
+namespace Assets.Stem.Scripts.Audio {
     public static class AudioTrackIds {
         public const int Bg1 = 0;
         public const int Bg2 = 1;

@@ -1,11 +1,11 @@
 using System;
 using System.Collections;
-using Assets.GGJ2015.Scripts.Extensions;
+using Assets.Stem.Scripts.Extensions;
 using UnityEngine;
 using UnityEngine.UI;
 
 
-namespace Assets.GGJ2015.Scripts.Utils
+namespace Assets.Stem.Scripts.Utils
 {
     public class TweenUtils : MonoBehaviour
     {

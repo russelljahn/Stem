@@ -1,7 +1,7 @@
 using UnityEngine;
 
 
-namespace Assets.GGJ2015.Scripts.PropertyAttributes
+namespace Assets.Stem.Scripts.PropertyAttributes
 {
     public class MaxAttribute : PropertyAttribute
     {

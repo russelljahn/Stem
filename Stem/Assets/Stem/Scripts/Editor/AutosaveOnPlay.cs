@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEditor;
 
 
-namespace Assets.GGJ2015.Scripts.Editor {
+namespace Assets.Stem.Scripts.Editor {
     [InitializeOnLoad]
     internal static class AutosaveOnPlay {
 

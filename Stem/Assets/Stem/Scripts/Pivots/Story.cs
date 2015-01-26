@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using Assets.GGJ2015.Scripts.Audio;
-using Assets.GGJ2015.Scripts.PropertyAttributes;
+using Assets.Stem.Scripts.Audio;
+using Assets.Stem.Scripts.PropertyAttributes;
 using UnityEngine;
 
 
-namespace Assets.GGJ2015.Scripts.Pivots {
+namespace Assets.Stem.Scripts.Pivots {
     public class Story {
 
         private readonly Dictionary<string, Pivot> _idsToPivots = new Dictionary<string, Pivot>();

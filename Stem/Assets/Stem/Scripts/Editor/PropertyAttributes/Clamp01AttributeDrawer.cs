@@ -1,10 +1,10 @@
 #if UNITY_EDITOR
-using Assets.GGJ2015.Scripts.PropertyAttributes;
+using Assets.Stem.Scripts.PropertyAttributes;
 using UnityEditor;
 using UnityEngine;
 
 
-namespace Assets.GGJ2015.Scripts.Editor.PropertyAttributes
+namespace Assets.Stem.Scripts.Editor.PropertyAttributes
 {
     [CustomPropertyDrawer(typeof(Clamp01Attribute))]
     public class Clamp01AttributeDrawer : PropertyDrawer 

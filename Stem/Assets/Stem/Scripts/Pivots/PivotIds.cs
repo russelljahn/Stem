@@ -1,5 +1,5 @@
 ﻿
-namespace Assets.GGJ2015.Scripts.Pivots {
+namespace Assets.Stem.Scripts.Pivots {
     public static class PivotIds {
         public const string None = "";
         public const string StoryRoot = "StoryRoot";

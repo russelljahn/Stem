@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine;
 
 
-namespace Assets.GGJ2015.Scripts.Extensions {
+namespace Assets.Stem.Scripts.Extensions {
     public static class MonoBehaviourExtensions {
 
         #region InvokeAfterCoroutine

@@ -1,7 +1,7 @@
 using UnityEngine;
 
 
-namespace Assets.GGJ2015.Scripts.Utils 
+namespace Assets.Stem.Scripts.Utils 
 {
     public static class AnimationCurveUtils 
     {

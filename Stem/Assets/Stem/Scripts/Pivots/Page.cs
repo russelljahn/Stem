@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using Assets.GGJ2015.Scripts.Audio;
-using Assets.GGJ2015.Scripts.Extensions;
-using Assets.GGJ2015.Scripts.Gui;
-using Assets.GGJ2015.Scripts.Gui.PivotAnimations;
-using Assets.GGJ2015.Scripts.PropertyAttributes;
-using Assets.GGJ2015.Scripts.Utils;
+using Assets.Stem.Scripts.Extensions;
+using Assets.Stem.Scripts.Audio;
+using Assets.Stem.Scripts.Gui;
+using Assets.Stem.Scripts.Gui.PivotAnimations;
+using Assets.Stem.Scripts.PropertyAttributes;
+using Assets.Stem.Scripts.Utils;
 using UnityEngine;
 
 
-namespace Assets.GGJ2015.Scripts.Pivots {
+namespace Assets.Stem.Scripts.Pivots {
     [RequireComponent(typeof(CanvasGroup))]
     public class Page : MonoBehaviour {
         [SerializeField] private List<ChoiceGui> _choiceGuis = new List<ChoiceGui>();

@@ -1,7 +1,7 @@
 using System;
 
 
-namespace Assets.GGJ2015.Scripts.Utils
+namespace Assets.Stem.Scripts.Utils
 {
     public class Pointer<T>
     {

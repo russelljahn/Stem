@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Reflection;
 
 
-namespace Assets.GGJ2015.Scripts.Extensions
+namespace Assets.Stem.Scripts.Extensions
 {
     public static class ObjectExtensions
     {

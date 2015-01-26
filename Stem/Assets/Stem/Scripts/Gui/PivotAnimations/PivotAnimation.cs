@@ -1,10 +1,10 @@
 using UnityEngine;
 using System;
 using System.ComponentModel;
-using Assets.GGJ2015.Scripts.PropertyAttributes;
+using Assets.Stem.Scripts.PropertyAttributes;
 
 
-namespace Assets.GGJ2015.Scripts.Gui.PivotAnimations {
+namespace Assets.Stem.Scripts.Gui.PivotAnimations {
     public abstract class PivotAnimation : MonoBehaviour {
 
         public event Action Finished = delegate { };

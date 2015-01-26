@@ -1,10 +1,10 @@
 using System.Security.Cryptography;
-using Assets.GGJ2015.Scripts.Extensions;
-using Assets.GGJ2015.Scripts.Utils;
+using Assets.Stem.Scripts.Extensions;
+using Assets.Stem.Scripts.Utils;
 using UnityEngine;
 
 
-namespace Assets.GGJ2015.Scripts.Gui.PivotAnimations {
+namespace Assets.Stem.Scripts.Gui.PivotAnimations {
     public class GetBusyAnimation : PivotAnimation {
 
         [SerializeField] private AnimationClip _flytrapWaggleClip;

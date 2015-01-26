@@ -1,11 +1,11 @@
 #if UNITY_EDITOR
-using Assets.GGJ2015.Scripts.Extensions;
-using Assets.GGJ2015.Scripts.PropertyAttributes;
+using Assets.Stem.Scripts.Extensions;
+using Assets.Stem.Scripts.PropertyAttributes;
 using UnityEditor;
 using UnityEngine;
 
 
-namespace Assets.GGJ2015.Scripts.Editor.PropertyAttributes
+namespace Assets.Stem.Scripts.Editor.PropertyAttributes
 {
     [CustomPropertyDrawer(typeof(MaxAttribute))]
     public class MaxAttributeDrawer : PropertyDrawer 

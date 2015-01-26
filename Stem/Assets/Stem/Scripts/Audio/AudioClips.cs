@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Assets.GGJ2015.Scripts.Extensions;
+using Assets.Stem.Scripts.Extensions;
 using UnityEngine;
 
 
-namespace Assets.GGJ2015.Scripts.Audio {
+namespace Assets.Stem.Scripts.Audio {
     public class AudioClips : MonoBehaviour {
        
 

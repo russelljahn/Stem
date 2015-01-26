@@ -1,11 +1,11 @@
 using System;
-using Assets.GGJ2015.Scripts.Pivots;
-using Assets.GGJ2015.Scripts.Utils;
+using Assets.Stem.Scripts.Pivots;
+using Assets.Stem.Scripts.Utils;
 using UnityEngine;
 using UnityEngine.UI;
 
 
-namespace Assets.GGJ2015.Scripts.Gui {
+namespace Assets.Stem.Scripts.Gui {
 
 	[RequireComponent(typeof(CanvasGroup))]
 	[RequireComponent(typeof(Text))]

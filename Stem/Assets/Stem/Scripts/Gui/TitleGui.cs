@@ -1,10 +1,10 @@
 using System;
-using Assets.GGJ2015.Scripts.Extensions;
-using Assets.GGJ2015.Scripts.Utils;
+using Assets.Stem.Scripts.Extensions;
+using Assets.Stem.Scripts.Utils;
 using UnityEngine;
 
 
-namespace Assets.GGJ2015.Scripts.Gui {
+namespace Assets.Stem.Scripts.Gui {
     [RequireComponent(typeof(CanvasGroup))]
     public class TitleGui : MonoBehaviour {
 
