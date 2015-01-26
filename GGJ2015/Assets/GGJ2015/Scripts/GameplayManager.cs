@@ -1,4 +1,4 @@
-using Assets.GGJ2015.Scripts.Audio;
+﻿using Assets.GGJ2015.Scripts.Gui;
 using Assets.GGJ2015.Scripts.Gui.PivotAnimations;
 using Assets.GGJ2015.Scripts.Pivots;
 using UnityEngine;
@@ -9,11 +9,11 @@ namespace Assets.GGJ2015.Scripts {
         private readonly Story _currentStory = new Story();
         [SerializeField] private Page _page;
         [SerializeField] private PivotAnimation _initialAnimation;
-        [SerializeField] private Title _title;
+        [SerializeField] private TitleGui _titleGui;
 
 
         private void OnEnable() {
-            _title.Closed += StartGame;
+            _titleGui.Closed += StartGame;
         }
 
 

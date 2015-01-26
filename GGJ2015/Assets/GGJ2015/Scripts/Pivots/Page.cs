@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using Assets.GGJ2015.Scripts.Audio;
 using Assets.GGJ2015.Scripts.Extensions;
@@ -15,13 +15,10 @@ namespace Assets.GGJ2015.Scripts.Pivots {
         [SerializeField] private List<ChoiceGui> _choiceGuis = new List<ChoiceGui>();
         [SerializeField] private AudioManager _audioManager;
 
-
         [SerializeField, Readonly] private Pivot _currentPivot;
         [SerializeField, Readonly] private Story _currentStory;
         [SerializeField, Readonly] private PivotAnimation _currentPivotAnimation;
 
-
-        private Choice _previousChoice;
         [SerializeField] private float _guiFadeTime = 1f;
         [SerializeField] private float _musicFadeTime = 1f;
         [SerializeField] private AnimationCurve _musicFadeEasing = AnimationCurveUtils.GetLinearCurve();
@@ -100,8 +97,6 @@ namespace Assets.GGJ2015.Scripts.Pivots {
                 previousPivotAnimation.Stop();
                 AnimatePivotTransition(pivot);
             });
-
-            _previousChoice = choice;
         }
 
 

@@ -6,30 +6,20 @@ using UnityEngine;
 namespace Assets.GGJ2015.Scripts.Gui.PivotAnimations {
     public class BaconWitchAnimation : PivotAnimation {
 
-        [SerializeField]
-        private float _growTime = 0.5f;
-        [SerializeField]
-        private AnimationCurve _growEasing = AnimationCurveUtils.GetLinearCurve();
-
-        [SerializeField]
-        private float _waitTime = 0.5f;
+        [SerializeField] private float _growTime = 0.5f;
+        [SerializeField] private AnimationCurve _growEasing = AnimationCurveUtils.GetLinearCurve();
 
 
         private Vector3 _initialLocalPosition;
 
-        [SerializeField]
-        private AnimationClip _baconWitchAnimationClip;
-        [SerializeField]
-        private SpriteRenderer _baconWitchSpriteRenderer;
+        [SerializeField]  private AnimationClip _baconWitchAnimationClip;
+        [SerializeField] private SpriteRenderer _baconWitchSpriteRenderer;
 
 
-        [SerializeField]
-        private Animator _growFlowerAnimator;
-        [SerializeField]
-        private AnimationClip _growFlowerAnimationClip;
+        [SerializeField] private Animator _growFlowerAnimator;
+        [SerializeField] private AnimationClip _growFlowerAnimationClip;
 
-        [SerializeField]
-        private SpriteRenderer _growFlowerSpriteRenderer;
+        [SerializeField] private SpriteRenderer _growFlowerSpriteRenderer;
 
 
         [SerializeField] private float _ashesWaitTime = 0.5f;
