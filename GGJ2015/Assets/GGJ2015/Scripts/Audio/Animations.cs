@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using Assets.GGJ2015.Scripts.Extensions;
 using Assets.GGJ2015.Scripts.Gui.PivotAnimations;
 using UnityEngine;
@@ -26,6 +26,7 @@ namespace Assets.GGJ2015.Scripts.Audio {
         public const string Pesticide = "Pesticide";
         public const string SpaceBees = "SpaceBees";
         public const string WaterFlower = "WaterFlower";
+        public const string InfectOthers = "InfectOthers";
 
         public const string BeLovers = "BeLovers";
         //public const string GetEbolaSting = "GetEbolaSting";

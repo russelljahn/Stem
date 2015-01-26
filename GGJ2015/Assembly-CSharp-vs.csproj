@@ -62,6 +62,7 @@
      <Compile Include="Assets\GGJ2015\Scripts\Gui\PivotAnimations\GetStungAnimation.cs" />
      <Compile Include="Assets\GGJ2015\Scripts\Gui\PivotAnimations\GraveAnimation.cs" />
      <Compile Include="Assets\GGJ2015\Scripts\Gui\PivotAnimations\GrowFlowerAnimation.cs" />
+     <Compile Include="Assets\GGJ2015\Scripts\Gui\PivotAnimations\InfectOthersAnimation.cs" />
      <Compile Include="Assets\GGJ2015\Scripts\Gui\PivotAnimations\PivotAnimation.cs" />
      <Compile Include="Assets\GGJ2015\Scripts\Gui\PivotAnimations\SimpleAnimation.cs" />
      <Compile Include="Assets\GGJ2015\Scripts\Gui\PivotAnimations\SpaceBeesAnimation.cs" />
