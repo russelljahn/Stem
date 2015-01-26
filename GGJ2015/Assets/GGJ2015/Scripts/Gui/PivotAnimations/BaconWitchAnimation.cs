@@ -1,4 +1,3 @@
-using System.Security.Cryptography;
 using Assets.GGJ2015.Scripts.Extensions;
 using Assets.GGJ2015.Scripts.Utils;
 using UnityEngine;

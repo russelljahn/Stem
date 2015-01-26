@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Assets.GGJ2015.Scripts.Extensions;
 using Assets.GGJ2015.Scripts.Gui.PivotAnimations;
 using UnityEngine;
@@ -6,7 +6,6 @@ using UnityEngine;
 
 namespace Assets.GGJ2015.Scripts.Audio {
     public class Animations : MonoBehaviour {
-       
 
         [SerializeField] protected List<PivotAnimation> PivotAnimations = new List<PivotAnimation>();
 
@@ -27,14 +26,9 @@ namespace Assets.GGJ2015.Scripts.Audio {
         public const string SpaceBees = "SpaceBees";
         public const string WaterFlower = "WaterFlower";
         public const string InfectOthers = "InfectOthers";
-
         public const string BeLovers = "BeLovers";
-        //public const string GetEbolaSting = "GetEbolaSting";
-        public const string BaconWitch = "BaconWitch"; // Stake + grave
-
-        // friend gets sick
-
-
+        public const string BaconWitch = "BaconWitch";
+        public const string FriendDrink = "FriendDrink";
 
 
          #region Singleton nonsense

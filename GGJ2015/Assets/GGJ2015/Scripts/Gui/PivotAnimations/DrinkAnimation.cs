@@ -7,27 +7,47 @@ namespace Assets.GGJ2015.Scripts.Gui.PivotAnimations {
     public class DrinkAnimation : PivotAnimation {
 
         [SerializeField] private AnimationClip _drinkAnimationClip;
+        [SerializeField] private AnimationClip _getSickAnimationClip;
+        [SerializeField] private Animator _getSickAnimator;
 
-        [SerializeField] private float _shortenAnimationTime = .1f;
-
-        [SerializeField] private float _fadeTime = 0.25f;
+        [SerializeField] private float _waitTime = 0.25f;
+        [SerializeField] private float _fadeTime = 0.5f;
         [SerializeField] private AnimationCurve _fadeEasing = AnimationCurveUtils.GetLinearCurve();
 
-        [SerializeField] private SpriteRenderer _spriteRenderer;
+
+        [SerializeField] private SpriteRenderer _drinkSpriteRenderer;
+        [SerializeField] private SpriteRenderer _getSickSpriteRenderer;
+        [SerializeField] private SpriteRenderer _hospitalSpriteRenderer;
+
+
 
 
 
         private void OnEnable() {
-            _spriteRenderer.color = new Color(1f, 1f, 1f, 1f);
+            _drinkSpriteRenderer.color = new Color(1f, 1f, 1f, 1f);
+            _getSickSpriteRenderer.color = new Color(1f, 1f, 1f, 0f);
+            _hospitalSpriteRenderer.color = new Color(1f, 1f, 1f, 0f);
 
+            _getSickAnimator.speed = 0f;
 
-            Length = _fadeTime + _drinkAnimationClip.length - _shortenAnimationTime;     
-            this.InvokeAfterTime(Length, FadeOut);
+            Length = _drinkAnimationClip.length + _getSickAnimationClip.length + _fadeTime + _waitTime;
+            this.InvokeAfterTime(_drinkAnimationClip.length, GetSickAnimation);
         }
 
 
-        private void FadeOut() {
-            TweenUtils.TweenAlpha(_spriteRenderer, 0f, _fadeTime, _fadeEasing, RaiseFinishedEvent);
+        private void GetSickAnimation() {
+            _drinkSpriteRenderer.color = new Color(1f, 1f, 1f, 0f);
+            _getSickSpriteRenderer.color = new Color(1f, 1f, 1f, 1f);
+
+            _getSickAnimator.speed = 1f;
+
+            this.InvokeAfterTime(_getSickAnimationClip.length + _waitTime, FadeInHospital);
+        }
+
+
+        private void FadeInHospital() {
+            TweenUtils.TweenAlpha(_getSickSpriteRenderer, 0f, _fadeTime, _fadeEasing);
+            TweenUtils.TweenAlpha(_hospitalSpriteRenderer, 1f, _fadeTime, _fadeEasing, RaiseFinishedEvent);
         }
 
     }

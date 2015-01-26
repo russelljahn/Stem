@@ -85,7 +85,7 @@ namespace Assets.GGJ2015.Scripts.Pivots {
                         new Choice {
                             Description = "Share it with a friend.",
                             NextPivot = PivotIds.FriendDies,
-                            OnTriggerAnimationName = Animations.DrinkPee,
+                            OnTriggerAnimationName = Animations.FriendDrink,
 							OnTriggerTrackName = AudioClips.BgFriendDies
                         }
                     }
@@ -210,7 +210,7 @@ namespace Assets.GGJ2015.Scripts.Pivots {
 							OnTriggerTrackName = AudioClips.BgNormal
                         },
                         new Choice {
-                            Description = "Chill with them.",
+                            Description = "The bees remain on Earth.",
                             NextPivot = PivotIds.GetStung,
                             OnTriggerAnimationName = Animations.GetStung,
 							OnTriggerTrackName = AudioClips.BgGetStung
