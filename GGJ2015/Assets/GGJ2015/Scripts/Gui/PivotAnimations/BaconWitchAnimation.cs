@@ -16,14 +16,6 @@ namespace Assets.GGJ2015.Scripts.Gui.PivotAnimations {
         private float _waitTime = 0.5f;
 
 
-        [SerializeField]
-        private float _graveFadeTime = 0.25f;
-        [SerializeField]
-        private AnimationCurve _graveFadeEasing = AnimationCurveUtils.GetLinearCurve();
-
-        [SerializeField]
-        private SpriteRenderer _graveSpriteRenderer;
-
         private Vector3 _initialLocalPosition;
 
         [SerializeField]
@@ -41,43 +33,33 @@ namespace Assets.GGJ2015.Scripts.Gui.PivotAnimations {
         private SpriteRenderer _growFlowerSpriteRenderer;
 
 
+        [SerializeField] private float _ashesWaitTime = 0.5f;
+
 
         private void OnEnable() {
             _growFlowerAnimator.speed = 0;
-            _initialLocalPosition = _graveSpriteRenderer.transform.localPosition;
+            _baconWitchSpriteRenderer.color = Color.white;
+            _growFlowerSpriteRenderer.color = new Color(0f, 0f, 0f, 0f);
 
-            _growFlowerSpriteRenderer.color = new Color(1f, 1f, 1f, 0f);
-            _graveSpriteRenderer.color = new Color(0f, 0f, 0f, 0f);
+            Length = _baconWitchAnimationClip.length + _growTime + _growFlowerAnimationClip.length;
 
-            Length = _growTime + _graveFadeTime + _baconWitchAnimationClip.length;
-            _graveSpriteRenderer.transform.localScale = Vector3.zero;
-
-            this.InvokeAfterTime(_baconWitchAnimationClip.length - _graveFadeTime, FadeOutWitch);
+            this.InvokeAfterTime(_baconWitchAnimationClip.length - _growTime, FadeOutWitch);
         }
 
 
         private void FadeOutWitch() {
-            TweenUtils.TweenAlpha(_baconWitchSpriteRenderer, 0f, _graveFadeTime, _graveFadeEasing, FadeOutGrave);
-            //TweenUtils.TweenColor(_graveSpriteRenderer, Color.white, _graveFadeTime, _graveFadeEasing, Wait);
-            //TweenUtils.TweenAlpha(_graveSpriteRenderer, 1f, _graveFadeTime, _graveFadeEasing);
-
+            TweenUtils.TweenColor(_growFlowerSpriteRenderer, Color.black, _growTime, _growEasing);
+            TweenUtils.TweenColor(_baconWitchSpriteRenderer, new Color(0f, 0f, 0f, 0f),  _growTime, _growEasing);
+            this.InvokeAfterTime(_growTime + _ashesWaitTime, PlayFlowerAnimation);
         }
 
 
-        //private void Wait() {
-        //    this.InvokeAfterTime(_waitTime, FadeOutGrave);
-        //}
 
-
-        private void FadeOutGrave() {
-            //TweenUtils.TweenAlpha(_graveSpriteRenderer, 0f, _graveFadeTime, _graveFadeEasing, RaiseFinishedEvent);
-            TweenUtils.TweenAlpha(_growFlowerSpriteRenderer, 1f, _graveFadeTime, _graveFadeEasing, RaiseFinishedEvent);
-            TweenUtils.TweenLocalPosition(_graveSpriteRenderer.transform, new Vector3(0f, -200f, 0f), _graveFadeTime, _graveFadeEasing, () => {
-                _graveSpriteRenderer.transform.localPosition = _initialLocalPosition;
-                _growFlowerAnimator.speed = 1;
-
-                RaiseFinishedEvent();
-            });
+        private void PlayFlowerAnimation()
+        {
+            TweenUtils.TweenColor(_growFlowerSpriteRenderer, Color.white, _growFlowerAnimationClip.length, _growEasing);
+            _growFlowerAnimator.speed = 1;
+            this.InvokeAfterTime(_growFlowerAnimationClip.length, RaiseFinishedEvent);
         }
 
     }

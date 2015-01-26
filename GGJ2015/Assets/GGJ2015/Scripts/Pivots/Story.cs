@@ -230,7 +230,7 @@ namespace Assets.GGJ2015.Scripts.Pivots {
 						new Choice {
 							Description = "Fry yourself!",
 							NextPivot = PivotIds.StoryRoot,
-                            OnTriggerAnimationName = Animations.Grave, //TODO: Witch
+                            OnTriggerAnimationName = Animations.BaconWitch,
 							OnTriggerTrackName = AudioClips.BgNormal
 						},
 					}
