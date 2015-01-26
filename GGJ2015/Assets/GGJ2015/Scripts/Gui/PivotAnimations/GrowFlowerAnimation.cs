@@ -26,10 +26,5 @@ namespace Assets.GGJ2015.Scripts.Gui.PivotAnimations {
             this.InvokeAfterTime(Length, RaiseFinishedEvent);
         }
 
-
-        private void OnDisable() {
-            TweenUtils.TweenAlpha(_spriteRenderer, 0f, 0.1f, _fadeEasing);
-        }
-
     }
 }
