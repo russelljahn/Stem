@@ -29,7 +29,7 @@ namespace Assets.GGJ2015.Scripts.Audio {
         public const string WaterFlower = "WaterFlower";
 
         public const string BeLovers = "BeLovers";
-        public const string GetEbolaSting = "GetEbolaSting";
+        //public const string GetEbolaSting = "GetEbolaSting";
         public const string BaconWitch = "BaconWitch"; // Stake + grave
 
         // friend gets sick

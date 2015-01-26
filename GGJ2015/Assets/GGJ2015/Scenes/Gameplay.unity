@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _page: {fileID: 1487219217}
-  _initialAnimation: {fileID: 2001638256}
+  _initialAnimation: {fileID: 279052570}
 --- !u!1 &33196961
 GameObject:
   m_ObjectHideFlags: 0
