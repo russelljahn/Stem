@@ -5,13 +5,13 @@ AnimatorController:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: BootStomp
+  m_Name: FlytrapHearts
   serializedVersion: 2
   m_AnimatorParameters: []
   m_AnimatorLayers:
   - serializedVersion: 3
     m_Name: Base Layer
-    m_StateMachine: {fileID: 110723244}
+    m_StateMachine: {fileID: 110701224}
     m_Mask: {fileID: 0}
     m_BlendingMode: 0
     m_SyncedLayerIndex: -1
@@ -20,31 +20,31 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
---- !u!1102 &110223244
+--- !u!1102 &110201224
 State:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: BootStomp
-  m_Speed: 1
+  m_Name: FlytrapHearts
+  m_Speed: .550000012
   m_CycleOffset: 0
   m_Motions:
-  - {fileID: 7400000, guid: b5f6867f153db437ebc520895ac68672, type: 2}
-  m_ParentStateMachine: {fileID: 110723244}
+  - {fileID: 7400000, guid: e3a7a6a4e130f43a384f8454d3516b0f, type: 2}
+  m_ParentStateMachine: {fileID: 110701224}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
---- !u!1107 &110723244
+--- !u!1107 &110701224
 StateMachine:
   serializedVersion: 2
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Base Layer
-  m_DefaultState: {fileID: 110223244}
+  m_DefaultState: {fileID: 110201224}
   m_States:
-  - {fileID: 110223244}
+  - {fileID: 110201224}
   m_ChildStateMachine: []
   m_ChildStateMachinePosition: []
   m_OrderedTransitions: {}

@@ -173,7 +173,7 @@ namespace Assets.GGJ2015.Scripts.Pivots {
 							OnTriggerTrackName = AudioClips.BgGotEbola
                         },
                         new Choice {
-                            Description = "Experiment on the bees.",
+                            Description = "Experiment on them.",
                             NextPivot = PivotIds.Experiment,
                             OnTriggerAnimationName = Animations.BeeExperiment,
 							OnTriggerTrackName = AudioClips.BgExperiment
@@ -204,13 +204,13 @@ namespace Assets.GGJ2015.Scripts.Pivots {
                     Description = "Genetic splicing makes the bees human-sized.",
                     Choices = new List<Choice> {
                         new Choice {
-                            Description = "The bees go to infinity and beyond.",
+                            Description = "The bees travel the stars.",
                             NextPivot = PivotIds.StoryRoot,
                             OnTriggerAnimationName = Animations.SpaceBees,
 							OnTriggerTrackName = AudioClips.BgNormal
                         },
                         new Choice {
-                            Description = "The bees remain on Earth.",
+                            Description = "They remain on Earth.",
                             NextPivot = PivotIds.GetStung,
                             OnTriggerAnimationName = Animations.GetStung,
 							OnTriggerTrackName = AudioClips.BgGetStung
@@ -240,7 +240,7 @@ namespace Assets.GGJ2015.Scripts.Pivots {
 					Description = "What are you gonna do now?",
 					Choices = new List<Choice> {
 						new Choice {
-							Description = "Pesticide anyone?",
+							Description = "Pesticide?",
 							NextPivot = PivotIds.FlowerMutates,
                             OnTriggerAnimationName = Animations.Pesticide,
 							OnTriggerTrackName = AudioClips.BgFlowerMutates

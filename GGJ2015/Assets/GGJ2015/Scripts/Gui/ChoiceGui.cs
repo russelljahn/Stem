@@ -59,6 +59,7 @@ namespace Assets.GGJ2015.Scripts.Gui {
 
 
 		public void AnimateOut(float time = 1.0f, Action onComplete = null) {
+            _button.OnDeselect(null);
             TweenUtils.TweenAlpha(_canvasGroup, 0f, time, _animateOutEasing, onComplete);
 		}		
 	}

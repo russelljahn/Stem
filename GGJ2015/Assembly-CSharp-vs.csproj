@@ -66,6 +66,7 @@
      <Compile Include="Assets\GGJ2015\Scripts\Gui\PivotAnimations\InfectOthersAnimation.cs" />
      <Compile Include="Assets\GGJ2015\Scripts\Gui\PivotAnimations\PivotAnimation.cs" />
      <Compile Include="Assets\GGJ2015\Scripts\Gui\PivotAnimations\SimpleAnimation.cs" />
+     <Compile Include="Assets\GGJ2015\Scripts\Gui\PivotAnimations\SimpleAnimationWithEndLoop.cs" />
      <Compile Include="Assets\GGJ2015\Scripts\Gui\PivotAnimations\SpaceBeesAnimation.cs" />
      <Compile Include="Assets\GGJ2015\Scripts\Pivots\Choice.cs" />
      <Compile Include="Assets\GGJ2015\Scripts\Pivots\Page.cs" />
