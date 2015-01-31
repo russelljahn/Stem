@@ -11,10 +11,12 @@ namespace Assets.Stem.Scripts.Audio {
         [SerializeField] protected List<AudioClip> Clips = new List<AudioClip>();
 
         public const string BgNormal = "BgNormal";
+
         public const string SfxButton = "SfxButton";
         public const string SfxBootStomp = "SfxBootStomp";
+        public const string SfxSplash = "SfxSplash";
+        public const string SfxStraw = "SfxStraw";
 
-        //public const string BgPeePuddle = "BgPeePuddle";
         //public const string BgRumblyTummy = "BgRumblyTummy";
         //public const string BgFriendDies = "BgFriendDies";
         //public const string BgGotEbola = "BgGotEbola";
@@ -89,6 +91,9 @@ namespace Assets.Stem.Scripts.Audio {
                     return AudioTrackIds.Sfx1;
 
                 case SfxBootStomp:
+                case SfxStraw:
+                case SfxSplash:
+
                     return AudioTrackIds.Sfx2;
 
                 default:

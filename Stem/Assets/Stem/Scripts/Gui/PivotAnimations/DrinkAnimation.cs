@@ -1,3 +1,4 @@
+using Assets.Stem.Scripts.Audio;
 using Assets.Stem.Scripts.Extensions;
 using Assets.Stem.Scripts.Utils;
 using UnityEngine;
@@ -19,6 +20,7 @@ namespace Assets.Stem.Scripts.Gui.PivotAnimations {
         [SerializeField] private SpriteRenderer _getSickSpriteRenderer;
         [SerializeField] private SpriteRenderer _hospitalSpriteRenderer;
 
+        [SerializeField] private float _strawSfxPlayDelay = 0f;
 
 
 
@@ -32,6 +34,7 @@ namespace Assets.Stem.Scripts.Gui.PivotAnimations {
 
             Length = _drinkAnimationClip.length + _getSickAnimationClip.length + _fadeTime + _waitTime;
             this.InvokeAfterTime(_drinkAnimationClip.length, GetSickAnimation);
+            this.InvokeAfterTime(_strawSfxPlayDelay, () => AudioManager.PlayTrackOneShot(AudioClips.SfxStraw));
         }
 
 

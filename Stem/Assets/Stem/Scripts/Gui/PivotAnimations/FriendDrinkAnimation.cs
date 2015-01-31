@@ -1,4 +1,4 @@
-using System.Security.Cryptography;
+using Assets.Stem.Scripts.Audio;
 using Assets.Stem.Scripts.Extensions;
 using Assets.Stem.Scripts.Utils;
 using UnityEngine;
@@ -8,7 +8,6 @@ namespace Assets.Stem.Scripts.Gui.PivotAnimations {
     public class FriendDrinkAnimation : PivotAnimation {
 
         [SerializeField] private AnimationClip _friendDrinkAnimationClip;
-        //[SerializeField] private Animator _friendDrinkAnimator;
 
         [SerializeField] private float _faceShortenAnimationTime = 1.0f;
 
@@ -20,6 +19,9 @@ namespace Assets.Stem.Scripts.Gui.PivotAnimations {
         [SerializeField] private SpriteRenderer _friendDrinkSpriteRenderer;
         [SerializeField] private SpriteRenderer _gravestoneSpriteRenderer;
 
+        [SerializeField] private float _strawSfxPlayDelay = 1.1f;
+
+
 
         private void OnEnable() {
             _peeSpriteRenderer.color = new Color(1f, 1f, 1f, 1f);
@@ -28,6 +30,8 @@ namespace Assets.Stem.Scripts.Gui.PivotAnimations {
 
             Length = _friendDrinkAnimationClip.length + _faceFadeInTime + _faceFadeOutTime - _faceShortenAnimationTime;
             TweenUtils.TweenAlpha(_friendDrinkSpriteRenderer, 1f, _faceFadeInTime, _fadeEasing, GetSickAnimation);
+
+            this.InvokeAfterTime(_strawSfxPlayDelay, () => AudioManager.PlayTrackOneShot(AudioClips.SfxStraw));
         }
 
 

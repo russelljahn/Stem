@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Linq;
 using Assets.Stem.Scripts.Constants;
 using Assets.Stem.Scripts.Extensions;
@@ -81,10 +81,10 @@ namespace Assets.Stem.Scripts.Audio {
                 Debug.LogError("GameObject with tag '" + TagConstants.PivotAnimationsRoot + "' is null!");
             }
 
-            Instance.PivotAnimations.Clear();
-            Instance.PivotAnimations.Capacity = pivotAnimationsRoot.transform.childCount;
-
             var pivotAnimations = pivotAnimationsRoot.GetComponentsInChildren<PivotAnimation>(true);
+            Instance.PivotAnimations.Clear();
+            Instance.PivotAnimations.Capacity = pivotAnimations.Length;
+
             foreach (var pivotAnimation in pivotAnimations) {
                 Instance.PivotAnimations.Add(pivotAnimation);
             }
