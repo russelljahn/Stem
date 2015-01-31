@@ -330,7 +330,7 @@ GameObject:
   - 224: {fileID: 33196962}
   m_Layer: 5
   m_Name: Pivot Animations
-  m_TagString: Untagged
+  m_TagString: PivotAnimationsRoot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -857,6 +857,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
   _targetLocalPosition: {x: 0, y: -135, z: 0}
+  _bgNormalFadeVolume: .25
+  _bgNormalFadeTime: 3.5
 --- !u!1 &182948348
 GameObject:
   m_ObjectHideFlags: 0
@@ -1053,12 +1055,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 184400789}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34314dbed18824fec9e891ace9c505b3, type: 3}
+  m_Script: {fileID: 11500000, guid: 2d5b1962aa631431dbec87d54b13653b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   AudioManager: {fileID: 1871092769}
   _length: 0
   _animationClip: {fileID: 7400000, guid: e2a4115fbdf004e5499a015e2ddd3272, type: 2}
+  _sfxClip: {fileID: 8300000, guid: 6c51ed02c350342dca30c1d0fdd0146a, type: 3}
+  _sfxPlayTime: 1
 --- !u!1 &207397103
 GameObject:
   m_ObjectHideFlags: 0
@@ -1660,6 +1664,7 @@ MonoBehaviour:
   _peeSpriteRenderer: {fileID: 1966929513}
   _friendDrinkSpriteRenderer: {fileID: 1089781473}
   _gravestoneSpriteRenderer: {fileID: 1210684252}
+  _strawSfxPlayDelay: 1.10000002
 --- !u!1 &378661711
 GameObject:
   m_ObjectHideFlags: 0
@@ -1932,6 +1937,7 @@ MonoBehaviour:
   _ashesWaitTime: .5
   _smoke: {fileID: 1834342755}
   _smokePlayTime: .234999999
+  _crossfadeNormalBgTime: 2.5
 --- !u!1 &555113902
 GameObject:
   m_ObjectHideFlags: 0
@@ -2508,6 +2514,7 @@ MonoBehaviour:
   _drinkSpriteRenderer: {fileID: 900340498}
   _getSickSpriteRenderer: {fileID: 1507818982}
   _hospitalSpriteRenderer: {fileID: 2108115614}
+  _strawSfxPlayDelay: 0
 --- !u!1 &891889719
 GameObject:
   m_ObjectHideFlags: 0
@@ -3556,7 +3563,7 @@ GameObject:
   - 224: {fileID: 1228372061}
   - 114: {fileID: 1228372062}
   m_Layer: 5
-  m_Name: InfectOthers
+  m_Name: God
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3592,7 +3599,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1228372060}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a059cb0a51924b89bd6ee58aa377b5e, type: 3}
+  m_Script: {fileID: 11500000, guid: 97e7e6b8d0597431c90fa81e50a17234, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   AudioManager: {fileID: 1871092769}
@@ -3600,7 +3607,9 @@ MonoBehaviour:
   _ebolaSpriteRenderer: {fileID: 1613747991}
   _text: {fileID: 154714101}
   _delayPerLetter: .0649999976
-  _extraTotalLength: 1
+  _extraAnimationLength: 1
+  _fourthWallSfxPitch: .5
+  _bgNormalFadeVolume: .25
 --- !u!1 &1234876118
 GameObject:
   m_ObjectHideFlags: 0
@@ -3901,6 +3910,7 @@ MonoBehaviour:
   - 3
   _time: 0
   _currentTimeIndex: 0
+  _bgNormalFadeVolume: .25
 --- !u!1 &1437382804
 GameObject:
   m_ObjectHideFlags: 0
@@ -3976,6 +3986,7 @@ MonoBehaviour:
   _drinkSpriteRenderer: {fileID: 72200222}
   _getSickSpriteRenderer: {fileID: 1928934983}
   _hospitalSpriteRenderer: {fileID: 1638845585}
+  _strawSfxPlayDelay: 0
 --- !u!1 &1441129312
 GameObject:
   m_ObjectHideFlags: 0
@@ -4262,18 +4273,18 @@ MonoBehaviour:
     Description: 
   _currentPivotAnimation: {fileID: 0}
   _guiFadeTime: .25
-  _musicFadeTime: 1
-  _musicFadeEasing:
+  _musicFadeInTime: 1
+  _musicFadeInEasing:
     serializedVersion: 2
     m_Curve:
     - time: 0
       value: 0
       inSlope: 0
-      outSlope: 0
+      outSlope: 1
       tangentMode: 0
     - time: 1
       value: 1
-      inSlope: 0
+      inSlope: 1
       outSlope: 0
       tangentMode: 0
     m_PreInfinity: 2
@@ -5239,7 +5250,7 @@ ParticleSystemRenderer:
   m_CameraVelocityScale: 0
   m_VelocityScale: 0
   m_LengthScale: 2
-  m_SortingFudge: 0
+  m_SortingFudge: 1
   m_NormalDirection: 1
   m_SortMode: 3
   m_Mesh: {fileID: 0}
@@ -6423,7 +6434,7 @@ MonoBehaviour:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-  _crossfadeTime: 1
+  _fadeTime: 1
 --- !u!1 &1879452530
 GameObject:
   m_ObjectHideFlags: 0
@@ -6654,22 +6665,21 @@ MonoBehaviour:
   - {fileID: 402283731}
   - {fileID: 1646447952}
   - {fileID: 306327911}
-  - {fileID: 0}
+  - {fileID: 1170582692}
   - {fileID: 1437382806}
+  - {fileID: 875491055}
   - {fileID: 372243620}
   - {fileID: 279052570}
   - {fileID: 925907402}
-  - {fileID: 875491055}
-  - {fileID: 1437382806}
   - {fileID: 1432522018}
   - {fileID: 1843918688}
   - {fileID: 1441129314}
+  - {fileID: 822955989}
   - {fileID: 184400791}
   - {fileID: 169276009}
+  - {fileID: 1228372062}
   - {fileID: 2001638256}
   - {fileID: 543415219}
-  - {fileID: 822955989}
-  - {fileID: 1228372062}
 --- !u!1 &1966929511
 GameObject:
   m_ObjectHideFlags: 0
@@ -6786,21 +6796,20 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 7baeb0074bd5c46bc8f0528a4ef44665, type: 3}
   - {fileID: 8300000, guid: aeebe69782db24b03919ae61645d29f2, type: 3}
   - {fileID: 8300000, guid: 1304dbd73ad4841ba83412768a6aad86, type: 3}
+  - {fileID: 8300000, guid: a2e40538bd2e64e5190e0a47d82a5d1a, type: 3}
   - {fileID: 8300000, guid: 182665582ef1d4898b70b752dbd2b06b, type: 3}
-  - {fileID: 8300000, guid: decdff584558a49d29e0a8e624608956, type: 3}
   - {fileID: 8300000, guid: 805a9c78113c142559b77a0a808f614b, type: 3}
   - {fileID: 8300000, guid: de264919788784282a5efd94a39c925a, type: 3}
   - {fileID: 8300000, guid: f9da9a39598794b3c92a1114bf3a01aa, type: 3}
   - {fileID: 8300000, guid: 56b7124ad17144235a3e521a44acc573, type: 3}
   - {fileID: 8300000, guid: aba6da4ad38d14d7eb540efef9c44868, type: 3}
   - {fileID: 8300000, guid: 669260aa685e944f99e029d533258fda, type: 3}
-  - {fileID: 8300000, guid: c803116b738e44059a6918601a7e0761, type: 3}
   - {fileID: 8300000, guid: 1f41d8ab170714ed1b1f3895a91b1e36, type: 3}
   - {fileID: 8300000, guid: a04d268ca3e834aad8691637544d6c53, type: 3}
+  - {fileID: 8300000, guid: cb874ecd3cc5c4b92a5918d135006b97, type: 3}
   - {fileID: 8300000, guid: 3a73b1dd5a3ff45599e1c383ddb5b108, type: 3}
   - {fileID: 8300000, guid: a7c8e9fe6016842a1abee9f0ab46d756, type: 3}
   - {fileID: 8300000, guid: cb0f451f601694b6d905dec888c15326, type: 3}
-  - {fileID: 8300000, guid: e69e37bf3e1204451b116c584b988d32, type: 3}
 --- !u!1 &1988395678
 GameObject:
   m_ObjectHideFlags: 0

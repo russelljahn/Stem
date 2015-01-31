@@ -1,11 +1,8 @@
 using System.Collections;
-using System.Security.Cryptography;
 using Assets.Stem.Scripts.Audio;
 using Assets.Stem.Scripts.Extensions;
-using Assets.Stem.Scripts.Utils;
 using UnityEngine;
 using UnityEngine.UI;
-
 
 
 namespace Assets.Stem.Scripts.Gui.PivotAnimations {
@@ -21,6 +18,7 @@ namespace Assets.Stem.Scripts.Gui.PivotAnimations {
 
         [SerializeField] private float _fourthWallSfxPitch = 0.75f;
 
+        [SerializeField] private float _bgNormalFadeVolume = 0.25f;
 
 
         private void OnEnable() {
@@ -31,7 +29,12 @@ namespace Assets.Stem.Scripts.Gui.PivotAnimations {
             Length = _initialText.Length * _delayPerLetter + _extraAnimationLength;
             _ebolaSpriteRenderer.color = Color.clear;
 
-            AudioManager.PlayTrackOneShot(AudioClips.SfxFourthWall, pitch: _fourthWallSfxPitch);
+            AudioManager.Fade(AudioClips.BgNormal, _bgNormalFadeVolume);
+            AudioManager.PlayTrackOneShot(AudioClips.SfxDreamHarp);
+
+            var fadeInTime = AudioClips.GetClip(AudioClips.SfxDreamHarp).length;
+            this.InvokeAfterTime(fadeInTime, () => AudioManager.Fade(AudioClips.BgNormal));
+
             StartCoroutine(TextAnimation());
         }
 

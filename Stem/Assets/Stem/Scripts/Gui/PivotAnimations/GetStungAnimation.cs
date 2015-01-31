@@ -1,6 +1,7 @@
 using Assets.Stem.Scripts.Extensions;
 using Assets.Stem.Scripts.Utils;
 using System.Collections.Generic;
+using Assets.Stem.Scripts.Audio;
 using Assets.Stem.Scripts.PropertyAttributes;
 using UnityEngine;
 using UnityEngine.UI;
@@ -24,6 +25,9 @@ namespace Assets.Stem.Scripts.Gui.PivotAnimations {
         [SerializeField, Readonly] private float _time;
         [SerializeField, Readonly] private int _currentTimeIndex;
 
+        [SerializeField] private float _bgNormalFadeVolume = 0.25f;
+
+
         private void OnEnable() {
             _getStungSpriteRenderer.color = Color.white;
 
@@ -35,6 +39,12 @@ namespace Assets.Stem.Scripts.Gui.PivotAnimations {
             _time = 0f;
             _currentTimeIndex = 0;
             _stingFlashTimes.Sort();
+
+            AudioManager.Fade(AudioClips.BgNormal, _bgNormalFadeVolume);
+            AudioManager.PlayTrackOneShot(AudioClips.SfxPsycho);
+
+            var fadeInTime = AudioClips.GetClip(AudioClips.SfxPsycho).length;
+            this.InvokeAfterTime(fadeInTime, () => AudioManager.Fade(AudioClips.BgNormal));
         }
 
 

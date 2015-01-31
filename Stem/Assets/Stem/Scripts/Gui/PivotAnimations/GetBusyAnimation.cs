@@ -1,4 +1,5 @@
 using System.Security.Cryptography;
+using Assets.Stem.Scripts.Audio;
 using Assets.Stem.Scripts.Extensions;
 using Assets.Stem.Scripts.Utils;
 using UnityEngine;
@@ -28,6 +29,7 @@ namespace Assets.Stem.Scripts.Gui.PivotAnimations {
         [SerializeField] private Animator _growFlowerAnimator;
         [SerializeField] private AnimationClip _growFlowerAnimationClip;
 
+        [SerializeField] private float _bgNormalFadeTime = 4f;
 
         private void OnEnable() {
             _growFlowerAnimator.speed = 0f;
@@ -37,6 +39,11 @@ namespace Assets.Stem.Scripts.Gui.PivotAnimations {
             this.InvokeAfterTime(_flytrapWaggleClip.length - _shortenFlytrapWaggleAnimationTime, FadeInHearts);
 
             _heartsSpriteRenderer.color = new Color(1f, 1f, 1f, 0f);
+
+            AudioManager.LoadClip(AudioClips.BgGetBusy);
+            AudioManager.PlayTrack(AudioClips.BgGetBusy);
+            AudioManager.Crossfade(AudioClips.BgNormal, AudioClips.BgGetBusy);
+            this.InvokeAfterTime(_bgNormalFadeTime, () => AudioManager.Crossfade(AudioClips.BgGetBusy, AudioClips.BgNormal));
         }
 
 

@@ -1,3 +1,4 @@
+using Assets.Stem.Scripts.Audio;
 using Assets.Stem.Scripts.Extensions;
 using Assets.Stem.Scripts.Utils;
 using UnityEngine;
@@ -17,6 +18,10 @@ namespace Assets.Stem.Scripts.Gui.PivotAnimations {
 
         private Vector3 _initialLocalScale;
 
+        [SerializeField] private float _bgNormalFadeVolume = 0.25f;
+        [SerializeField] private float _bgNormalFadeTime = 2f;
+
+
 
         private void OnEnable() {
             _initialLocalPosition = _biohazardImage.transform.localPosition;
@@ -27,6 +32,10 @@ namespace Assets.Stem.Scripts.Gui.PivotAnimations {
             TweenUtils.TweenLocalScale(_biohazardImage.transform, Vector3.one, _tweenTime, _tweenEasing);
             TweenUtils.TweenLocalPosition(_biohazardImage.transform, _targetLocalPosition, _tweenTime, _tweenEasing);
 
+            AudioManager.Fade(AudioClips.BgNormal, _bgNormalFadeVolume);
+            AudioManager.PlayTrackOneShot(AudioClips.BgRadioactive);
+
+            this.InvokeAfterTime(_bgNormalFadeTime, () => AudioManager.Crossfade(AudioClips.BgRadioactive, AudioClips.BgNormal));
             this.InvokeAfterTime(Length, RaiseFinishedEvent);
         }
 

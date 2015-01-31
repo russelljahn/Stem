@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Linq;
 using Assets.Stem.Scripts.Utils;
 using UnityEngine;
@@ -59,6 +59,7 @@ namespace Assets.Stem.Scripts.Audio {
 
         private void LoadClip(int trackId, AudioClip clip, float volume = 1.0f, float pitch = 1.0f, bool loop = false) {
             var track = _tracks[trackId];
+            track.time = 0f;
             track.clip = clip;
             track.volume = volume;
             track.pitch = pitch;
