@@ -1,6 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
+using Assets.Stem.Scripts.Constants;
 using Assets.Stem.Scripts.Extensions;
 using Assets.Stem.Scripts.Gui.PivotAnimations;
+using UnityEditor;
 using UnityEngine;
 
 
@@ -66,8 +69,27 @@ namespace Assets.Stem.Scripts.Audio {
                     return animation;
                 }
             }
-            Debug.LogError("Could not find clip with name: " + animationName);
+            Debug.LogError("Could not find animation clip with name: " + animationName);
             return null;
+        }
+
+
+        [MenuItem("Stem/Refresh Pivot Animations")]
+        private static void RefreshPivotAnimations() {
+            var pivotAnimationsRoot = GameObject.FindWithTag(TagConstants.PivotAnimationsRoot);
+            if (pivotAnimationsRoot.IsNull()) {
+                Debug.LogError("GameObject with tag '" + TagConstants.PivotAnimationsRoot + "' is null!");
+            }
+
+            Instance.PivotAnimations.Clear();
+            Instance.PivotAnimations.Capacity = pivotAnimationsRoot.transform.childCount;
+
+            var pivotAnimations = pivotAnimationsRoot.GetComponentsInChildren<PivotAnimation>(true);
+            foreach (var pivotAnimation in pivotAnimations) {
+                Instance.PivotAnimations.Add(pivotAnimation);
+            }
+
+            Debug.Log("Refreshed " + pivotAnimations.Length + " pivot animations!");
         }
     }
 }

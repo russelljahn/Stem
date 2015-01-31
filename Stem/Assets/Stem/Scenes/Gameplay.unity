@@ -837,6 +837,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cebf1799ebcd4d04a5e800630a01195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AudioManager: {fileID: 1871092769}
   _length: 0
   _biohazardImage: {fileID: 1746771705}
   _tweenTime: .5
@@ -1055,6 +1056,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34314dbed18824fec9e891ace9c505b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AudioManager: {fileID: 1871092769}
   _length: 0
   _animationClip: {fileID: 7400000, guid: e2a4115fbdf004e5499a015e2ddd3272, type: 2}
 --- !u!1 &207397103
@@ -1408,6 +1410,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e669b10cf1a14ea79e4932fd49ca091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AudioManager: {fileID: 1871092769}
   _length: 0
   _growFlowerAnimator: {fileID: 654495934}
   _growFlowerAnimationClip: {fileID: 7400000, guid: e12bbf777e09f45b5a2273274d4ce5c8,
@@ -1554,6 +1557,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d36016aac4f34411c9ac128bf3e65b98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AudioManager: {fileID: 1871092769}
   _length: 0
   _flytrapWaggleClip: {fileID: 7400000, guid: 5288f2970e085421e8a383d88d03854f, type: 2}
   _heartsClip: {fileID: 7400000, guid: 28b114c13dc004c7982553d923578c0b, type: 2}
@@ -1631,6 +1635,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a248fdd32510d4128ab819fcc8efe580, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AudioManager: {fileID: 1871092769}
   _length: 0
   _friendDrinkAnimationClip: {fileID: 7400000, guid: 7dc0b975458684f94ba8065c6505190e,
     type: 2}
@@ -1761,6 +1766,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3df77c2d5b8a4efab4068ab684104fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AudioManager: {fileID: 1871092769}
   _length: 0
   _sequenceAnimationClip: {fileID: 7400000, guid: b43e0c049775249dbbc44fb28957c791,
     type: 2}
@@ -1898,6 +1904,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f97a86e351de4f90b2c0a8e4b11225a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AudioManager: {fileID: 1871092769}
   _length: 0
   _growTime: .5
   _growEasing:
@@ -2269,6 +2276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc543fd7e67974b6e9e9765ba917c096, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AudioManager: {fileID: 1871092769}
   _length: 0
   _spaceBeesClip: {fileID: 7400000, guid: 166ba9c1fb9bb49c68482dc0a99749c7, type: 2}
   _flowerGrowsClip: {fileID: 7400000, guid: e12bbf777e09f45b5a2273274d4ce5c8, type: 2}
@@ -2474,6 +2482,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a41114bc3bd7e408f8c7bb2239585a82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AudioManager: {fileID: 1871092769}
   _length: 0
   _drinkAnimationClip: {fileID: 7400000, guid: 794a6519cb4984a9f90f53f0b30d0886, type: 2}
   _getSickAnimationClip: {fileID: 7400000, guid: 78ba980c189f54eed9a055dcf2cafb62,
@@ -2762,6 +2771,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34314dbed18824fec9e891ace9c505b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AudioManager: {fileID: 1871092769}
   _length: 0
   _animationClip: {fileID: 7400000, guid: 001fda279572741309fadf2c6176657e, type: 2}
 --- !u!1 &943771976
@@ -3409,11 +3419,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1170582690}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34314dbed18824fec9e891ace9c505b3, type: 3}
+  m_Script: {fileID: 11500000, guid: 2d5b1962aa631431dbec87d54b13653b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AudioManager: {fileID: 1871092769}
   _length: 0
   _animationClip: {fileID: 7400000, guid: b5f6867f153db437ebc520895ac68672, type: 2}
+  _sfxClip: {fileID: 8300000, guid: 7875e9c3416914c76817bbce49e23b85, type: 3}
+  _sfxPlayTime: .600000024
 --- !u!1 &1210684250
 GameObject:
   m_ObjectHideFlags: 0
@@ -3582,10 +3595,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a059cb0a51924b89bd6ee58aa377b5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AudioManager: {fileID: 1871092769}
   _length: 0
   _ebolaSpriteRenderer: {fileID: 1613747991}
   _text: {fileID: 154714101}
-  _delayPerLetter: .075000003
+  _delayPerLetter: .0649999976
   _extraTotalLength: 1
 --- !u!1 &1234876118
 GameObject:
@@ -3846,6 +3860,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0e36f54882ff438bbe0f75ed9854a12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AudioManager: {fileID: 1871092769}
   _length: 0
   _getStungClip: {fileID: 7400000, guid: cb98725bf54dc48f9aa8df0fcc094982, type: 2}
   _fadeTime: .5
@@ -3935,6 +3950,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a41114bc3bd7e408f8c7bb2239585a82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AudioManager: {fileID: 1871092769}
   _length: 0
   _drinkAnimationClip: {fileID: 7400000, guid: 4c32c805b64274fee8d52c22c46023ea, type: 2}
   _getSickAnimationClip: {fileID: 7400000, guid: 4d6bd94757cb24af5b4199ae767e904a,
@@ -4008,6 +4024,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3df77c2d5b8a4efab4068ab684104fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AudioManager: {fileID: 1871092769}
   _length: 0
   _sequenceAnimationClip: {fileID: 7400000, guid: 1e82cbfacb81643318d06e3d287bd6af,
     type: 2}
@@ -4243,7 +4260,6 @@ MonoBehaviour:
   _currentPivot:
     Id: 
     Description: 
-    Graphics: {fileID: 0}
   _currentPivotAnimation: {fileID: 0}
   _guiFadeTime: .25
   _musicFadeTime: 1
@@ -4728,6 +4744,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3df77c2d5b8a4efab4068ab684104fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AudioManager: {fileID: 1871092769}
   _length: 0
   _sequenceAnimationClip: {fileID: 7400000, guid: 3fb7a1092f3874a56bd2841f96ed1cf6,
     type: 2}
@@ -6334,6 +6351,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34314dbed18824fec9e891ace9c505b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AudioManager: {fileID: 1871092769}
   _length: 0
   _animationClip: {fileID: 7400000, guid: 6bd638afbf0234fed9f5ab4895e13702, type: 2}
 --- !u!1 &1871092767
@@ -6636,7 +6654,7 @@ MonoBehaviour:
   - {fileID: 402283731}
   - {fileID: 1646447952}
   - {fileID: 306327911}
-  - {fileID: 1170582692}
+  - {fileID: 0}
   - {fileID: 1437382806}
   - {fileID: 372243620}
   - {fileID: 279052570}
@@ -6750,8 +6768,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Clips:
-  - {fileID: 8300000, guid: bbcc2af4d80be4876bbf1a37685fbce3, type: 3}
+  - {fileID: 8300000, guid: 97236a20a1dbc4faabc99a209f11c203, type: 3}
+  - {fileID: 8300000, guid: 388909b07fc934cb8a1a029650e051a7, type: 3}
+  - {fileID: 8300000, guid: 6b3a2c1195f6d4867bf12f99ba9f8e20, type: 3}
   - {fileID: 8300000, guid: df8b94c19dcc74ab8b6d8db7e07ab60b, type: 3}
+  - {fileID: 8300000, guid: 6c51ed02c350342dca30c1d0fdd0146a, type: 3}
+  - {fileID: 8300000, guid: 32bd3b1230e494e999b4263421b4fd5f, type: 3}
+  - {fileID: 8300000, guid: 4fffe96251bd44b28bed8edacdd7e44d, type: 3}
+  - {fileID: 8300000, guid: 3d7e6cb29a2a1405e8ab5b8f83e93933, type: 3}
+  - {fileID: 8300000, guid: 53acbbf2b007c4d67b93db9f15866fee, type: 3}
+  - {fileID: 8300000, guid: 7875e9c3416914c76817bbce49e23b85, type: 3}
+  - {fileID: 8300000, guid: a3cad24412ba4406faf991b1a1ae3265, type: 3}
+  - {fileID: 8300000, guid: bbcc2af4d80be4876bbf1a37685fbce3, type: 3}
+  - {fileID: 8300000, guid: 738c75751d10448e386f1b3201138fb0, type: 3}
+  - {fileID: 8300000, guid: b2bb33e6c32fc4b12883df7887a9d3b0, type: 3}
+  - {fileID: 8300000, guid: 418b00071e770449bb5d17ba0b27b5c3, type: 3}
+  - {fileID: 8300000, guid: 7baeb0074bd5c46bc8f0528a4ef44665, type: 3}
+  - {fileID: 8300000, guid: aeebe69782db24b03919ae61645d29f2, type: 3}
+  - {fileID: 8300000, guid: 1304dbd73ad4841ba83412768a6aad86, type: 3}
+  - {fileID: 8300000, guid: 182665582ef1d4898b70b752dbd2b06b, type: 3}
+  - {fileID: 8300000, guid: decdff584558a49d29e0a8e624608956, type: 3}
+  - {fileID: 8300000, guid: 805a9c78113c142559b77a0a808f614b, type: 3}
+  - {fileID: 8300000, guid: de264919788784282a5efd94a39c925a, type: 3}
+  - {fileID: 8300000, guid: f9da9a39598794b3c92a1114bf3a01aa, type: 3}
+  - {fileID: 8300000, guid: 56b7124ad17144235a3e521a44acc573, type: 3}
+  - {fileID: 8300000, guid: aba6da4ad38d14d7eb540efef9c44868, type: 3}
+  - {fileID: 8300000, guid: 669260aa685e944f99e029d533258fda, type: 3}
+  - {fileID: 8300000, guid: c803116b738e44059a6918601a7e0761, type: 3}
+  - {fileID: 8300000, guid: 1f41d8ab170714ed1b1f3895a91b1e36, type: 3}
+  - {fileID: 8300000, guid: a04d268ca3e834aad8691637544d6c53, type: 3}
+  - {fileID: 8300000, guid: 3a73b1dd5a3ff45599e1c383ddb5b108, type: 3}
+  - {fileID: 8300000, guid: a7c8e9fe6016842a1abee9f0ab46d756, type: 3}
+  - {fileID: 8300000, guid: cb0f451f601694b6d905dec888c15326, type: 3}
+  - {fileID: 8300000, guid: e69e37bf3e1204451b116c584b988d32, type: 3}
 --- !u!1 &1988395678
 GameObject:
   m_ObjectHideFlags: 0
@@ -6912,6 +6961,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65fb67b81fc6a460c8c5bc1450b6a3a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AudioManager: {fileID: 1871092769}
   _length: 0
   _growTime: .5
   _growEasing:

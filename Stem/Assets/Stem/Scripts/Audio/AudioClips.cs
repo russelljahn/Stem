@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Linq;
 using System.Security.AccessControl;
 using Assets.Stem.Scripts.Extensions;
@@ -12,30 +12,32 @@ namespace Assets.Stem.Scripts.Audio {
 
         public const string BgNormal = "BgNormal";
         public const string SfxButton = "SfxButton";
-		public const string BgPeePuddle = "BgPeePuddle";
-		public const string BgRumblyTummy = "BgRumblyTummy";
-		public const string BgFriendDies = "BgFriendDies";
-		public const string BgGotEbola = "BgGotEbola";
-		public const string BgAreYouSure = "BgAreYouSure";
-		public const string BgYouSure = "BgYouSure";
-		public const string BgYouDied = "BgYouDied";
-		public const string BgInTrial = "BgInTrial";
-		public const string BgGrave = "BgGrave";
-		public const string BgAsylum = "BgAsylum";
-		public const string BgIncineration = "BgIncineration";
-		public const string BgStoryRoot = "BgStoryRoot";
-		public const string BgMakeFlowerBaby = "BgMakeFlowerBaby";
-		public const string BgBeFriends = "BgBeFriends";
-		public const string BgBeLovers = "BgBeLovers";
-		public const string BgExperiment = "BgExperiment";
-		public const string BgGetStung = "BgGetStung";
-		public const string BgInfinityAndBeyond = "BgInfinityAndBeyond";
-		public const string BgTerriblePerson = "TerriblePerson";
-		public const string BgFourthWall = "FourthWall";
-		public const string BgFlowerMutates = "FlowerMutates";
-		public const string BgBeeUtopia = "BeeUtopia";
-        public const string ButtonClick = "ButtonClick";
-		public const string BgYourBurial = "YourBurial";
+        public const string SfxBootStomp = "SfxBootStomp";
+
+        //public const string BgPeePuddle = "BgPeePuddle";
+        //public const string BgRumblyTummy = "BgRumblyTummy";
+        //public const string BgFriendDies = "BgFriendDies";
+        //public const string BgGotEbola = "BgGotEbola";
+        //public const string BgAreYouSure = "BgAreYouSure";
+        //public const string BgYouSure = "BgYouSure";
+        //public const string BgYouDied = "BgYouDied";
+        //public const string BgInTrial = "BgInTrial";
+        //public const string BgGrave = "BgGrave";
+        //public const string BgAsylum = "BgAsylum";
+        //public const string BgIncineration = "BgIncineration";
+        //public const string BgStoryRoot = "BgStoryRoot";
+        //public const string BgMakeFlowerBaby = "BgMakeFlowerBaby";
+        //public const string BgBeFriends = "BgBeFriends";
+        //public const string BgBeLovers = "BgBeLovers";
+        //public const string BgExperiment = "BgExperiment";
+        //public const string BgGetStung = "BgGetStung";
+        //public const string BgInfinityAndBeyond = "BgInfinityAndBeyond";
+        //public const string BgTerriblePerson = "TerriblePerson";
+        //public const string BgFourthWall = "FourthWall";
+        //public const string BgFlowerMutates = "FlowerMutates";
+        //public const string BgBeeUtopia = "BeeUtopia";
+        //public const string ButtonClick = "ButtonClick";
+        //public const string BgYourBurial = "YourBurial";
 
 
          #region Singleton nonsense
@@ -86,6 +88,9 @@ namespace Assets.Stem.Scripts.Audio {
                 case SfxButton:
                     return AudioTrackIds.Sfx1;
 
+                case SfxBootStomp:
+                    return AudioTrackIds.Sfx2;
+
                 default:
                     Debug.LogError(string.Format("Unknown clip name: " + clipName));
                     return AudioTrackIds.Sfx3;
@@ -104,6 +109,9 @@ namespace Assets.Stem.Scripts.Audio {
                 var clip = (AudioClip)AssetDatabase.LoadAssetAtPath(path, typeof (AudioClip));
                 Instance.Clips.Add(clip);
             }
+
+            Debug.Log("Refreshed " + assetPaths.Length + " audio clips!");
+
         }
     }
 }

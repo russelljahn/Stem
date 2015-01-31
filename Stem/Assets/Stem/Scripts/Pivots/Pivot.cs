@@ -8,7 +8,6 @@ namespace Assets.Stem.Scripts.Pivots {
     public class Pivot {
         public string Id;
         public string Description;
-        public PivotAnimation Graphics;
         public List<Choice> Choices;
     }
 }

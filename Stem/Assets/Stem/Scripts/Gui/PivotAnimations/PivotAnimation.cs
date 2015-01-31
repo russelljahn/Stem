@@ -1,13 +1,16 @@
 using UnityEngine;
 using System;
-using System.ComponentModel;
+using Assets.Stem.Scripts.Audio;
 using Assets.Stem.Scripts.PropertyAttributes;
 
 
 namespace Assets.Stem.Scripts.Gui.PivotAnimations {
     public abstract class PivotAnimation : MonoBehaviour {
 
+        [SerializeField] protected AudioManager AudioManager;
+
         public event Action Finished = delegate { };
+
 
         [SerializeField, Readonly] private float _length;
         public float Length { get { return _length; } protected set { _length = value; } }
