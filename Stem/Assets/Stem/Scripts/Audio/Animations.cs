@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Assets.Stem.Scripts.Constants;
 using Assets.Stem.Scripts.Extensions;
@@ -18,6 +18,7 @@ namespace Assets.Stem.Scripts.Audio {
         public const string DrinkPee = "DrinkPee";
         public const string DrinkWater = "DrinkWater";
         public const string GotEbola = "GotEbola";
+        public const string God = "God";
         public const string Grave = "Grave";
         public const string FlowerGrow = "FlowerGrow";
         public const string FlowersSprout = "FlowersSprout";
@@ -28,7 +29,6 @@ namespace Assets.Stem.Scripts.Audio {
         public const string Pesticide = "Pesticide";
         public const string SpaceBees = "SpaceBees";
         public const string WaterFlower = "WaterFlower";
-        public const string InfectOthers = "InfectOthers";
         public const string BeLovers = "BeLovers";
         public const string BaconWitch = "BaconWitch";
         public const string FriendDrink = "FriendDrink";

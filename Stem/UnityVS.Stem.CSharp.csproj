@@ -7,14 +7,16 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{095F1368-EEC2-98FD-D0FC-D7D62E3DE950}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <AssemblyName>Assembly-CSharp</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -40,14 +42,14 @@
     <Reference Include="Boo.Lang" />
     <Reference Include="UnityScript.Lang" />
     <Reference Include="UnityEngine">
-      <HintPath>Library\UnityAssemblies\UnityEngine.dll</HintPath>
+      <HintPath>..\..\..\Athgo\athgo-world\Libraries\Unity\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor">
-      <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
+      <HintPath>..\..\..\Athgo\athgo-world\Libraries\Unity\UnityEditor.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="UnityEngine.UI">
-      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
+      <HintPath>..\..\..\Athgo\athgo-world\Libraries\Unity\UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>\Applications\Unity\Unity.app\Contents\UnityExtensions\Unity\GUISystem\4.6.1\UnityEngine.UI.dll</HintPath>
@@ -58,6 +60,7 @@
     <Compile Include="Assets\Stem\Scripts\Audio\AudioClips.cs" />
     <Compile Include="Assets\Stem\Scripts\Audio\AudioManager.cs" />
     <Compile Include="Assets\Stem\Scripts\Audio\AudioTrackIds.cs" />
+    <Compile Include="Assets\Stem\Scripts\Constants\TagConstants.cs" />
     <Compile Include="Assets\Stem\Scripts\Extensions\MonoBehaviourExtensions.cs" />
     <Compile Include="Assets\Stem\Scripts\Extensions\ObjectExtensions.cs" />
     <Compile Include="Assets\Stem\Scripts\GameplayManager.cs" />
@@ -70,13 +73,17 @@
     <Compile Include="Assets\Stem\Scripts\Gui\PivotAnimations\GetSickAnimation.cs" />
     <Compile Include="Assets\Stem\Scripts\Gui\PivotAnimations\GetStungAnimation.cs" />
     <Compile Include="Assets\Stem\Scripts\Gui\PivotAnimations\GraveAnimation.cs" />
+    <Compile Include="Assets\Stem\Scripts\Gui\PivotAnimations\GetEbolaAnimation.cs" />
     <Compile Include="Assets\Stem\Scripts\Gui\PivotAnimations\GrowFlowerAnimation.cs" />
-    <Compile Include="Assets\Stem\Scripts\Gui\PivotAnimations\InfectOthersAnimation.cs" />
+    <Compile Include="Assets\Stem\Scripts\Gui\PivotAnimations\GodAnimation.cs" />
     <Compile Include="Assets\Stem\Scripts\Gui\PivotAnimations\PivotAnimation.cs" />
+    <Compile Include="Assets\Stem\Scripts\Gui\PivotAnimations\SimpleAnimationWithOneShotSfx.cs" />
     <Compile Include="Assets\Stem\Scripts\Gui\PivotAnimations\SimpleAnimation.cs" />
     <Compile Include="Assets\Stem\Scripts\Gui\PivotAnimations\SimpleAnimationWithEndLoop.cs" />
     <Compile Include="Assets\Stem\Scripts\Gui\PivotAnimations\SpaceBeesAnimation.cs" />
     <Compile Include="Assets\Stem\Scripts\Gui\TitleGui.cs" />
+    <Compile Include="Assets\Stem\Scripts\PingPongTweenOutlineDistance.cs" />
+    <Compile Include="Assets\Stem\Scripts\PingPongTweenGraphicColor.cs" />
     <Compile Include="Assets\Stem\Scripts\Pivots\Choice.cs" />
     <Compile Include="Assets\Stem\Scripts\Pivots\Page.cs" />
     <Compile Include="Assets\Stem\Scripts\Pivots\Pivot.cs" />
@@ -86,6 +93,7 @@
     <Compile Include="Assets\Stem\Scripts\PropertyAttributes\MaxAttribute.cs" />
     <Compile Include="Assets\Stem\Scripts\PropertyAttributes\MinAttribute.cs" />
     <Compile Include="Assets\Stem\Scripts\PropertyAttributes\ReadonlyAttribute.cs" />
+    <Compile Include="Assets\Stem\Scripts\SpeedTimeKey.cs" />
     <Compile Include="Assets\Stem\Scripts\Utils\AnimationCurveUtils.cs" />
     <Compile Include="Assets\Stem\Scripts\Utils\Pointer.cs" />
     <Compile Include="Assets\Stem\Scripts\Utils\TweenUtils.cs" />

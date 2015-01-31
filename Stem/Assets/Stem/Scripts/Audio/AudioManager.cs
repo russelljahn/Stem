@@ -13,7 +13,7 @@ namespace Assets.Stem.Scripts.Audio {
         [SerializeField] private AnimationCurve _fadeInEasing = AnimationCurveUtils.GetLinearCurve();
         [SerializeField] private AnimationCurve _fadeOutEasing = AnimationCurveUtils.GetLinearCurve();
 
-        [SerializeField] private float _crossfadeTime = 1.0f;
+        [SerializeField] private float _fadeTime = 1.0f;
 
 
         private void Awake() {
@@ -29,56 +29,100 @@ namespace Assets.Stem.Scripts.Audio {
                     break;
                 }
                 var source = sources [trackId];
+                SetDefaultSourceSettings(source);
                 _tracks.Add(source);
             }
 
             while (trackId < NumTracks) {
                 var source = gameObject.AddComponent<AudioSource>();
+                SetDefaultSourceSettings(source);
                 _tracks.Add(source);
                 ++trackId;
             }
         }
 
 
-        public void LoadClip(int trackId, AudioClip clip, float volume = 1.0f, bool loop = false) {
-            var track = _tracks[trackId];
-            track.clip = clip;
-            track.loop = loop;
-            track.volume = volume;
+        private void SetDefaultSourceSettings(AudioSource source) {
+            source.loop = false;
+            source.playOnAwake = false;
+            source.volume = 1f;
+            source.pitch = 1f;
         }
 
 
-        public void PlayTrack(int trackId) {
+        public void LoadClip(string clipName, float volume = 1.0f, float pitch = 1.0f, bool loop = false) {
+            var trackId = AudioClips.GetClipTrackId(clipName);
+            var clip = AudioClips.GetClip(clipName);
+            LoadClip(trackId, clip, volume, pitch, loop);
+        }
+
+
+        private void LoadClip(int trackId, AudioClip clip, float volume = 1.0f, float pitch = 1.0f, bool loop = false) {
             var track = _tracks[trackId];
+            track.clip = clip;
+            track.volume = volume;
+            track.pitch = pitch;
+            track.loop = loop;
+        }
+
+
+        public void PlayTrack(string clipName) {
+            var trackId = AudioClips.GetClipTrackId(clipName);
+            PlayTrack(trackId);
+        }
+
+
+        private void PlayTrack(int trackId) {
+            var track = _tracks [trackId];
             track.Play();
         }
 
 
-        public void PlayTrackOneShot(int trackId) {
+        public void PlayTrackOneShot(string clipName, float volume = 1.0f, float pitch = 1.0f) {
+            var clip = AudioClips.GetClip(clipName);
+            var trackId = AudioClips.GetClipTrackId(clipName);
+            LoadClip(trackId, clip, volume, pitch);
+            PlayTrackOneShot(trackId);
+        }
+
+
+        private void PlayTrackOneShot(int trackId) {
             var track = _tracks [trackId];
             track.PlayOneShot(track.clip);
         }
 
 
-        public void PlayTrackOneShot(string clipName) {
-            var clip = AudioClips.GetClip(clipName);
-            var trackId = AudioClips.GetClipTrackId(clipName);
-            LoadClip(trackId, clip);
-            PlayTrackOneShot(trackId);
+        public void Crossfade(string fadeOutClipName, string fadeInClipName, float fadeOutVolume = 0.0f, float fadeInVolume = 1.0f) {
+            var fadeOutTrackId = AudioClips.GetClipTrackId(fadeOutClipName);
+            var fadeInTrackId = AudioClips.GetClipTrackId(fadeInClipName);
+
+            if (fadeInTrackId == fadeOutTrackId) {
+                Debug.LogError(string.Format("'{0}' and '{1}' share the same track id of '{2}'!", fadeOutClipName, fadeInClipName, fadeInTrackId));
+                return;
+            }
+
+            Crossfade(fadeOutTrackId, fadeInTrackId, fadeOutVolume, fadeInVolume);
         }
 
 
-
-        public void Crossfade(int fadeInTrackId, int fadeOutTrackId, float fadeInVolume = 0.0f, float fadeOutVolume = 1.0f) {
+        private void Crossfade(int fadeOutTrackId, int fadeInTrackId, float fadeOutVolume = 0.0f, float fadeInVolume = 1.0f) {
             Fade(fadeOutTrackId, fadeOutVolume, _fadeOutEasing);
             Fade(fadeInTrackId, fadeInVolume, _fadeInEasing);
         }
 
 
-        public void Fade(int trackId, float volume = 1.0f, AnimationCurve easing = null) {
+        public void Fade(string clipName, float volume = 1.0f, AnimationCurve easing = null) {
             easing = easing ?? AnimationCurveUtils.GetLinearCurve();
-            var fadeInTrack = _tracks [trackId];
-            TweenUtils.TweenVolume(fadeInTrack, volume, _crossfadeTime, easing);
+            var trackId = AudioClips.GetClipTrackId(clipName);
+            var fadeTrack = _tracks [trackId];
+            TweenUtils.TweenVolume(fadeTrack, volume, _fadeTime, easing);
+        }
+
+
+        private void Fade(int trackId, float volume = 1.0f, AnimationCurve easing = null) {
+            easing = easing ?? AnimationCurveUtils.GetLinearCurve();
+            var fadeTrack = _tracks [trackId];
+            TweenUtils.TweenVolume(fadeTrack, volume, _fadeTime, easing);
         }
 
     }

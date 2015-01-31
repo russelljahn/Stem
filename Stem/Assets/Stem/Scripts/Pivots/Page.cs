@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using Assets.Stem.Scripts.Extensions;
 using Assets.Stem.Scripts.Audio;
@@ -20,8 +20,8 @@ namespace Assets.Stem.Scripts.Pivots {
         [SerializeField, Readonly] private PivotAnimation _currentPivotAnimation;
 
         [SerializeField] private float _guiFadeTime = 1f;
-        [SerializeField] private float _musicFadeTime = 1f;
-        [SerializeField] private AnimationCurve _musicFadeEasing = AnimationCurveUtils.GetLinearCurve();
+        [SerializeField] private float _musicFadeInTime = 1f;
+        [SerializeField] private AnimationCurve _musicFadeInEasing = AnimationCurveUtils.GetLinearCurve();
 
 
         public void Setup(Story story, PivotAnimation initialAnimation) {
@@ -31,12 +31,9 @@ namespace Assets.Stem.Scripts.Pivots {
 
 
         private void Start() {
-            var normalBgTrackId = AudioClips.GetClipTrackId(AudioClips.BgNormal);
-            var nextChoiceClip = AudioClips.GetClip(AudioClips.BgNormal);
-
-            _audioManager.LoadClip(normalBgTrackId, nextChoiceClip, 0f, true);
-            _audioManager.PlayTrack(normalBgTrackId);
-            _audioManager.Fade(normalBgTrackId, _musicFadeTime, _musicFadeEasing);
+            _audioManager.LoadClip(AudioClips.BgNormal, 0f);
+            _audioManager.PlayTrack(AudioClips.BgNormal);
+            _audioManager.Fade(AudioClips.BgNormal, _musicFadeInTime, _musicFadeInEasing);
         }
 
 

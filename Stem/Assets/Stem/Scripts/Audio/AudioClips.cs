@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Security.AccessControl;
 using Assets.Stem.Scripts.Extensions;
@@ -11,9 +11,11 @@ namespace Assets.Stem.Scripts.Audio {
         [SerializeField] protected List<AudioClip> Clips = new List<AudioClip>();
 
         public const string BgNormal = "BgNormal";
+        public const string BgHell = "BgHell";
 
-        public const string SfxButton = "SfxButton";
         public const string SfxBootStomp = "SfxBootStomp";
+        public const string SfxButton = "SfxButton";
+        public const string SfxFourthWall = "SfxFourthWall";
         public const string SfxSplash = "SfxSplash";
         public const string SfxStraw = "SfxStraw";
 
@@ -87,13 +89,16 @@ namespace Assets.Stem.Scripts.Audio {
                 case BgNormal:
                     return AudioTrackIds.Bg1;
 
+                case BgHell:
+                    return AudioTrackIds.Bg2;
+
                 case SfxButton:
                     return AudioTrackIds.Sfx1;
 
                 case SfxBootStomp:
+                case SfxFourthWall:
                 case SfxStraw:
                 case SfxSplash:
-
                     return AudioTrackIds.Sfx2;
 
                 default:

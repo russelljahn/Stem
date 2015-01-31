@@ -1,3 +1,4 @@
+using Assets.Stem.Scripts.Audio;
 using Assets.Stem.Scripts.Extensions;
 using Assets.Stem.Scripts.Utils;
 using UnityEngine;
@@ -27,6 +28,9 @@ namespace Assets.Stem.Scripts.Gui.PivotAnimations {
         [SerializeField] private ParticleSystem _smoke;
         [SerializeField] private float _smokePlayTime = 0.235f;
 
+        [SerializeField] private float _crossfadeNormalBgTime = 2.0f;
+
+
 
 
         private void OnEnable() {
@@ -38,6 +42,11 @@ namespace Assets.Stem.Scripts.Gui.PivotAnimations {
 
             this.InvokeAfterTime(_baconWitchAnimationClip.length - _growTime, FadeOutWitch);
             this.InvokeAfterTime(_smokePlayTime, () => _smoke.Play());
+
+            AudioManager.LoadClip(AudioClips.BgHell);
+            AudioManager.PlayTrack(AudioClips.BgHell);
+            AudioManager.Crossfade(AudioClips.BgNormal, AudioClips.BgHell);
+            this.InvokeAfterTime(_crossfadeNormalBgTime, () => AudioManager.Crossfade(AudioClips.BgHell, AudioClips.BgNormal));
         }
 
 
