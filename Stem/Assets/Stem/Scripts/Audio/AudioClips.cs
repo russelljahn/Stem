@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Security.AccessControl;
 using Assets.Stem.Scripts.Extensions;
+using UnityEditor;
 using UnityEngine;
 
 
 namespace Assets.Stem.Scripts.Audio {
     public class AudioClips : MonoBehaviour {
-       
-
         [SerializeField] protected List<AudioClip> Clips = new List<AudioClip>();
 
         public const string BgNormal = "BgNormal";
@@ -89,6 +89,20 @@ namespace Assets.Stem.Scripts.Audio {
                 default:
                     Debug.LogError(string.Format("Unknown clip name: " + clipName));
                     return AudioTrackIds.Sfx3;
+            }
+        }
+
+
+        [MenuItem("Stem/Refresh Audio Clips")]
+        private static void RefreshAudioClips() {
+            var assetPaths = AssetDatabase.GetAllAssetPaths().Where(asset => asset.EndsWith(".mp3")).ToArray();
+            
+            Instance.Clips.Clear();
+            Instance.Clips.Capacity = assetPaths.Length;
+
+            foreach (var path in assetPaths) {
+                var clip = (AudioClip)AssetDatabase.LoadAssetAtPath(path, typeof (AudioClip));
+                Instance.Clips.Add(clip);
             }
         }
     }
