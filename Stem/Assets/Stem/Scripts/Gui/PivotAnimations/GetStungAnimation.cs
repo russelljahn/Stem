@@ -1,6 +1,9 @@
 using Assets.Stem.Scripts.Extensions;
 using Assets.Stem.Scripts.Utils;
+using System.Collections.Generic;
+using Assets.Stem.Scripts.PropertyAttributes;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 namespace Assets.Stem.Scripts.Gui.PivotAnimations {
@@ -14,7 +17,12 @@ namespace Assets.Stem.Scripts.Gui.PivotAnimations {
         [SerializeField] private SpriteRenderer _getStungSpriteRenderer;
         [SerializeField] private SpriteRenderer _hospitalSpriteRenderer;
 
+        [SerializeField] private Image _stingFlash;
+        [SerializeField] private Color _stingFlashColor = Color.yellow;
 
+        [SerializeField] private List<float> _stingFlashTimes;
+        [SerializeField, Readonly] private float _time;
+        [SerializeField, Readonly] private int _currentTimeIndex;
 
         private void OnEnable() {
             _getStungSpriteRenderer.color = Color.white;
@@ -23,6 +31,22 @@ namespace Assets.Stem.Scripts.Gui.PivotAnimations {
             this.InvokeAfterTime(_getStungClip.length - _fadeTime, FadeToHospital);
 
             _hospitalSpriteRenderer.color = new Color(1f, 1f, 1f, 0f);
+
+            _time = 0f;
+            _currentTimeIndex = 0;
+            _stingFlashTimes.Sort();
+        }
+
+
+        private void Update() {
+            _time += Time.deltaTime;
+            if (_currentTimeIndex < _stingFlashTimes.Count && _time >= _stingFlashTimes [_currentTimeIndex]) {
+                _stingFlash.color = _stingFlashColor;
+                ++_currentTimeIndex;
+            }
+            else {
+                _stingFlash.color = Color.clear;                
+            }
         }
 
 

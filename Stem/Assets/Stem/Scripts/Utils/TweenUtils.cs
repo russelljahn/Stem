@@ -459,6 +459,12 @@ namespace Assets.Stem.Scripts.Utils
         }
 
 
+        public static void TweenSize(Outline outline, Vector2 endValue, float time, AnimationCurve easing = null, params Action [] onComplete) {
+            var ptr = new Pointer<Vector2>(() => outline.effectDistance, value => outline.effectDistance = value);
+            TweenVector2(ptr, endValue, time, easing, onComplete);
+        }
+
+
         public static void TweenColor(Color color, Color endValue, float time, AnimationCurve easing = null, params Action [] onComplete)
         {
             var ptr = new Pointer<Color>(() => color, value => color = value);
@@ -474,6 +480,12 @@ namespace Assets.Stem.Scripts.Utils
 
         public static void TweenColor(SpriteRenderer spriteRenderer, Color endValue, float time, AnimationCurve easing = null, params Action [] onComplete) {
             var ptr = new Pointer<Color>(() => spriteRenderer.color, value => { spriteRenderer.color = value; });
+            TweenColor(ptr, endValue, time, easing, onComplete);
+        }
+
+
+        public static void TweenColor(Outline outline, Color endValue, float time, AnimationCurve easing = null, params Action [] onComplete) {
+            var ptr = new Pointer<Color>(() => outline.effectColor, value => outline.effectColor = value);
             TweenColor(ptr, endValue, time, easing, onComplete);
         }
 

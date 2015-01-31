@@ -1,46 +1,44 @@
+using System.Collections;
 using System.Security.Cryptography;
 using Assets.Stem.Scripts.Extensions;
 using Assets.Stem.Scripts.Utils;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 
 namespace Assets.Stem.Scripts.Gui.PivotAnimations {
     public class InfectOthersAnimation : PivotAnimation {
 
-        [SerializeField] private float _shrinkTime = 0.5f;
-        [SerializeField] private AnimationCurve _shrinkEasing = AnimationCurveUtils.GetLinearCurve();
-
-
-        [SerializeField] private float _textFadeTime = 0.25f;
-        [SerializeField] private AnimationCurve _textFadeEasing = AnimationCurveUtils.GetLinearCurve();
-
         [SerializeField] private SpriteRenderer _ebolaSpriteRenderer;
-        [SerializeField] private SpriteRenderer _textSpriteRenderer;
+        [SerializeField] private Text _text;
 
+        private string _initialText;
 
-        private Vector3 _initialScale;
-
+        [SerializeField] private float _delayPerLetter = 0.5f;
+        [SerializeField] private float _extraTotalLength = 1f;
 
 
         private void OnEnable() {
-            _initialScale = _ebolaSpriteRenderer.transform.localScale;
+            _initialText = _text.text;
+            _text.text = "";
 
             _ebolaSpriteRenderer.color = new Color(1f, 1f, 1f, 1f);
-            _textSpriteRenderer.color = new Color(1f, 1f, 1f, 0f);
-            Length = _shrinkTime + _textFadeTime;
+            Length = _initialText.Length * _delayPerLetter  + _extraTotalLength;
+            _ebolaSpriteRenderer.color = Color.clear;
 
-            TweenUtils.TweenLocalScale(_ebolaSpriteRenderer.transform, Vector3.zero, _shrinkTime, _shrinkEasing, FadeInText);
+            StartCoroutine(TextAnimation());
         }
 
 
-        private void FadeInText() {
-            TweenUtils.TweenAlpha(_textSpriteRenderer, 1f, _textFadeTime, _textFadeEasing, RaiseFinishedEvent);
-        }
-
-
-        private void OnDisable() {
-            _ebolaSpriteRenderer.transform.localScale = _initialScale;
-            _textSpriteRenderer.color = new Color(1f, 1f, 1f, 0f);
+        private IEnumerator TextAnimation() {
+            int currentLetter = 0;
+            while (currentLetter < _initialText.Length) {
+                _text.text += _initialText[currentLetter];
+                yield return new WaitForSeconds(_delayPerLetter);
+                ++currentLetter;
+            }
+            RaiseFinishedEvent();
         }
 
     }

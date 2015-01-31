@@ -24,15 +24,20 @@ namespace Assets.Stem.Scripts.Gui.PivotAnimations {
 
         [SerializeField] private float _ashesWaitTime = 0.5f;
 
+        [SerializeField] private ParticleSystem _smoke;
+        [SerializeField] private float _smokePlayTime = 0.235f;
+
+
 
         private void OnEnable() {
             _growFlowerAnimator.speed = 0;
             _baconWitchSpriteRenderer.color = Color.white;
-            _growFlowerSpriteRenderer.color = new Color(0f, 0f, 0f, 0f);
+            _growFlowerSpriteRenderer.color = Color.clear;
 
             Length = _baconWitchAnimationClip.length + _growTime + _growFlowerAnimationClip.length;
 
             this.InvokeAfterTime(_baconWitchAnimationClip.length - _growTime, FadeOutWitch);
+            this.InvokeAfterTime(_smokePlayTime, () => _smoke.Play());
         }
 
 
