@@ -19,33 +19,10 @@ namespace Assets.Stem.Scripts.Audio {
         public const string SfxButton = "SfxButton";
         public const string SfxDreamHarp = "SfxDreamHarp";
         public const string SfxFourthWall = "SfxFourthWall";
+        public const string SfxPesticide = "SfxPesticide";
         public const string SfxPsycho = "SfxPsycho";
         public const string SfxSplash = "SfxSplash";
         public const string SfxStraw = "SfxStraw";
-
-        //public const string BgRumblyTummy = "BgRumblyTummy";
-        //public const string BgFriendDies = "BgFriendDies";
-        //public const string BgGotEbola = "BgGotEbola";
-        //public const string BgAreYouSure = "BgAreYouSure";
-        //public const string BgYouSure = "BgYouSure";
-        //public const string BgYouDied = "BgYouDied";
-        //public const string BgInTrial = "BgInTrial";
-        //public const string BgGrave = "BgGrave";
-        //public const string BgAsylum = "BgAsylum";
-        //public const string BgIncineration = "BgIncineration";
-        //public const string BgStoryRoot = "BgStoryRoot";
-        //public const string BgMakeFlowerBaby = "BgMakeFlowerBaby";
-        //public const string BgBeFriends = "BgBeFriends";
-        //public const string BgBeLovers = "BgBeLovers";
-        //public const string BgExperiment = "BgExperiment";
-        //public const string BgGetStung = "BgGetStung";
-        //public const string BgInfinityAndBeyond = "BgInfinityAndBeyond";
-        //public const string BgTerriblePerson = "TerriblePerson";
-        //public const string BgFourthWall = "FourthWall";
-        //public const string BgFlowerMutates = "FlowerMutates";
-        //public const string BgBeeUtopia = "BeeUtopia";
-        //public const string ButtonClick = "ButtonClick";
-        //public const string BgYourBurial = "YourBurial";
 
 
          #region Singleton nonsense
@@ -104,6 +81,7 @@ namespace Assets.Stem.Scripts.Audio {
                 case SfxBootStomp:
                 case SfxDreamHarp:
                 case SfxFourthWall:
+                case SfxPesticide:
                 case SfxPsycho:
                 case SfxStraw:
                 case SfxSplash:
