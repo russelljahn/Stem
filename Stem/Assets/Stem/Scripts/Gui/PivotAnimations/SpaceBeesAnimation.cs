@@ -1,3 +1,4 @@
+using Assets.Stem.Scripts.Audio;
 using Assets.Stem.Scripts.Extensions;
 using Assets.Stem.Scripts.Utils;
 using UnityEngine;
@@ -17,14 +18,22 @@ namespace Assets.Stem.Scripts.Gui.PivotAnimations {
         [SerializeField] private SpriteRenderer _spaceBeesSpriteRenderer;
         [SerializeField] private SpriteRenderer _flowerGrowsSpriteRenderer;
 
+        [SerializeField] private float _crossfadeNormalBgTime = 2.0f;
 
 
         private void OnEnable() {
             Length = _spaceBeesClip.length + _flowerGrowsClip.length - _fadeTime;
+            _spaceBeesSpriteRenderer.color = Color.white;
+
             _flowerGrowsAnimator.speed = 0f;
             this.InvokeAfterTime(_spaceBeesClip.length - _fadeTime, FadeToFlowerGrows);
 
             _flowerGrowsSpriteRenderer.color = new Color(1f, 1f, 1f, 0f);
+
+            AudioManager.LoadClip(AudioClips.BgSpaceBees);
+            AudioManager.PlayTrack(AudioClips.BgSpaceBees);
+            AudioManager.Crossfade(AudioClips.BgNormal, AudioClips.BgSpaceBees);
+            this.InvokeAfterTime(_crossfadeNormalBgTime, () => AudioManager.Crossfade(AudioClips.BgSpaceBees, AudioClips.BgNormal));
         }
 
 

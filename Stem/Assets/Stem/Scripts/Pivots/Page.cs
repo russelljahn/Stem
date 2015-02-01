@@ -31,7 +31,7 @@ namespace Assets.Stem.Scripts.Pivots {
 
 
         private void Start() {
-            _audioManager.LoadClip(AudioClips.BgNormal, 0f);
+            _audioManager.LoadClip(AudioClips.BgNormal, 0f, loop: true);
             _audioManager.PlayTrack(AudioClips.BgNormal);
             _audioManager.Fade(AudioClips.BgNormal, _musicFadeInTime, _musicFadeInEasing);
         }

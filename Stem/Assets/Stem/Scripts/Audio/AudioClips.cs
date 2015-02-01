@@ -10,14 +10,19 @@ namespace Assets.Stem.Scripts.Audio {
     public class AudioClips : MonoBehaviour {
         [SerializeField] protected List<AudioClip> Clips = new List<AudioClip>();
 
-        public const string BgNormal = "BgNormal";
+        public const string BgDubstep = "BgDubstep";
         public const string BgGetBusy = "BgGetBusy";
         public const string BgHell = "BgHell";
+        public const string BgNormal = "BgNormal";
         public const string BgRadioactive = "BgRadioactive";
+        public const string BgSpaceBees = "BgSpaceBees";
 
+        public const string SfxBees = "SfxBees";
+        public const string SfxBeeExperiment = "SfxBeeExperiment";
         public const string SfxBell = "SfxBell";
         public const string SfxBootStomp = "SfxBootStomp";
         public const string SfxButton = "SfxButton";
+        public const string SfxEvilLaugh = "SfxEvilLaugh";
         public const string SfxLionRoar = "SfxLionRoar";
         public const string SfxOrchestra = "SfxOrchestra";
         public const string SfxPee = "SfxPee";
@@ -73,23 +78,27 @@ namespace Assets.Stem.Scripts.Audio {
                 case BgNormal:
                     return AudioTrackIds.Bg1;
 
+                case BgDubstep:
                 case BgHell:
                 case BgGetBusy:
                 case BgRadioactive:
+                case BgSpaceBees:
                     return AudioTrackIds.Bg2;
 
                 case SfxButton:
                     return AudioTrackIds.Sfx1;
 
+                case SfxBees:
+                case SfxBeeExperiment:
                 case SfxBell:
                 case SfxBootStomp:
+                case SfxEvilLaugh:
                 case SfxLionRoar:
                 case SfxOrchestra:
                 case SfxPee:
                 case SfxPesticide:
                 case SfxPsycho:
                 case SfxStraw:
-                case SfxSplash:
                 case SfxWaterFlower:
                     return AudioTrackIds.Sfx2;
 

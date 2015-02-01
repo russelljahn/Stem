@@ -1,9 +1,10 @@
+using Assets.Stem.Scripts.Audio;
 using Assets.Stem.Scripts.Extensions;
 using UnityEngine;
 
 
 namespace Assets.Stem.Scripts.Gui.PivotAnimations {
-    public class SimpleAnimationWithEndLoop : PivotAnimation {
+    public class BeeExperimentAnimation : PivotAnimation {
 
         [SerializeField] private AnimationClip _sequenceAnimationClip;
         [SerializeField] private AnimationClip _loopAnimationClip;
@@ -14,6 +15,9 @@ namespace Assets.Stem.Scripts.Gui.PivotAnimations {
 
         [SerializeField] private WrapMode _wrapMode = WrapMode.Loop;
 
+        [SerializeField] private float _sfx1PlayTime = 1f;
+        [SerializeField] private float _sfx2PlayTime = 1f;
+
   
         private void OnEnable() {
             _sequenceSpriteRenderer.color = Color.white;
@@ -21,6 +25,9 @@ namespace Assets.Stem.Scripts.Gui.PivotAnimations {
 
             Length = _sequenceAnimationClip.length;
             this.InvokeAfterTime(Length, PlayLoop, RaiseFinishedEvent);
+            this.InvokeAfterTime(_sfx1PlayTime, () => AudioManager.PlayTrackOneShot(AudioClips.SfxBeeExperiment));
+            this.InvokeAfterTime(_sfx2PlayTime, () => AudioManager.PlayTrackOneShot(AudioClips.BgDubstep));
+
         }
 
 

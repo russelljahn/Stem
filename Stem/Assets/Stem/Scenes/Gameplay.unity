@@ -2217,7 +2217,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 207397103}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.38999999, z: -90}
+  m_LocalPosition: {x: 0, y: -1.5, z: -90}
   m_LocalScale: {x: .716145813, y: .716145813, z: 1}
   m_Children: []
   m_Father: {fileID: 378661712}
@@ -2250,7 +2250,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 902fb2f71cfff4288aa55b1c8a54fe10, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9af3008dd514a44aaba65175ecf6163c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &212614524
 GameObject:
@@ -2903,7 +2903,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 402283730}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3df77c2d5b8a4efab4068ab684104fc, type: 3}
+  m_Script: {fileID: 11500000, guid: 14b0c8b040c2348128b3f044e47f2268, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   AudioManager: {fileID: 1871092769}
@@ -2914,6 +2914,8 @@ MonoBehaviour:
   _sequenceSpriteRenderer: {fileID: 2086046235}
   _loopSpriteRenderer: {fileID: 555113905}
   _wrapMode: 2
+  _sfx1PlayTime: .75
+  _sfx2PlayTime: 2.75
 --- !u!224 &402283732
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3440,6 +3442,7 @@ MonoBehaviour:
     m_PostInfinity: 2
   _spaceBeesSpriteRenderer: {fileID: 1299689442}
   _flowerGrowsSpriteRenderer: {fileID: 1560836630}
+  _crossfadeNormalBgTime: 4.5
 --- !u!1 &832108917
 GameObject:
   m_ObjectHideFlags: 0
@@ -8958,16 +8961,17 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: '<i>Russell Jahn:</i>                                       Programming
+  m_Text: '<i>Russell Jahn:</i>                              Programming
 
-    <i>Megan Prazenica:</i>                              Animation
+    <i>Megan Prazenica:</i>                     Animation/Writing
 
-    <i>Pricilla Delatorre:</i>                              Animation
+    <i>Pricilla Delatorre:</i>                     Animation/Writing
 
-    <i>Jerrod Holland:</i>                                   Audio
+    <i>Jerrod Holland:</i>                          Audio
 
+    <i>Kevin Sclar</i>                                 Audio
 
-    <i>German Graces:</i>                                 Generalist'
+    <i>German Graces:</i>                        Generalist'
 --- !u!222 &1841777198
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9562,21 +9566,24 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 388909b07fc934cb8a1a029650e051a7, type: 3}
   - {fileID: 8300000, guid: df8b94c19dcc74ab8b6d8db7e07ab60b, type: 3}
   - {fileID: 8300000, guid: 4fffe96251bd44b28bed8edacdd7e44d, type: 3}
+  - {fileID: 8300000, guid: e2568b82a9c83473295f87b48d58cec9, type: 3}
   - {fileID: 8300000, guid: ba4a6e638608240c99892333d6ad119b, type: 3}
   - {fileID: 8300000, guid: 7875e9c3416914c76817bbce49e23b85, type: 3}
+  - {fileID: 8300000, guid: 7795ecc36afdc464b9ac754b8bbd6570, type: 3}
   - {fileID: 8300000, guid: bbcc2af4d80be4876bbf1a37685fbce3, type: 3}
   - {fileID: 8300000, guid: c5f77ae53ae8540eea7e9be1eab7a7bf, type: 3}
   - {fileID: 8300000, guid: 418b00071e770449bb5d17ba0b27b5c3, type: 3}
   - {fileID: 8300000, guid: aeebe69782db24b03919ae61645d29f2, type: 3}
   - {fileID: 8300000, guid: a2e40538bd2e64e5190e0a47d82a5d1a, type: 3}
   - {fileID: 8300000, guid: 0f31dbe8c19434a56a6bdcb3a11cb529, type: 3}
+  - {fileID: 8300000, guid: c018cb1981e0c4922bdede28555f8956, type: 3}
   - {fileID: 8300000, guid: 1118a91a46ba44b298286e1e8e911f2c, type: 3}
   - {fileID: 8300000, guid: aba6da4ad38d14d7eb540efef9c44868, type: 3}
   - {fileID: 8300000, guid: e7231bba1916f4632bbb97ca559feed4, type: 3}
   - {fileID: 8300000, guid: 1f41d8ab170714ed1b1f3895a91b1e36, type: 3}
-  - {fileID: 8300000, guid: 809648cb8a4a548f3842e5ab4e84b12a, type: 3}
   - {fileID: 8300000, guid: a04d268ca3e834aad8691637544d6c53, type: 3}
   - {fileID: 8300000, guid: cb0f451f601694b6d905dec888c15326, type: 3}
+  - {fileID: 8300000, guid: 92cea45fb39f140f5826cba471f5ead7, type: 3}
 --- !u!1 &1988395678
 GameObject:
   m_ObjectHideFlags: 0
