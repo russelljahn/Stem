@@ -6,14 +6,11 @@ using UnityEngine.UI;
 
 namespace Assets.Stem.Scripts.Gui {
     [RequireComponent(typeof(CanvasGroup))]
-    public class MenuGui : MonoBehaviour {
+    public class CreditsGui : MonoBehaviour {
 
         private CanvasGroup _canvasGroup;
-        [SerializeField] private Button _menuFadeInButton;
-        [SerializeField] private List<Button> _menuFadeOutButtons;
-        [SerializeField] private Button _quitButton;
-
-
+        [SerializeField] private Button _fadeInButton;
+        [SerializeField] private Button _fadeOutButton;
 
         [SerializeField] private float _fadeTime = 1f;
         [SerializeField] private AnimationCurve _fadeEasing = AnimationCurveUtils.GetLinearCurve();
@@ -27,20 +24,14 @@ namespace Assets.Stem.Scripts.Gui {
 
 
         private void OnEnable() {
-            _menuFadeInButton.onClick.AddListener(FadeIn);
-            foreach (var button in _menuFadeOutButtons) {
-                button.onClick.AddListener(FadeOut);           
-            }
-            _quitButton.onClick.AddListener(Application.Quit);
+            _fadeInButton.onClick.AddListener(FadeIn);
+            _fadeOutButton.onClick.AddListener(FadeOut);
         }
 
 
         private void OnDisable() {
-            _menuFadeInButton.onClick.RemoveListener(FadeIn);
-            foreach (var button in _menuFadeOutButtons) {
-                button.onClick.RemoveListener(FadeOut);
-            }
-            _quitButton.onClick.RemoveListener(Application.Quit);
+            _fadeInButton.onClick.RemoveListener(FadeIn);
+            _fadeOutButton.onClick.RemoveListener(FadeOut);
         }
 
 

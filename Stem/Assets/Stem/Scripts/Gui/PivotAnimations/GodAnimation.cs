@@ -15,7 +15,7 @@ namespace Assets.Stem.Scripts.Gui.PivotAnimations {
         [SerializeField] private float _delayPerLetter = 0.5f;
         [SerializeField] private float _extraAnimationLength = 1f;
 
-        [SerializeField] private float _fourthWallSfxPitch = 0.75f;
+        [SerializeField] private float _sfxPitch = 0.75f;
 
         [SerializeField] private float _bgNormalFadeVolume = 0.25f;
 
@@ -26,7 +26,7 @@ namespace Assets.Stem.Scripts.Gui.PivotAnimations {
             Length = _initialText.Length * _delayPerLetter + _extraAnimationLength;
 
             AudioManager.Fade(AudioClips.BgNormal, _bgNormalFadeVolume);
-            AudioManager.PlayTrackOneShot(AudioClips.SfxOrchestra);
+            AudioManager.PlayTrackOneShot(AudioClips.SfxOrchestra, pitch: _sfxPitch);
 
             var fadeInTime = AudioClips.GetClip(AudioClips.SfxOrchestra).length;
             this.InvokeAfterTime(fadeInTime, () => AudioManager.Fade(AudioClips.BgNormal));
