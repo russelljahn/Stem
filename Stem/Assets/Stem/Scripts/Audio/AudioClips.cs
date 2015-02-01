@@ -15,14 +15,17 @@ namespace Assets.Stem.Scripts.Audio {
         public const string BgHell = "BgHell";
         public const string BgRadioactive = "BgRadioactive";
 
+        public const string SfxBell = "SfxBell";
         public const string SfxBootStomp = "SfxBootStomp";
         public const string SfxButton = "SfxButton";
-        public const string SfxDreamHarp = "SfxDreamHarp";
-        public const string SfxFourthWall = "SfxFourthWall";
+        public const string SfxLionRoar = "SfxLionRoar";
+        public const string SfxOrchestra = "SfxOrchestra";
+        public const string SfxPee = "SfxPee";
         public const string SfxPesticide = "SfxPesticide";
         public const string SfxPsycho = "SfxPsycho";
         public const string SfxSplash = "SfxSplash";
         public const string SfxStraw = "SfxStraw";
+        public const string SfxWaterFlower = "SfxWaterFlower";
 
 
          #region Singleton nonsense
@@ -78,13 +81,16 @@ namespace Assets.Stem.Scripts.Audio {
                 case SfxButton:
                     return AudioTrackIds.Sfx1;
 
+                case SfxBell:
                 case SfxBootStomp:
-                case SfxDreamHarp:
-                case SfxFourthWall:
+                case SfxLionRoar:
+                case SfxOrchestra:
+                case SfxPee:
                 case SfxPesticide:
                 case SfxPsycho:
                 case SfxStraw:
                 case SfxSplash:
+                case SfxWaterFlower:
                     return AudioTrackIds.Sfx2;
 
                 default:
@@ -96,7 +102,7 @@ namespace Assets.Stem.Scripts.Audio {
 
         [MenuItem("Stem/Refresh Audio Clips")]
         private static void RefreshAudioClips() {
-            var assetPaths = AssetDatabase.GetAllAssetPaths().Where(asset => asset.EndsWith(".mp3")).ToArray();
+            var assetPaths = AssetDatabase.GetAllAssetPaths().Where(assetName => IsAudioFile(assetName)).ToArray();
             
             Instance.Clips.Clear();
             Instance.Clips.Capacity = assetPaths.Length;
@@ -107,7 +113,11 @@ namespace Assets.Stem.Scripts.Audio {
             }
 
             Debug.Log("Refreshed " + assetPaths.Length + " audio clips!");
+        }
 
+
+        private static bool IsAudioFile(string fileName) {
+            return fileName.EndsWith(".mp3") || fileName.EndsWith(".wav");
         }
     }
 }

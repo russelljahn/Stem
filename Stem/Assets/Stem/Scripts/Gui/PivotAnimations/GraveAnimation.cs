@@ -1,4 +1,5 @@
 using System.Security.Cryptography;
+using Assets.Stem.Scripts.Audio;
 using Assets.Stem.Scripts.Extensions;
 using Assets.Stem.Scripts.Utils;
 using UnityEngine;
@@ -39,6 +40,8 @@ namespace Assets.Stem.Scripts.Gui.PivotAnimations {
             Length = _growTime + _graveFadeTime + _waitTime;
             _graveSpriteRenderer.transform.localScale = Vector3.zero;
             TweenUtils.TweenLocalScale(_graveSpriteRenderer.transform, _initialScale, _growTime, _growEasing, Wait);
+
+            AudioManager.PlayTrackOneShot(AudioClips.SfxBell);
         }
 
 

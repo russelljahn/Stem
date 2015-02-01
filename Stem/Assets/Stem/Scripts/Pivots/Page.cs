@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using Assets.Stem.Scripts.Extensions;
 using Assets.Stem.Scripts.Audio;
@@ -99,10 +99,6 @@ namespace Assets.Stem.Scripts.Pivots {
 
         private void HandleOnClickChoiceAudio(Choice choice) {
             _audioManager.PlayTrackOneShot(AudioClips.SfxButton);
-
-            //var nextChoiceClip = AudioClips.GetClip(choice.OnTriggerTrackName);
-            //var nextChoiceTrackId = AudioClips.GetClipTrackId(choice.OnTriggerTrackName);
-            //_audioManager.Fade(normalBgTrackId, _musicFadeTime, _musicFadeEasing);
         }
 
 

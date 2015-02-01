@@ -21,9 +21,10 @@ namespace Assets.Stem.Scripts.Gui.PivotAnimations {
         [SerializeField] private float _bgNormalFadeVolume = 0.25f;
         [SerializeField] private float _bgNormalFadeTime = 2f;
 
-
+        private bool _fadingOut;
 
         private void OnEnable() {
+            _fadingOut = false;
             _initialLocalPosition = _biohazardImage.transform.localPosition;
             _initialLocalScale = _biohazardImage.transform.localScale;
 
@@ -32,10 +33,11 @@ namespace Assets.Stem.Scripts.Gui.PivotAnimations {
             TweenUtils.TweenLocalScale(_biohazardImage.transform, Vector3.one, _tweenTime, _tweenEasing);
             TweenUtils.TweenLocalPosition(_biohazardImage.transform, _targetLocalPosition, _tweenTime, _tweenEasing);
 
-            AudioManager.Fade(AudioClips.BgNormal, _bgNormalFadeVolume);
-            AudioManager.PlayTrackOneShot(AudioClips.BgRadioactive);
+            AudioManager.LoadClip(AudioClips.BgRadioactive);
+            AudioManager.PlayTrack(AudioClips.BgRadioactive);
+            AudioManager.Crossfade(AudioClips.BgNormal, AudioClips.BgRadioactive);
 
-            this.InvokeAfterTime(_bgNormalFadeTime, () => AudioManager.Crossfade(AudioClips.BgRadioactive, AudioClips.BgNormal));
+            this.InvokeAfterTime(_bgNormalFadeTime, HandleBgFadingOut);
             this.InvokeAfterTime(Length, RaiseFinishedEvent);
         }
 
@@ -43,6 +45,15 @@ namespace Assets.Stem.Scripts.Gui.PivotAnimations {
         private void OnDisable() {
              _biohazardImage.transform.localPosition = _initialLocalPosition;
              _biohazardImage.transform.localScale = _initialLocalScale;
+                HandleBgFadingOut();
+        }
+
+
+        private void HandleBgFadingOut() {
+            if (!_fadingOut) {
+                _fadingOut = true;
+                AudioManager.Crossfade(AudioClips.BgRadioactive, AudioClips.BgNormal);
+            }
         }
 
     }

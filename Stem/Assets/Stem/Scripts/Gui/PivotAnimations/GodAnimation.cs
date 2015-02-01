@@ -8,7 +8,6 @@ using UnityEngine.UI;
 namespace Assets.Stem.Scripts.Gui.PivotAnimations {
     public class GodAnimation : PivotAnimation {
 
-        [SerializeField] private SpriteRenderer _ebolaSpriteRenderer;
         [SerializeField] private Text _text;
 
         private string _initialText;
@@ -20,19 +19,16 @@ namespace Assets.Stem.Scripts.Gui.PivotAnimations {
 
         [SerializeField] private float _bgNormalFadeVolume = 0.25f;
 
-
         private void OnEnable() {
             _initialText = _text.text;
             _text.text = "";
 
-            _ebolaSpriteRenderer.color = new Color(1f, 1f, 1f, 1f);
             Length = _initialText.Length * _delayPerLetter + _extraAnimationLength;
-            _ebolaSpriteRenderer.color = Color.clear;
 
             AudioManager.Fade(AudioClips.BgNormal, _bgNormalFadeVolume);
-            AudioManager.PlayTrackOneShot(AudioClips.SfxDreamHarp);
+            AudioManager.PlayTrackOneShot(AudioClips.SfxOrchestra);
 
-            var fadeInTime = AudioClips.GetClip(AudioClips.SfxDreamHarp).length;
+            var fadeInTime = AudioClips.GetClip(AudioClips.SfxOrchestra).length;
             this.InvokeAfterTime(fadeInTime, () => AudioManager.Fade(AudioClips.BgNormal));
 
             StartCoroutine(TextAnimation());

@@ -49,7 +49,6 @@ namespace Assets.Stem.Scripts.Gui {
         public void LoadChoice(Choice choice) {
             _choice = choice;
             _text.text = choice.Description;
-            Debug.Log("Loading choice: " + choice.Description);
         }
 
 
