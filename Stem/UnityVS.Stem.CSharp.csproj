@@ -65,6 +65,7 @@
     <Compile Include="Assets\Stem\Scripts\Extensions\ObjectExtensions.cs" />
     <Compile Include="Assets\Stem\Scripts\GameplayManager.cs" />
     <Compile Include="Assets\Stem\Scripts\Gui\ChoiceGui.cs" />
+    <Compile Include="Assets\Stem\Scripts\Gui\CreditsGui.cs" />
     <Compile Include="Assets\Stem\Scripts\Gui\MenuGui.cs" />
     <Compile Include="Assets\Stem\Scripts\Gui\PivotAnimations\BaconWitchAnimation.cs" />
     <Compile Include="Assets\Stem\Scripts\Gui\PivotAnimations\DrinkAnimation.cs" />
@@ -76,8 +77,13 @@
     <Compile Include="Assets\Stem\Scripts\Gui\PivotAnimations\GetEbolaAnimation.cs" />
     <Compile Include="Assets\Stem\Scripts\Gui\PivotAnimations\GrowFlowerAnimation.cs" />
     <Compile Include="Assets\Stem\Scripts\Gui\PivotAnimations\GodAnimation.cs" />
+    <Compile Include="Assets\Stem\Scripts\Gui\PivotAnimations\BeeExperimentAnimation.cs" />
+    <Compile Include="Assets\Stem\Scripts\Gui\PivotAnimations\BeeUtopiaAnimation.cs" />
+    <Compile Include="Assets\Stem\Scripts\Gui\PivotAnimations\HoneySplatAnimation.cs" />
+    <Compile Include="Assets\Stem\Scripts\Gui\PivotAnimations\WaterFlowerAnimation.cs" />
     <Compile Include="Assets\Stem\Scripts\Gui\PivotAnimations\PivotAnimation.cs" />
     <Compile Include="Assets\Stem\Scripts\Gui\PivotAnimations\PesticideAnimation.cs" />
+    <Compile Include="Assets\Stem\Scripts\Gui\PivotAnimations\PeeAnimation.cs" />
     <Compile Include="Assets\Stem\Scripts\Gui\PivotAnimations\SimpleAnimationWithOneShotSfx.cs" />
     <Compile Include="Assets\Stem\Scripts\Gui\PivotAnimations\SimpleAnimation.cs" />
     <Compile Include="Assets\Stem\Scripts\Gui\PivotAnimations\SimpleAnimationWithEndLoop.cs" />
