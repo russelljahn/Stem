@@ -89,6 +89,8 @@
     <Compile Include="Assets\Stem\Scripts\Gui\PivotAnimations\SimpleAnimationWithEndLoop.cs" />
     <Compile Include="Assets\Stem\Scripts\Gui\PivotAnimations\SpaceBeesAnimation.cs" />
     <Compile Include="Assets\Stem\Scripts\Gui\TitleGui.cs" />
+    <Compile Include="Assets\Stem\Scripts\PingPongTweenLocalRotation.cs" />
+    <Compile Include="Assets\Stem\Scripts\PingPongTweenLocalPosition.cs" />
     <Compile Include="Assets\Stem\Scripts\PingPongTweenOutlineDistance.cs" />
     <Compile Include="Assets\Stem\Scripts\PingPongTweenGraphicColor.cs" />
     <Compile Include="Assets\Stem\Scripts\Pivots\Choice.cs" />
