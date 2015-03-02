@@ -12,26 +12,27 @@ namespace Assets.Stem.Scripts.Audio {
 
         [SerializeField] protected List<PivotAnimation> PivotAnimations = new List<PivotAnimation>();
 
+        public const string BaconWitch = "BaconWitch";
         public const string BeeExperiment = "BeeExperiment";
+        public const string BeLovers = "BeLovers";
         public const string BeeUtopia = "BeeUtopia";
         public const string BootStomp = "BootStomp";
         public const string DrinkPee = "DrinkPee";
         public const string DrinkWater = "DrinkWater";
-        public const string GotEbola = "GotEbola";
-        public const string God = "God";
-        public const string Grave = "Grave";
         public const string FlowerGrow = "FlowerGrow";
         public const string FlowersSprout = "FlowersSprout";
+        public const string FriendDrink = "FriendDrink";
+        public const string GotEbola = "GotEbola";
         public const string GetSickFromPee = "GetSickFromPee";
         public const string GetSickFromWater = "GetSickFromWater";
         public const string GetStung = "GetStung";
+        public const string God = "God";
+        public const string Grave = "Grave";
+        public const string HoneyBombs = "HoneyBombs";
         public const string Pee = "Pee";
         public const string Pesticide = "Pesticide";
         public const string SpaceBees = "SpaceBees";
         public const string WaterFlower = "WaterFlower";
-        public const string BeLovers = "BeLovers";
-        public const string BaconWitch = "BaconWitch";
-        public const string FriendDrink = "FriendDrink";
 
 
          #region Singleton nonsense

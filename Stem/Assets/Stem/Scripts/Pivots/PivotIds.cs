@@ -6,7 +6,7 @@ namespace Assets.Stem.Scripts.Pivots {
 
         public const string BeeUtopia = "BeeUtopia";
         public const string Experiment = "Experiment";
-        public const string FlowerSprout = "FlowersSprout";
+        public const string FlowersSprout = "FlowersSprout";
         public const string FlowerMutates = "FlowerMutates";
         public const string FoundInnocent = "FoundInnocent";
         public const string FriendDies = "FriendDies";
