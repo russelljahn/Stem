@@ -28,7 +28,7 @@ namespace Assets.Stem.Scripts.Audio {
         public const string SfxPee = "SfxPee";
         public const string SfxPesticide = "SfxPesticide";
         public const string SfxPsycho = "SfxPsycho";
-        public const string SfxSplash = "SfxSplash";
+        public const string SfxStork = "SfxStork";
         public const string SfxStraw = "SfxStraw";
         public const string SfxWaterFlower = "SfxWaterFlower";
 
@@ -98,6 +98,7 @@ namespace Assets.Stem.Scripts.Audio {
                 case SfxPee:
                 case SfxPesticide:
                 case SfxPsycho:
+                case SfxStork:
                 case SfxStraw:
                 case SfxWaterFlower:
                     return AudioTrackIds.Sfx2;

@@ -84,11 +84,10 @@ namespace Assets.Stem.Scripts.Gui.PivotAnimations {
             Length = _flytrapWaggleClip.length + _heartsClip.length + 3f * _fadeInGroundTime - _shortenFlytrapWaggleAnimationTime + 
                 _growFlowerAnimationClip.length + _seedFallTime + _seedIncubationTime;
 
-
-            //AudioManager.LoadClip(AudioClips.BgGetBusy);
-            //AudioManager.PlayTrack(AudioClips.BgGetBusy);
-            //AudioManager.Crossfade(AudioClips.BgNormal, AudioClips.BgGetBusy);
-            //this.InvokeAfterTime(_bgNormalFadeTime, () => AudioManager.Crossfade(AudioClips.BgGetBusy, AudioClips.BgNormal));
+            AudioManager.LoadClip(AudioClips.BgGetBusy);
+            AudioManager.PlayTrack(AudioClips.BgGetBusy);
+            AudioManager.Crossfade(AudioClips.BgNormal, AudioClips.BgGetBusy);
+            this.InvokeAfterTime(_bgNormalFadeTime, () => AudioManager.Crossfade(AudioClips.BgGetBusy, AudioClips.BgNormal));
 
             this.InvokeAfterTime(_flytrapWaggleClip.length - _shortenFlytrapWaggleAnimationTime, FadeInHearts);
         }
@@ -113,6 +112,7 @@ namespace Assets.Stem.Scripts.Gui.PivotAnimations {
 
 
         private void PlayStorkAnimation() {
+            AudioManager.PlayTrackOneShot(AudioClips.SfxStork);
             _stork.gameObject.SetActive(true);
 
             TweenUtils.TweenWorldPosition(_stork, Camera.main.ViewportToWorldPoint(_storkFlyPositionViewportCoord), _storkFlyTime, _storkFlyEasing);
