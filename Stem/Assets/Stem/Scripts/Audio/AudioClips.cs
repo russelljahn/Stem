@@ -1,9 +1,11 @@
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.AccessControl;
 using Assets.Stem.Scripts.Extensions;
-using UnityEditor;
 using UnityEngine;
+
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 
 namespace Assets.Stem.Scripts.Audio {
@@ -111,7 +113,7 @@ namespace Assets.Stem.Scripts.Audio {
             }
         }
 
-
+#if UNITY_EDITOR
         [MenuItem("Stem/Refresh Audio Clips")]
         private static void RefreshAudioClips() {
             var assetPaths = AssetDatabase.GetAllAssetPaths().Where(assetName => IsAudioFile(assetName)).ToArray();
@@ -131,5 +133,6 @@ namespace Assets.Stem.Scripts.Audio {
         private static bool IsAudioFile(string fileName) {
             return fileName.EndsWith(".mp3") || fileName.EndsWith(".wav");
         }
+#endif
     }
 }

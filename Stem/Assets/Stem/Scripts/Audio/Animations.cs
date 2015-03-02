@@ -1,10 +1,12 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using Assets.Stem.Scripts.Constants;
 using Assets.Stem.Scripts.Extensions;
 using Assets.Stem.Scripts.Gui.PivotAnimations;
-using UnityEditor;
 using UnityEngine;
+
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 
 namespace Assets.Stem.Scripts.Audio {
@@ -75,6 +77,7 @@ namespace Assets.Stem.Scripts.Audio {
         }
 
 
+#if UNITY_EDITOR
         [MenuItem("Stem/Refresh Pivot Animations")]
         private static void RefreshPivotAnimations() {
             var pivotAnimationsRoot = GameObject.FindWithTag(TagConstants.PivotAnimationsRoot);
@@ -92,5 +95,7 @@ namespace Assets.Stem.Scripts.Audio {
 
             Debug.Log("Refreshed " + pivotAnimations.Length + " pivot animations!");
         }
+#endif
+
     }
 }
