@@ -1151,7 +1151,6 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 832108918}
   - {fileID: 483951687}
   m_Father: {fileID: 33196962}
   m_RootOrder: 14
@@ -1174,7 +1173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AudioManager: {fileID: 1871092769}
   _length: 0
-  _animationClip: {fileID: 7400000, guid: e2a4115fbdf004e5499a015e2ddd3272, type: 2}
+  _animationClip: {fileID: 7400000, guid: 5f5ce6330f76b4c648270f705101af8d, type: 2}
   _sfxClip: {fileID: 8300000, guid: 1118a91a46ba44b298286e1e8e911f2c, type: 3}
   _sfxPlayTime: .200000003
 --- !u!1 &207397103
@@ -1555,7 +1554,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &291763857
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2160,7 +2159,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &378661712
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2426,12 +2425,12 @@ GameObject:
   - 212: {fileID: 483951689}
   - 95: {fileID: 483951688}
   m_Layer: 0
-  m_Name: water_falls0026
+  m_Name: Water Flower Animator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &483951687
 Transform:
   m_ObjectHideFlags: 0
@@ -2439,11 +2438,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 483951686}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12, y: 78, z: -6912}
+  m_LocalPosition: {x: -42, y: 83, z: -6912}
   m_LocalScale: {x: 76.7999954, y: 76.7999954, z: 76.7999954}
   m_Children: []
   m_Father: {fileID: 184400790}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!95 &483951688
 Animator:
   serializedVersion: 3
@@ -2999,7 +2998,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b91db8ece3e7043a1b73164edede5555, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &654495936
 Transform:
@@ -3225,78 +3224,6 @@ MonoBehaviour:
   _spaceBeesSpriteRenderer: {fileID: 1299689442}
   _flowerGrowsSpriteRenderer: {fileID: 1560836630}
   _crossfadeNormalBgTime: 4.5
---- !u!1 &832108917
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 832108918}
-  - 212: {fileID: 832108920}
-  - 95: {fileID: 832108919}
-  m_Layer: 0
-  m_Name: Animator
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &832108918
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 832108917}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 76.8000031, y: 76.8000031, z: 76.8000031}
-  m_Children: []
-  m_Father: {fileID: 184400790}
-  m_RootOrder: 0
---- !u!95 &832108919
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 832108917}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ae7a4e04f0b6f4416bf383edbd939011, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
---- !u!212 &832108920
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 832108917}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 1
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 5c83ccf82053647aba7bce5e8842298d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &855365250
 GameObject:
   m_ObjectHideFlags: 0
@@ -5597,6 +5524,7 @@ MonoBehaviour:
   _flowerGoopPlaybackDelayTime: .300000012
   _flowerGoopFadeDelayTime: 1.5
   _flowerGoopFadeTime: 2
+  _shortenAnimationTime: 2
   _honeyBombContainerLaunchEasing:
     serializedVersion: 2
     m_Curve:
@@ -7670,78 +7598,6 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 48a234d4003bd431b8bb1e7ac18f978e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
---- !u!1 &1301149867
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1301149868}
-  - 212: {fileID: 1301149869}
-  - 95: {fileID: 1301149870}
-  m_Layer: 0
-  m_Name: Flower Grow Animator
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1301149868
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1301149867}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 76.7990189, y: 76.7990189, z: 76.7990189}
-  m_Children: []
-  m_Father: {fileID: 2001638255}
-  m_RootOrder: 0
---- !u!212 &1301149869
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1301149867}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 1
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b91db8ece3e7043a1b73164edede5555, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
---- !u!95 &1301149870
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1301149867}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9de866d9484974642bb5ba24c254fe44, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1366505540
 GameObject:
   m_ObjectHideFlags: 0
@@ -8515,7 +8371,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1487219216
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8593,60 +8449,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1487219215}
---- !u!1 &1503000718
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1503000719}
-  - 212: {fileID: 1503000720}
-  m_Layer: 0
-  m_Name: Gravestone
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1503000719
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1503000718}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -100, z: 0}
-  m_LocalScale: {x: 100, y: 100, z: 76.7999954}
-  m_Children: []
-  m_Father: {fileID: 2001638255}
-  m_RootOrder: 1
---- !u!212 &1503000720
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1503000718}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 1
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8c88f1a287fc84e35b3084ad6d1594d1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1507818979
 GameObject:
   m_ObjectHideFlags: 0
@@ -8792,6 +8594,78 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1057193204}
   m_RootOrder: 6
+--- !u!1 &1544707599
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1544707600}
+  - 212: {fileID: 1544707602}
+  - 95: {fileID: 1544707601}
+  m_Layer: 0
+  m_Name: Grave Animator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1544707600
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1544707599}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 60, y: -188, z: -6912}
+  m_LocalScale: {x: 76.7999954, y: 76.7999954, z: 76.7999954}
+  m_Children: []
+  m_Father: {fileID: 2001638255}
+  m_RootOrder: 0
+--- !u!95 &1544707601
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1544707599}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0f4940af576944a86ae9dacf3e8c50fb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!212 &1544707602
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1544707599}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 076eed202e54b4d6283e2a044a27e226, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1560836627
 GameObject:
   m_ObjectHideFlags: 0
@@ -8880,7 +8754,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1566390912
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11452,6 +11326,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 3e0a88272ed0742f4b5f216d0ee2da05, type: 3}
   - {fileID: 8300000, guid: a2e40538bd2e64e5190e0a47d82a5d1a, type: 3}
   - {fileID: 8300000, guid: 0f31dbe8c19434a56a6bdcb3a11cb529, type: 3}
+  - {fileID: 8300000, guid: d707cc0934fb948c7ae78fec863a7a3c, type: 3}
   - {fileID: 8300000, guid: c018cb1981e0c4922bdede28555f8956, type: 3}
   - {fileID: 8300000, guid: 1118a91a46ba44b298286e1e8e911f2c, type: 3}
   - {fileID: 8300000, guid: aba6da4ad38d14d7eb540efef9c44868, type: 3}
@@ -11766,6 +11641,7 @@ GameObject:
   m_Component:
   - 224: {fileID: 2001638255}
   - 114: {fileID: 2001638256}
+  - 114: {fileID: 2001638257}
   m_Layer: 5
   m_Name: Grave
   m_TagString: Untagged
@@ -11784,8 +11660,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1301149868}
-  - {fileID: 1503000719}
+  - {fileID: 1544707600}
   m_Father: {fileID: 33196962}
   m_RootOrder: 17
   m_AnchorMin: {x: 0, y: 0}
@@ -11800,7 +11675,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2001638254}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 65fb67b81fc6a460c8c5bc1450b6a3a0, type: 3}
   m_Name: 
@@ -11840,11 +11715,29 @@ MonoBehaviour:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-  _graveSpriteRenderer: {fileID: 1503000720}
-  _growFlowerAnimator: {fileID: 1301149870}
+  _graveSpriteRenderer: {fileID: 0}
+  _growFlowerAnimator: {fileID: 0}
   _growFlowerAnimationClip: {fileID: 7400000, guid: e12bbf777e09f45b5a2273274d4ce5c8,
     type: 2}
-  _growFlowerSpriteRenderer: {fileID: 1301149869}
+  _growFlowerSpriteRenderer: {fileID: 0}
+--- !u!114 &2001638257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2001638254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d5b1962aa631431dbec87d54b13653b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AudioManager: {fileID: 1871092769}
+  _length: 0
+  _animationClip: {fileID: 7400000, guid: ea7bac64324594abeae76af2c381b002, type: 2}
+  _sfxClip: {fileID: 8300000, guid: 0f31dbe8c19434a56a6bdcb3a11cb529, type: 3}
+  _sfxPlayTime: .25
+  _sfxFadeOut: 1
+  _sfxFadeOutTime: 3.5
 --- !u!1 &2003433437
 GameObject:
   m_ObjectHideFlags: 0

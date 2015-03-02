@@ -13,6 +13,7 @@ namespace Assets.Stem.Scripts.Audio {
         public const string BgDubstep = "BgDubstep";
         public const string BgGetBusy = "BgGetBusy";
         public const string BgHell = "BgHell";
+        public const string BgHoneyBombs = "BgHoneyBombs";
         public const string BgNormal = "BgNormal";
         public const string BgRadioactive = "BgRadioactive";
         public const string BgSpaceBees = "BgSpaceBees";
@@ -83,6 +84,7 @@ namespace Assets.Stem.Scripts.Audio {
                 case BgGetBusy:
                 case BgRadioactive:
                 case BgSpaceBees:
+                case BgHoneyBombs:
                     return AudioTrackIds.Bg2;
 
                 case SfxButton:

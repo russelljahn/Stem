@@ -4,6 +4,7 @@ using Assets.Stem.Scripts.Audio;
 using Assets.Stem.Scripts.Extensions;
 using Assets.Stem.Scripts.Utils;
 using System.Collections.Generic;
+using Assets.Stem.Scripts.PropertyAttributes;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -50,6 +51,9 @@ namespace Assets.Stem.Scripts.Gui.PivotAnimations {
         [SerializeField] private float _flowerGoopFadeDelayTime = 2.0f;
         [SerializeField] private float _flowerGoopFadeTime = 2.0f;
 
+        [SerializeField, Min(0f)] private float _shortenAnimationTime = 2.0f;
+
+
         [SerializeField] private AnimationCurve _honeyBombContainerLaunchEasing = AnimationCurveUtils.GetLinearCurve();
         [SerializeField] private AnimationCurve _beeAngerFadeEasing = AnimationCurveUtils.GetLinearCurve();
         [SerializeField] private AnimationCurve _honeySplatFadeEasing = AnimationCurveUtils.GetLinearCurve();
@@ -67,6 +71,8 @@ namespace Assets.Stem.Scripts.Gui.PivotAnimations {
 
 
         private void OnEnable() {
+            Length = _honeyBombContainerLaunchTime + _honeySplatTimeRange + _flowerGoopPlaybackDelayTime + _flowerGoopFadeDelayTime + _flowerGoopFadeTime - _shortenAnimationTime;
+
             _initialBeeLocalPosition = _beeSpriteRenderer.transform.localPosition;
             _initialBeeLocalScale = _beeSpriteRenderer.transform.localScale;
             _beeSpriteRenderer.color = Color.white;
@@ -105,6 +111,10 @@ namespace Assets.Stem.Scripts.Gui.PivotAnimations {
             _bgImage.color = new Color(1f, 1f, 1f, 0f);
 
             _firstPlay = false;
+
+            AudioManager.LoadClip(AudioClips.BgHoneyBombs);
+            AudioManager.PlayTrack(AudioClips.BgHoneyBombs);
+            AudioManager.Crossfade(AudioClips.BgNormal, AudioClips.BgHoneyBombs);
 
             /*
              * Ideally we want to do the following right now in OnEnable(), but setting position somehow fails on the first frame of OnEnable()
@@ -162,6 +172,8 @@ namespace Assets.Stem.Scripts.Gui.PivotAnimations {
                 _flowerBgSpriteRenderer.color = Color.white;
                 TweenUtils.TweenColor(_bgImage, Color.clear, _flowerGoopFadeTime, _flowerGoopFadeEasing);
                 TweenUtils.TweenColor(_flowerGoopSpriteRenderer, new Color(1f, 1f, 1f, 0f), _flowerGoopFadeTime, _flowerGoopFadeEasing, RaiseFinishedEvent);
+
+                AudioManager.Crossfade(AudioClips.BgHoneyBombs, AudioClips.BgNormal);
             });
         }
 
