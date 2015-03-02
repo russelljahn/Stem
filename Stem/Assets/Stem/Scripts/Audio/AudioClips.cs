@@ -10,7 +10,6 @@ namespace Assets.Stem.Scripts.Audio {
     public class AudioClips : MonoBehaviour {
         [SerializeField] protected List<AudioClip> Clips = new List<AudioClip>();
 
-        public const string BgDubstep = "BgDubstep";
         public const string BgGetBusy = "BgGetBusy";
         public const string BgHell = "BgHell";
         public const string BgHoneyBombs = "BgHoneyBombs";
@@ -21,6 +20,7 @@ namespace Assets.Stem.Scripts.Audio {
         public const string SfxBees = "SfxBees";
         public const string SfxBeeExperiment = "SfxBeeExperiment";
         public const string SfxBell = "SfxBell";
+        public const string SfxBeeMonster = "SfxBeeMonster";
         public const string SfxBootStomp = "SfxBootStomp";
         public const string SfxButton = "SfxButton";
         public const string SfxEvilLaugh = "SfxEvilLaugh";
@@ -79,7 +79,6 @@ namespace Assets.Stem.Scripts.Audio {
                 case BgNormal:
                     return AudioTrackIds.Bg1;
 
-                case BgDubstep:
                 case BgHell:
                 case BgGetBusy:
                 case BgRadioactive:
@@ -93,6 +92,7 @@ namespace Assets.Stem.Scripts.Audio {
                 case SfxBees:
                 case SfxBeeExperiment:
                 case SfxBell:
+                case SfxBeeMonster:
                 case SfxBootStomp:
                 case SfxEvilLaugh:
                 case SfxLionRoar:

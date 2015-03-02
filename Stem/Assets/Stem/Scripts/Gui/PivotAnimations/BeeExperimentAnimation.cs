@@ -26,7 +26,7 @@ namespace Assets.Stem.Scripts.Gui.PivotAnimations {
             Length = _sequenceAnimationClip.length;
             this.InvokeAfterTime(Length, PlayLoop, RaiseFinishedEvent);
             this.InvokeAfterTime(_sfx1PlayTime, () => AudioManager.PlayTrackOneShot(AudioClips.SfxBeeExperiment));
-            this.InvokeAfterTime(_sfx2PlayTime, () => AudioManager.PlayTrackOneShot(AudioClips.BgDubstep));
+            this.InvokeAfterTime(_sfx2PlayTime, () => AudioManager.PlayTrackOneShot(AudioClips.SfxBeeMonster));
 
         }
 
