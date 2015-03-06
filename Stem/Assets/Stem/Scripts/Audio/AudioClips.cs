@@ -39,16 +39,12 @@ namespace Assets.Stem.Scripts.Audio {
          #region Singleton nonsense
         private static AudioClips _instance;
 
-        private static AudioClips Instance
-        {
-            get
-            {
-                if (_instance.IsNull())
-                {
+        private static AudioClips Instance {
+            get {
+                if (_instance.IsNull()) {
                     _instance = FindObjectOfType<AudioClips>();
                 }
-                if (_instance.IsNull())
-                {
+                if (_instance.IsNull()) {
                     var go = new GameObject("AudioClips");
                     _instance = go.AddComponent<AudioClips>();
                     DontDestroyOnLoad(_instance);
@@ -116,7 +112,7 @@ namespace Assets.Stem.Scripts.Audio {
 #if UNITY_EDITOR
         [MenuItem("Stem/Refresh Audio Clips")]
         private static void RefreshAudioClips() {
-            var assetPaths = AssetDatabase.GetAllAssetPaths().Where(assetName => IsAudioFile(assetName)).ToArray();
+            var assetPaths = AssetDatabase.GetAllAssetPaths().Where(IsAudioFile).ToArray();
             
             Instance.Clips.Clear();
             Instance.Clips.Capacity = assetPaths.Length;

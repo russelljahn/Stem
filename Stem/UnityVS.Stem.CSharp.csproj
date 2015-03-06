@@ -70,6 +70,7 @@
     <Compile Include="Assets\Stem\Scripts\Gui\PivotAnimations\BaconWitchAnimation.cs" />
     <Compile Include="Assets\Stem\Scripts\Gui\PivotAnimations\DrinkAnimation.cs" />
     <Compile Include="Assets\Stem\Scripts\Gui\PivotAnimations\FriendDrinkAnimation.cs" />
+    <Compile Include="Assets\Stem\Scripts\Gui\PivotAnimations\HoneyBombsAnimation.cs" />
     <Compile Include="Assets\Stem\Scripts\Gui\PivotAnimations\GetBusyAnimation.cs" />
     <Compile Include="Assets\Stem\Scripts\Gui\PivotAnimations\GetSickAnimation.cs" />
     <Compile Include="Assets\Stem\Scripts\Gui\PivotAnimations\GetStungAnimation.cs" />

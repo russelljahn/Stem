@@ -7,7 +7,9 @@ using Assets.Stem.Scripts.PropertyAttributes;
 namespace Assets.Stem.Scripts.Gui.PivotAnimations {
     public abstract class PivotAnimation : MonoBehaviour {
 
-        [SerializeField] protected AudioManager AudioManager;
+        protected AudioManager AudioManager {
+            get { return AudioManager.Instance; }
+        }
 
         public event Action Finished = delegate { };
 

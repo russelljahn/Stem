@@ -26,7 +26,7 @@ namespace Assets.Stem.Scripts.Pivots {
 
         public void Setup(Story story, PivotAnimation initialAnimation) {
             _currentStory = story;
-            _currentPivotAnimation = initialAnimation;
+            _currentPivotAnimation = Animations.LoadAnimation(initialAnimation.name);
         }
 
 
@@ -85,13 +85,14 @@ namespace Assets.Stem.Scripts.Pivots {
         private void OnClickChoice(Choice choice) {
             var pivot = _currentStory.GetPivot(choice.NextPivot);
             var previousPivotAnimation = _currentPivotAnimation;
-            _currentPivotAnimation = Animations.GetAnimation(choice.OnTriggerAnimationName);
+            _currentPivotAnimation = Animations.LoadAnimation(choice.OnTriggerAnimationName);
 
             HandleOnClickChoiceAudio(choice);
 
             UnloadCurrentPivot(() => {
                 LoadPivot(pivot);
                 previousPivotAnimation.Stop();
+                Animations.ReleaseAnimation(previousPivotAnimation);
                 AnimatePivotTransition(pivot);
             });
         }

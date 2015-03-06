@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Assets.Stem.Scripts.Extensions;
 using Assets.Stem.Scripts.Utils;
 using UnityEngine;
 
@@ -14,6 +15,28 @@ namespace Assets.Stem.Scripts.Audio {
         [SerializeField] private AnimationCurve _fadeOutEasing = AnimationCurveUtils.GetLinearCurve();
 
         [SerializeField] private float _fadeTime = 1.0f;
+
+
+        #region Singleton nonsense
+        private static AudioManager _instance;
+
+        public static AudioManager Instance {
+            get {
+                if (_instance.IsNull()) {
+                    _instance = FindObjectOfType<AudioManager>();
+                }
+                if (_instance.IsNull()) {
+                    var go = new GameObject("AudioManager");
+                    _instance = go.AddComponent<AudioManager>();
+                    DontDestroyOnLoad(_instance);
+                }
+                return _instance;
+            }
+        }
+
+
+        protected AudioManager() { }
+        #endregion
 
 
         private void Awake() {
